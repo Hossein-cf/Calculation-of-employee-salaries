@@ -15,7 +15,7 @@
          <children>
             <ImageView fitHeight="363.0" fitWidth="466.0" layoutX="5.0" layoutY="69.0" opacity="0.6" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../../../../Desktop/Icone/bgs/3327590.jpg" />
+                  <Image url="@../Pics/3327590.jpg" />
                </image>
             </ImageView>
             <Pane layoutX="492.0" layoutY="12.0" prefHeight="405.0" prefWidth="271.0" style="-fx-border-radius: 5; -fx-background-color: #ffffff;">
@@ -39,7 +39,7 @@
                   </ImageView>
                   <ImageView fitHeight="148.0" fitWidth="168.0" layoutX="72.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../../../../Desktop/Icone/bgs/building-business-company-19953138.jpg" />
+                        <Image url="@../Pics/building-business-company-19953138.jpg" />
                      </image>
                   </ImageView>
                   <Label alignment="CENTER" layoutX="86.0" layoutY="106.0" prefHeight="17.0" prefWidth="120.0" text="Employment System">
