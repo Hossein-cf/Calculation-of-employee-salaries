@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<AnchorPane prefHeight="502.0" prefWidth="815.0" style="-fx-border-radius: 5; -fx-background-color: #BBDEFB;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Pane layoutX="31.0" layoutY="26.0" prefHeight="451.0" prefWidth="754.0" style="-fx-background-radius: 5; -fx-background-color: #fff; -fx-border-radius: 5;">
+         <effect>
+            <DropShadow color="#0f1011" height="50.0" radius="24.5" width="50.0" />
+         </effect>
+         <children>
+            <ImageView fitHeight="412.0" fitWidth="514.0" layoutX="232.0" layoutY="14.0" opacity="0.83" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Pics/email-marketing-communication-never-right-word-scaled.jpg" />
+               </image>
+            </ImageView>
+            <Pane layoutX="5.0" layoutY="6.0" prefHeight="438.0" prefWidth="242.0" style="-fx-background-radius: 10;">
+               <children>
+                  <ImageView fitHeight="175.0" fitWidth="182.0" layoutX="46.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../Pics/building-business-company-19953138.jpg" />
+                     </image>
+                  </ImageView>
+                  <JFXButton buttonType="RAISED" layoutX="52.0" layoutY="333.0" prefHeight="32.0" prefWidth="163.0" ripplerFill="#16c1ff" style="-fx-border-radius: 5; -fx-border-color: #B2EBF2;" text="Start to Cooperation">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </JFXButton>
+                  <Label alignment="CENTER" layoutX="57.0" layoutY="131.0" prefHeight="17.0" prefWidth="145.0" text="Employment System" textFill="#230494">
+                     <font>
+                        <Font name="System Bold Italic" size="12.0" />
+                     </font>
+                  </Label>
+                  <TextField layoutX="57.0" layoutY="188.0" prefHeight="25.0" prefWidth="175.0" promptText="Company Name" />
+                  <ImageView fitHeight="47.0" fitWidth="39.0" layoutX="10.0" layoutY="181.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../Pics/icons8-business-building-100.jpg" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="32.0" fitWidth="39.0" layoutX="14.0" layoutY="255.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../Pics/icons8-business-building-64.jpg" />
+                     </image>
+                  </ImageView>
+                  <JFXComboBox layoutX="57.0" layoutY="259.0" opacity="0.51" prefHeight="25.0" prefWidth="145.0" promptText="CompanyType" />
+                  <Separator layoutX="246.0" layoutY="16.0" orientation="VERTICAL" prefHeight="369.0" prefWidth="5.0" />
+               </children>
+            </Pane>
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>

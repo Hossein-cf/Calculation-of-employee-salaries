@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXButton?>
+<AnchorPane prefHeight="256.0" prefWidth="439.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <ImageView fitHeight="383.0" fitWidth="563.0" opacity="0.37" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Pics/MainLoginBG.jpg" />
+         </image>
+      </ImageView>
+      <JFXComboBox layoutX="215.0" layoutY="105.0" prefHeight="25.0" prefWidth="151.0" promptText="Choose the use case">
+         <effect>
+            <DropShadow />
+         </effect>
+      </JFXComboBox>
+      <JFXButton layoutX="231.0" layoutY="188.0" prefHeight="40.0" prefWidth="102.0" style="-fx-border-color: #002171; -fx-border-radius: 5;" text="GO">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </JFXButton>
+      <Label alignment="CENTER" layoutX="153.0" layoutY="30.0" opacity="0.71" prefHeight="50.0" prefWidth="257.0" text="Welcom to your Managment system" textFill="#0f51eb">
+         <font>
+            <Font name="System Bold Italic" size="15.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>
