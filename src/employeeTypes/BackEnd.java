@@ -1,4 +1,7 @@
 package employeeTypes;
 
-public class BackEnd {
+import extras.Employee;
+
+public class BackEnd extends Employee {
+
 }

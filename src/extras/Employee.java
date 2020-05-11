@@ -19,4 +19,5 @@ public class Employee extends Person implements CalculationSalary {
     public double calculate() {
         return 0;
     }
+
 }
