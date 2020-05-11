@@ -15,7 +15,7 @@
          <children>
             <ImageView fitHeight="363.0" fitWidth="466.0" layoutX="5.0" layoutY="69.0" opacity="0.6" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../Pics/3327590.jpg" />
+                  <Image url="@../Pics/Embg.jpg" />
                </image>
             </ImageView>
             <Pane layoutX="492.0" layoutY="12.0" prefHeight="405.0" prefWidth="271.0" style="-fx-border-radius: 5; -fx-background-color: #ffffff;">
