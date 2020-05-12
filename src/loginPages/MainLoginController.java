@@ -64,7 +64,7 @@ public class MainLoginController implements Initializable {
         try {
             Stage stage = (Stage) btnGo.getScene().getWindow();
             stage.close();
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("../EmployeeDashbord/EmployeeLogin.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("../EmployeeDashbord/FXMLs/EmployeeLogin.fxml"));
             root = loader.load();
             stage = new Stage();
             Stage finalStage = stage;

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane prefHeight="881.0" prefWidth="672.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ManagerDashbord.DashbordFXMLs.Employment.SubmitEmployee.DBExpertForm">
+   <children>
+      <Pane layoutX="14.0" layoutY="14.0" prefHeight="289.0" prefWidth="643.0" style="-fx-background-color: #e6ffff; -fx-background-radius: 20;">
+         <children>
+            <Label alignment="CENTER" layoutX="226.0" layoutY="2.0" prefHeight="25.0" prefWidth="192.0" text="Fill your personal information" textFill="#1a06c6">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+      <Pane layoutX="15.0" layoutY="328.0" prefHeight="58.0" prefWidth="643.0" style="-fx-background-color: #e6ffff; -fx-background-radius: 20;">
+         <children>
+            <Label layoutX="25.0" layoutY="14.0" prefHeight="17.0" prefWidth="92.0" />
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>
