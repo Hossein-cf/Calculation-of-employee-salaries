@@ -8,17 +8,16 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
 <AnchorPane prefHeight="500.0" prefWidth="700.0" style="-fx-background-color: #e6ffff;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ManagerDashbord.DashbordFXMLs.ManagerEmployment">
    <children>
       <ComboBox layoutX="421.0" layoutY="52.0" prefHeight="25.0" prefWidth="195.0" promptText="Employee Type" />
-      <ComboBox layoutX="421.0" layoutY="129.0" prefHeight="25.0" prefWidth="195.0" promptText="Work Time" />
+      <ComboBox layoutX="422.0" layoutY="174.0" prefHeight="25.0" prefWidth="195.0" promptText="Work Time" />
       <Label layoutX="99.0" layoutY="52.0" prefHeight="25.0" prefWidth="261.0" text="Choose Employee type that want to hire" textFill="#0804ff">
          <font>
             <Font name="System Bold" size="13.0" />
          </font>
       </Label>
-      <Label layoutX="104.0" layoutY="129.0" prefHeight="25.0" prefWidth="207.0" text="Choose Employee's work time" textFill="#2209ff">
+      <Label layoutX="105.0" layoutY="174.0" prefHeight="25.0" prefWidth="207.0" text="Choose Employee's work time" textFill="#2209ff">
          <font>
             <Font name="System Bold" size="13.0" />
          </font>
@@ -28,15 +27,26 @@
             <Image url="@../../../Pics/icons8-employee-50-2.jpg" />
          </image>
       </ImageView>
-      <ImageView fitHeight="25.0" fitWidth="43.0" layoutX="386.0" layoutY="129.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="25.0" fitWidth="43.0" layoutX="387.0" layoutY="174.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../../Pics/alarm-clock-1.jpg" />
          </image>
       </ImageView>
-      <JFXButton layoutX="263.0" layoutY="223.0" prefHeight="55.0" prefWidth="195.0" style="-fx-border-color: #00cccc; -fx-border-radius: 10;" text="Complete the information" textFill="#101043">
+      <JFXButton layoutX="263.0" layoutY="256.0" prefHeight="55.0" prefWidth="195.0" style="-fx-border-color: #00cccc; -fx-border-radius: 10;" text="Complete the information" textFill="#101043">
          <font>
             <Font name="System Bold" size="14.0" />
          </font>
       </JFXButton>
+      <ComboBox layoutX="424.0" layoutY="116.0" prefHeight="25.0" prefWidth="195.0" promptText="Employee Level" />
+      <Label layoutX="102.0" layoutY="116.0" prefHeight="25.0" prefWidth="261.0" text="Choose Employee level that want to hire" textFill="#0804ff">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Label>
+      <ImageView fitHeight="25.0" fitWidth="33.0" layoutX="384.0" layoutY="116.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../../../../Desktop/Icone/essential-collection/png/controls.png" />
+         </image>
+      </ImageView>
    </children>
 </AnchorPane>

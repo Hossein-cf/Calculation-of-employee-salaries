@@ -9,7 +9,7 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="659.0" prefWidth="700.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/8.0.221" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ManagerDashbord.DashbordFXMLs.ManagerSlary">
+<AnchorPane prefHeight="659.0" prefWidth="700.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ManagerDashbord.DashbordFXMLs.ManagerSlary">
    <children>
       <AnchorPane layoutX="16.0" layoutY="14.0" prefHeight="264.0" prefWidth="663.0" style="-fx-background-color: #e6ffff; -fx-background-radius: 10;">
          <children>
@@ -32,9 +32,14 @@
                   <Font name="System Bold" size="13.0" />
                </font>
             </Label>
-            <TextField layoutX="51.0" layoutY="66.0" promptText="overtime hour" />
-            <TextField layoutX="250.0" layoutY="66.0" />
-            <TextField layoutX="436.0" layoutY="66.0" />
+            <TextField layoutX="49.0" layoutY="80.0" promptText="overtime hour" />
+            <TextField layoutX="49.0" layoutY="131.0" promptText="vacation hour" />
+            <TextField layoutX="298.0" layoutY="106.0" />
+            <Label alignment="CENTER" layoutX="14.0" layoutY="46.0" prefHeight="19.0" prefWidth="284.0" text="complete the information about the Eployee">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+            </Label>
          </children>
       </Pane>
    </children>
