@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<AnchorPane prefHeight="500.0" prefWidth="730.0" style="-fx-background-color: e6ffff;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ManagerDashbord.DashbordControllers.SubmitPaneController">
+   <children>
+      <ScrollPane layoutX="27.0" layoutY="40.0" prefHeight="333.0" prefWidth="680.0">
+        <content>
+          <AnchorPane fx:id="SubmitScrollPane" minHeight="0.0" minWidth="0.0" prefHeight="342.0" prefWidth="680.0" />
+        </content>
+      </ScrollPane>
+   </children>
+</AnchorPane>

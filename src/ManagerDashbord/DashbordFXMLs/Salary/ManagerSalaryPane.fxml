@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<AnchorPane prefHeight="500.0" prefWidth="700.0" style="-fx-background-color: #e6ffff;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ManagerDashbord.DashbordFXMLs.Salary.ManageSalaryPane">
+   <children>
+      <ScrollPane layoutX="10.0" layoutY="44.0" prefHeight="373.0" prefWidth="679.0">
+        <content>
+          <AnchorPane fx:id="SalaryScrollPane" minHeight="0.0" minWidth="0.0" prefHeight="374.0" prefWidth="665.0" />
+        </content>
+      </ScrollPane>
+   </children>
+</AnchorPane>

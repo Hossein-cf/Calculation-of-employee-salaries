@@ -7,13 +7,13 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
 
-<AnchorPane prefHeight="482.0" prefWidth="690.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ManagerDashbord.DashbordFXMLs.Salary.SalariesReceiptController">
+<AnchorPane prefHeight="482.0" prefWidth="690.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ManagerDashbord.DashbordControllers.SalariesReceiptController">
    <children>
       <Pane layoutX="22.0" layoutY="26.0" prefHeight="439.0" prefWidth="647.0" style="-fx-background-color: e6ffff; -fx-background-radius: 5;">
          <children>
             <ImageView fitHeight="127.0" fitWidth="202.0" layoutX="14.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../../../../../../Desktop/Icone/essential-collection/png/id-card-4.png" />
+                  <Image url="@../../../Pics/id-card-4.jpg" />
                </image>
             </ImageView>
             <JFXTextField labelFloat="true" layoutX="29.0" layoutY="127.0" prefHeight="25.0" prefWidth="97.0" promptText="First Name" text=" " />

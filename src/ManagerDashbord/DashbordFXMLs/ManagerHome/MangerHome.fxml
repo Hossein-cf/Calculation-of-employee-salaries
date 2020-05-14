@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ProgressIndicator?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="532.0" prefWidth="735.0" style="-fx-background-color: #ffffff; -fx-background-radius: 30;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ManagerDashbord.DashbordControllers.ManagerHomeController">
+   <children>
+      <ImageView fx:id="HomeImage" fitHeight="204.0" fitWidth="206.0" layoutX="480.0" pickOnBounds="true" preserveRatio="true" AnchorPane.rightAnchor="85.5911865234375" AnchorPane.topAnchor="0.0">
+         <image>
+            <Image url="@../../../Pics/flat.jpg" />
+         </image>
+      </ImageView>
+      <Pane fx:id="creditPane" layoutX="71.0" layoutY="195.0" prefHeight="303.0" prefWidth="335.0" style="-fx-background-color: #ffffff; -fx-background-radius: 5;" AnchorPane.bottomAnchor="41.0">
+         <children>
+            <Label alignment="CENTER" layoutX="82.0" layoutY="72.0" prefHeight="41.0" prefWidth="22.0" text="0" />
+            <Label alignment="CENTER" layoutX="228.0" layoutY="71.0" prefHeight="41.0" prefWidth="22.0" text="0" />
+            <Label alignment="CENTER" layoutX="49.0" layoutY="25.0" prefHeight="26.0" prefWidth="88.0" style="-fx-border-color: #00cccc; -fx-border-radius: 5;" text="Employees :">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" layoutX="191.0" layoutY="25.0" prefHeight="26.0" prefWidth="95.0" style="-fx-border-radius: 5; -fx-border-color: #00cccc;" text="Payed Salaries :">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+            <Separator layoutX="21.0" layoutY="150.0" prefHeight="0.0" prefWidth="293.0" />
+            <Label alignment="CENTER" layoutX="67.0" layoutY="214.0" prefHeight="35.0" prefWidth="60.0" text="Total :">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" layoutX="21.0" layoutY="165.0" prefHeight="35.0" prefWidth="72.0" text="Credit" textFill="#1404a4">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" layoutX="160.0" layoutY="214.0" prefHeight="35.0" prefWidth="14.0" text="\$">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+            </Label>
+            <Label layoutX="181.0" layoutY="214.0" prefHeight="35.0" prefWidth="109.0" text="0">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+            </Label>
+            <ProgressIndicator layoutX="63.0" layoutY="61.0" prefHeight="64.0" prefWidth="60.0" />
+            <ProgressIndicator layoutX="209.0" layoutY="60.0" prefHeight="64.0" prefWidth="60.0" />
+         </children>
+         <effect>
+            <DropShadow />
+         </effect>
+      </Pane>
+      <Pane fx:id="TeamPane" layoutX="451.0" layoutY="200.0" prefHeight="303.0" prefWidth="239.0" style="-fx-background-color: #80ffcc; -fx-background-radius: 5;" AnchorPane.bottomAnchor="41.0" AnchorPane.rightAnchor="80.0">
+         <children>
+            <ImageView fitHeight="219.0" fitWidth="239.0" layoutY="35.0" opacity="0.73" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../Pics/Team.jpg" />
+               </image>
+            </ImageView>
+            <Label layoutX="20.0" layoutY="14.0" prefHeight="41.0" prefWidth="115.0" />
+            <JFXButton buttonType="RAISED" layoutX="20.0" layoutY="14.0" prefHeight="41.0" prefWidth="204.0" ripplerFill="#081dff" text="Check out Developer Team ?">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+            </JFXButton>
+         </children>
+         <effect>
+            <DropShadow />
+         </effect>
+      </Pane>
+      <Pane fx:id="Pane1" layoutX="77.0" layoutY="82.0" opacity="0.7" prefHeight="94.0" prefWidth="616.0" style="-fx-background-color: #e6ffff; -fx-background-radius: 10;" AnchorPane.leftAnchor="77.0" AnchorPane.rightAnchor="77.0">
+         <children>
+            <Label layoutX="6.0" prefHeight="35.0" prefWidth="247.0" text="Do your Accountings with us" textFill="#1f0bff">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Label>
+            <Label layoutX="26.0" layoutY="35.0" prefHeight="19.0" prefWidth="124.0" text="Comapany Name :">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </Label>
+            <Label fx:id="lblCompanyName" layoutX="143.0" layoutY="35.0" prefHeight="19.0" prefWidth="152.0">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+            </Label>
+            <Label fx:id="lblCompanyType" layoutX="428.0" layoutY="35.0" prefHeight="19.0" prefWidth="173.0">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+            </Label>
+            <Label layoutX="308.0" layoutY="35.0" prefHeight="19.0" prefWidth="124.0" text="Comapany Type   :">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+      <AnchorPane fx:id="loadAnchorPane" layoutX="7.0" layoutY="7.0" prefHeight="532.0" prefWidth="735.0" style="-fx-background-color: #e6ffff; -fx-background-radius: 30;" visible="false" />
+   </children>
+</AnchorPane>

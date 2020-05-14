@@ -8,7 +8,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="500.0" prefWidth="700.0" style="-fx-background-color: #e6ffff;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ManagerDashbord.DashbordFXMLs.ManagerEmployment">
+<AnchorPane prefHeight="500.0" prefWidth="700.0" style="-fx-background-color: #e6ffff;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ManagerDashbord.DashbordControllers.ManagerEmploymentController">
    <children>
       <ComboBox layoutX="421.0" layoutY="52.0" prefHeight="25.0" prefWidth="195.0" promptText="Employee Type" />
       <ComboBox layoutX="422.0" layoutY="174.0" prefHeight="25.0" prefWidth="195.0" promptText="Work Time" />
