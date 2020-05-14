@@ -1,25 +1,97 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXCheckBox?>
+<?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-
 <AnchorPane prefHeight="881.0" prefWidth="672.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ManagerDashbord.DashbordFXMLs.Employment.SubmitEmployee.DBExpertForm">
    <children>
-      <Pane layoutX="14.0" layoutY="14.0" prefHeight="289.0" prefWidth="643.0" style="-fx-background-color: #e6ffff; -fx-background-radius: 20;">
+      <Pane layoutX="14.0" layoutY="14.0" prefHeight="254.0" prefWidth="643.0" style="-fx-background-color: #e6ffff; -fx-background-radius: 20;">
          <children>
-            <Label alignment="CENTER" layoutX="226.0" layoutY="2.0" prefHeight="25.0" prefWidth="192.0" text="Fill your personal information" textFill="#1a06c6">
+            <Label alignment="CENTER" layoutX="219.0" layoutY="2.0" prefHeight="25.0" prefWidth="221.0" text="Fill Employee personal information" textFill="#1a06c6">
                <font>
                   <Font name="System Bold" size="13.0" />
                </font>
             </Label>
+            <TextField layoutX="34.0" layoutY="41.0" prefHeight="25.0" prefWidth="92.0" promptText="Firrst Name" />
+            <TextField layoutX="154.0" layoutY="41.0" prefHeight="25.0" prefWidth="92.0" promptText="Last Name" />
+            <TextField layoutX="283.0" layoutY="41.0" prefHeight="25.0" prefWidth="92.0" promptText="Father Name" />
+            <TextField layoutX="417.0" layoutY="41.0" prefHeight="25.0" prefWidth="192.0" promptText="National Code" />
+            <TextField layoutX="34.0" layoutY="98.0" prefHeight="25.0" prefWidth="127.0" promptText="Born Place" />
+            <DatePicker layoutX="200.0" layoutY="98.0" prefHeight="25.0" prefWidth="198.0" promptText="Your Born Date" />
+            <TextField layoutX="417.0" layoutY="98.0" prefHeight="25.0" prefWidth="192.0" promptText="Phone Number" />
+            <TextField layoutX="34.0" layoutY="158.0" prefHeight="25.0" prefWidth="418.0" promptText="Address" />
+            <TextField layoutX="468.0" layoutY="158.0" prefHeight="25.0" prefWidth="139.0" promptText="Postal Code" />
+            <JFXButton layoutX="288.0" layoutY="201.0" prefHeight="32.0" prefWidth="69.0" style="-fx-border-color: #000051; -fx-border-radius: 10;" text="Done!" textFill="#3f0097">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </JFXButton>
          </children>
       </Pane>
-      <Pane layoutX="15.0" layoutY="328.0" prefHeight="58.0" prefWidth="643.0" style="-fx-background-color: #e6ffff; -fx-background-radius: 20;">
+      <Pane layoutX="14.0" layoutY="278.0" prefHeight="102.0" prefWidth="643.0" style="-fx-background-color: #e6ffff; -fx-background-radius: 20;">
          <children>
             <Label layoutX="25.0" layoutY="14.0" prefHeight="17.0" prefWidth="92.0" />
+            <JFXCheckBox layoutX="92.0" layoutY="31.0" prefHeight="21.0" prefWidth="51.0" text="Git">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+            </JFXCheckBox>
+            <JFXCheckBox layoutX="470.0" layoutY="31.0" prefHeight="21.0" prefWidth="110.0" text="Linux or Mac">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+            </JFXCheckBox>
+            <JFXCheckBox layoutX="251.0" layoutY="31.0" prefHeight="21.0" prefWidth="118.0" text="TeleWorking">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+            </JFXCheckBox>
+            <Label layoutX="8.0" layoutY="5.0" prefHeight="19.0" prefWidth="139.0" text="Having exprience in:">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+            </Label>
+            <JFXButton layoutX="287.0" layoutY="63.0" prefHeight="21.0" prefWidth="69.0" style="-fx-border-color: #000051; -fx-border-radius: 10;" text="Done!" textFill="#3f0097">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </JFXButton>
+         </children>
+      </Pane>
+      <Pane layoutX="14.0" layoutY="391.0" prefHeight="481.0" prefWidth="643.0" style="-fx-background-color: #e6ffff; -fx-background-radius: 20;">
+         <children>
+            <Label layoutX="25.0" layoutY="14.0" prefHeight="17.0" prefWidth="92.0" />
+            <Label alignment="CENTER" layoutX="226.0" layoutY="2.0" prefHeight="25.0" prefWidth="192.0" text=" " textFill="#1a06c6">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+            </Label>
+            <TableView layoutX="46.0" layoutY="42.0" prefHeight="311.0" prefWidth="559.0">
+              <columns>
+                <TableColumn prefWidth="55.0" text="Row" />
+                <TableColumn prefWidth="329.0" text="Expertise" />
+                  <TableColumn minWidth="0.0" prefWidth="173.0" text="Mark the specialties" />
+              </columns>
+            </TableView>
+            <Label alignment="CENTER" layoutX="229.0" layoutY="10.0" prefHeight="25.0" prefWidth="192.0" text="Select Employee Specialties" textFill="#1a06c6">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+            </Label>
+            <JFXButton layoutX="262.0" layoutY="368.0" prefHeight="32.0" prefWidth="139.0" style="-fx-border-color: #000051; -fx-border-radius: 10;" text="Check the status" textFill="#3f0097">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </JFXButton>
+            <Label alignment="CENTER" layoutX="116.0" layoutY="428.0" prefHeight="17.0" prefWidth="428.0" text="Label" />
          </children>
       </Pane>
    </children>

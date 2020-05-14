@@ -1,14 +1,67 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ProgressIndicator?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="ManagerDashbord.DashbordFXMLs.ManagerMembersOfCompany"
-            prefHeight="400.0" prefWidth="600.0">
 
+<AnchorPane prefHeight="477.0" prefWidth="700.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ManagerDashbord.DashbordFXMLs.ManagerMembersOfCompany">
+   <children>
+      <Pane layoutX="17.0" layoutY="151.0" prefHeight="312.0" prefWidth="667.0" style="-fx-background-color: #e6ffff; -fx-background-radius: 15;">
+         <children>
+            <Label layoutX="46.0" layoutY="56.0" prefHeight="22.0" prefWidth="131.0" text="Full Stack Developers" />
+            <Label layoutX="46.0" layoutY="173.0" prefHeight="22.0" prefWidth="154.0" text="NetWork Security Expert" />
+            <ProgressIndicator layoutX="87.0" layoutY="98.0" />
+            <ProgressIndicator layoutX="87.0" layoutY="213.0" />
+            <Label alignment="CENTER" layoutX="99.0" layoutY="112.0" prefHeight="22.0" prefWidth="26.0" text="0" />
+            <Label alignment="CENTER" layoutX="99.0" layoutY="227.0" prefHeight="22.0" prefWidth="26.0" text="0" />
+            <Label layoutX="251.0" layoutY="56.0" prefHeight="22.0" prefWidth="131.0" text="Front-end Developers" />
+            <Label layoutX="272.0" layoutY="173.0" prefHeight="22.0" prefWidth="88.0" text="App Developer" />
+            <ProgressIndicator layoutX="292.0" layoutY="98.0" />
+            <ProgressIndicator layoutX="293.0" layoutY="213.0" />
+            <Label alignment="CENTER" layoutX="305.0" layoutY="112.0" prefHeight="22.0" prefWidth="26.0" text="0" />
+            <Label alignment="CENTER" layoutX="305.0" layoutY="227.0" prefHeight="22.0" prefWidth="26.0" text="0" />
+            <Label layoutX="475.0" layoutY="56.0" prefHeight="22.0" prefWidth="131.0" text="Back-end Developers" />
+            <Label layoutX="490.0" layoutY="173.0" prefHeight="22.0" prefWidth="131.0" text="Data Base Expert" />
+            <ProgressIndicator layoutX="507.0" layoutY="98.0" />
+            <ProgressIndicator layoutX="516.0" layoutY="207.0" />
+            <Label alignment="CENTER" layoutX="519.0" layoutY="112.0" prefHeight="22.0" prefWidth="26.0" text="0" />
+            <Label alignment="CENTER" layoutX="528.0" layoutY="221.0" prefHeight="22.0" prefWidth="26.0" text="0" />
+            <Separator layoutX="206.0" layoutY="40.0" orientation="VERTICAL" prefHeight="241.0" prefWidth="7.0" />
+            <Separator layoutX="427.0" layoutY="40.0" orientation="VERTICAL" prefHeight="241.0" prefWidth="7.0" />
+            <Label alignment="CENTER" layoutX="14.0" layoutY="14.0" prefHeight="22.0" prefWidth="99.0" style="-fx-border-color: #003C8F; -fx-border-radius: 5;" text="Numbers Of :">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+      <Pane layoutX="21.0" layoutY="9.0" prefHeight="123.0" prefWidth="659.0" style="-fx-background-color: #e6ffff;">
+         <children>
+            <Label layoutX="304.0" layoutY="27.0" prefHeight="17.0" prefWidth="99.0" text="Company Name :" />
+            <Label layoutX="304.0" layoutY="77.0" prefHeight="17.0" prefWidth="99.0" text="Company Type :">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+            <Label layoutX="410.0" layoutY="25.0" prefHeight="22.0" prefWidth="106.0" text=" " />
+            <Label layoutX="410.0" layoutY="75.0" prefHeight="22.0" prefWidth="106.0" text=" " />
+            <ImageView fitHeight="123.0" fitWidth="131.0" layoutX="82.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../../../Desktop/Icone/bgs/building-business-company-19953138.jpg" />
+               </image>
+            </ImageView>
+            <Label alignment="CENTER" layoutX="88.0" layoutY="101.0" prefHeight="17.0" prefWidth="112.0" text="Emolyment System">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+   </children>
 </AnchorPane>
