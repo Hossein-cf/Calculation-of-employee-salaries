@@ -12,7 +12,7 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="478.0" prefWidth="816.0" style="-fx-background-color: #BBDEFB;" xmlns="http://javafx.com/javafx/8.0.221" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane prefHeight="478.0" prefWidth="816.0" style="-fx-background-color: #BBDEFB;" xmlns="http://javafx.com/javafx/8.0.221" xmlns:fx="http://javafx.com/fxml/1" fx:controller="EmployeeDashbord.Controllers.EmployeeLoginController">
    <children>
       <Pane layoutX="20.0" layoutY="24.0" prefHeight="430.0" prefWidth="777.0" style="-fx-background-color: #ffffff; -fx-background-radius: 5;">
          <children>
@@ -25,7 +25,7 @@
                <children>
                   <TextField fx:id="txtUserName" layoutX="66.0" layoutY="154.0" prefHeight="25.0" prefWidth="187.0" promptText="UserName(national Code)" />
                   <TextField fx:id="txtPassWord" layoutX="66.0" layoutY="223.0" prefHeight="25.0" prefWidth="187.0" promptText="PassWord(employee code)" />
-                  <JFXButton fx:id="btnCheckProfile" layoutX="81.0" layoutY="288.0" prefHeight="37.0" prefWidth="155.0" ripplerFill="#3680c6" style="-fx-border-color: B2EBF2; -fx-border-radius: 5;" text="Check out Profile">
+                  <JFXButton fx:id="btnCheckProfile" layoutX="81.0" layoutY="288.0" prefHeight="37.0" prefWidth="155.0" ripplerFill="#3680c6" style="-fx-border-color: B2EBF2; -fx-border-radius: 5;" text="Check out Profile" onMouseClicked="#loadDashBoard">
                      <font>
                         <Font name="System Bold" size="14.0" />
                      </font>

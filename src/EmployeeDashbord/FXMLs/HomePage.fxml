@@ -8,17 +8,16 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
 
-
-<AnchorPane prefHeight="553.0" prefWidth="818.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="EmployeeDashbord.FXMLs.HomePage">
+<AnchorPane prefHeight="552.0" prefWidth="732.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="EmployeeDashbord.Controllers.EmployeeHomePage">
    <children>
-      <AnchorPane layoutX="14.0" layoutY="5.0" prefHeight="544.0" prefWidth="779.0" style="-fx-background-color: #ffffff; -fx-background-radius: 30;">
+      <AnchorPane layoutY="1.0" prefHeight="552.0" prefWidth="732.0" style="-fx-background-color: #ffffff; -fx-background-radius: 30;">
          <children>
             <AnchorPane fx:id="loadAnchorPane" layoutX="7.0" layoutY="7.0" prefHeight="532.0" prefWidth="735.0" style="-fx-background-color: #e6ffff; -fx-background-radius: 30;" visible="false" />
             <Pane layoutX="46.0" layoutY="43.0" opacity="0.76" prefHeight="164.0" prefWidth="660.0" style="-fx-background-color: #e6ffff; -fx-background-radius: 10;">
                <children>
                   <ImageView fitHeight="182.0" fitWidth="252.0" layoutX="-12.0" layoutY="-8.0" opacity="0.61" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../../../../../Desktop/Icone/bgs/Work%20From%20Home.png" />
+                        <Image url="@../../Pics/Work.jpg" />
                      </image>
                   </ImageView>
                   <JFXTextField labelFloat="true" layoutX="286.0" layoutY="33.0" prefHeight="25.0" prefWidth="124.0" promptText="FirstName" text=" " />
