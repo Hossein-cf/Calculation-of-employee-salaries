@@ -127,7 +127,7 @@ public class DashBordNewController implements Initializable {
         hideThings();
         loadAnchorPane.setVisible(true);
         try {
-            AnchorPane anchorPane = FXMLLoader.load(getClass().getResource("../ManagerDashbord/DashbordFXMLs/Members/ManagerMembersOfCompany.fxml"));
+            AnchorPane anchorPane = FXMLLoader.load(getClass().getResource("./DashbordFXMLs/Members/ManagerMembersOfCompany.fxml"));
             loadAnchorPane.getChildren().addAll(anchorPane);
         } catch (IOException ex) {
             System.out.println("Problem in loading");
@@ -140,6 +140,7 @@ public class DashBordNewController implements Initializable {
         Pane1.setVisible(false);
         HomeImage.setVisible(false);
     }
+
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {

@@ -8,7 +8,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="500.0" prefWidth="700.0" style="-fx-background-color: #e6ffff;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ManagerDashbord.DashbordControllers.ManagerEmploymentController">
+<AnchorPane fx:id="loadAnchorPane" prefHeight="532.0" prefWidth="735.0" style="-fx-background-color: #e6ffff; -fx-background-radius: 30;" xmlns="http://javafx.com/javafx/8.0.221" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ManagerDashbord.DashbordControllers.ManagerEmploymentController">
    <children>
       <ComboBox layoutX="421.0" layoutY="52.0" prefHeight="25.0" prefWidth="195.0" promptText="Employee Type" />
       <ComboBox layoutX="422.0" layoutY="174.0" prefHeight="25.0" prefWidth="195.0" promptText="Work Time" />
@@ -32,7 +32,7 @@
             <Image url="@../../../Pics/alarm-clock-1.jpg" />
          </image>
       </ImageView>
-      <JFXButton layoutX="263.0" layoutY="256.0" prefHeight="55.0" prefWidth="195.0" style="-fx-border-color: #00cccc; -fx-border-radius: 10;" text="Complete the information" textFill="#101043">
+      <JFXButton fx:id="btnLoadForm" layoutX="263.0" layoutY="256.0" onMouseClicked="#loadForm" prefHeight="55.0" prefWidth="195.0" style="-fx-border-color: #00cccc; -fx-border-radius: 10;" text="Complete the information" textFill="#101043">
          <font>
             <Font name="System Bold" size="14.0" />
          </font>
