@@ -18,7 +18,7 @@
          <children>
             <JFXButton disable="true" prefHeight="35.0" prefWidth="89.0" text=" " />
             <JFXButton disable="true" prefHeight="34.0" prefWidth="89.0" text=" " />
-            <JFXButton fx:id="btnHome" contentDisplay="TOP" prefHeight="78.0" prefWidth="71.0" text="Home" onMouseClicked="#loadHomePage">
+            <JFXButton fx:id="btnHome" contentDisplay="TOP" onMouseClicked="#loadHomePage" prefHeight="78.0" prefWidth="71.0" text="Home">
                <graphic>
                   <ImageView fitHeight="32.0" fitWidth="31.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -29,7 +29,7 @@
                   <Font size="11.0" />
                </font>
             </JFXButton>
-            <JFXButton fx:id="btnEmployment" contentDisplay="TOP" prefHeight="78.0" prefWidth="71.0" text="Employment" onMouseClicked="#loadEmploymentPage">
+            <JFXButton fx:id="btnEmployment" contentDisplay="TOP" onMouseClicked="#loadEmploymentPage" prefHeight="78.0" prefWidth="71.0" text="Employment">
                <graphic>
                   <ImageView fitHeight="28.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -40,7 +40,7 @@
                   <Font size="10.0" />
                </font>
             </JFXButton>
-            <JFXButton fx:id="btnSalary" contentDisplay="TOP" prefHeight="78.0" prefWidth="71.0" text="Salary" onMouseClicked="#loadSalaryPage">
+            <JFXButton fx:id="btnSalary" contentDisplay="TOP" onMouseClicked="#loadSalaryPage" prefHeight="78.0" prefWidth="71.0" text="Salary">
                <graphic>
                   <ImageView fitHeight="30.0" fitWidth="29.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -51,7 +51,7 @@
                   <Font size="11.0" />
                </font>
             </JFXButton>
-            <JFXButton fx:id="btnMembers" contentDisplay="TOP" prefHeight="78.0" prefWidth="71.0" text="Members" onMouseClicked="#loadMembersPage">
+            <JFXButton fx:id="btnMembers" contentDisplay="TOP" onMouseClicked="#loadMembersPage" prefHeight="78.0" prefWidth="71.0" text="Members">
                <graphic>
                   <ImageView fitHeight="29.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -74,9 +74,9 @@
             <Pane fx:id="creditPane" layoutX="86.0" layoutY="200.0" prefHeight="303.0" prefWidth="335.0" style="-fx-background-color: #ffffff; -fx-background-radius: 5;" AnchorPane.bottomAnchor="41.0">
                <children>
 
-                              <Label alignment="CENTER" layoutX="82.0" layoutY="72.0" prefHeight="41.0" prefWidth="22.0" text="0" />
+                              <Label fx:id="lblEmployeeNumbers" alignment="CENTER" layoutX="82.0" layoutY="72.0" prefHeight="41.0" prefWidth="22.0" text="0" />
 
-                              <Label alignment="CENTER" layoutX="228.0" layoutY="71.0" prefHeight="41.0" prefWidth="22.0" text="0" />
+                              <Label fx:id="lblPayedSalaries" alignment="CENTER" layoutX="228.0" layoutY="71.0" prefHeight="41.0" prefWidth="22.0" text="0" />
                   <Label alignment="CENTER" layoutX="49.0" layoutY="25.0" prefHeight="26.0" prefWidth="88.0" style="-fx-border-color: #00cccc; -fx-border-radius: 5;" text="Employees :">
                      <font>
                         <Font name="System Bold" size="12.0" />
@@ -167,7 +167,7 @@
       </AnchorPane>
       <VBox layoutX="658.0" layoutY="-1.0" prefHeight="525.0" prefWidth="32.0" style="-fx-background-color: #e6ffff;" AnchorPane.bottomAnchor="1.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="-1.0">
          <children>
-            <JFXButton fx:id="btnClose" alignment="CENTER" contentDisplay="CENTER" prefHeight="36.0" prefWidth="32.0" text=" " onMouseClicked="#exit">
+            <JFXButton fx:id="btnClose" alignment="CENTER" contentDisplay="CENTER" onMouseClicked="#exit" prefHeight="36.0" prefWidth="32.0" text=" ">
                <graphic>
                   <ImageView fitHeight="24.0" fitWidth="23.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -176,7 +176,7 @@
                   </ImageView>
                </graphic>
             </JFXButton>
-            <JFXButton fx:id="btnBack" alignment="CENTER" contentDisplay="CENTER" prefHeight="36.0" prefWidth="32.0" text=" " onMouseClicked="#back">
+            <JFXButton fx:id="btnBack" alignment="CENTER" contentDisplay="CENTER" onMouseClicked="#back" prefHeight="36.0" prefWidth="32.0" text=" ">
                <graphic>
                   <ImageView fitHeight="24.0" fitWidth="23.0" pickOnBounds="true" preserveRatio="true">
                      <image>

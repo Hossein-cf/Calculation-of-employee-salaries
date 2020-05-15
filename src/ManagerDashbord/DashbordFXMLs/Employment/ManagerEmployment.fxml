@@ -8,10 +8,10 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="loadAnchorPane" prefHeight="532.0" prefWidth="735.0" style="-fx-background-color: #e6ffff; -fx-background-radius: 30;" xmlns="http://javafx.com/javafx/8.0.221" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ManagerDashbord.DashbordControllers.ManagerEmploymentController">
+<AnchorPane fx:id="loadAnchorPane" prefHeight="532.0" prefWidth="735.0" style="-fx-background-color: #e6ffff; -fx-background-radius: 30;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ManagerDashbord.DashbordControllers.ManagerEmploymentController">
    <children>
-      <ComboBox layoutX="421.0" layoutY="52.0" prefHeight="25.0" prefWidth="195.0" promptText="Employee Type" />
-      <ComboBox layoutX="422.0" layoutY="174.0" prefHeight="25.0" prefWidth="195.0" promptText="Work Time" />
+      <ComboBox fx:id="comboEmployeeType" layoutX="424.0" layoutY="52.0" prefHeight="25.0" prefWidth="195.0" promptText="Employee Type" />
+      <ComboBox fx:id="comboWorkTime" layoutX="422.0" layoutY="174.0" prefHeight="25.0" prefWidth="195.0" promptText="Work Time" />
       <Label layoutX="99.0" layoutY="52.0" prefHeight="25.0" prefWidth="261.0" text="Choose Employee type that want to hire" textFill="#0804ff">
          <font>
             <Font name="System Bold" size="13.0" />
@@ -37,7 +37,7 @@
             <Font name="System Bold" size="14.0" />
          </font>
       </JFXButton>
-      <ComboBox layoutX="424.0" layoutY="116.0" prefHeight="25.0" prefWidth="195.0" promptText="Employee Level" />
+      <ComboBox fx:id="comboEmployeeLevel" layoutX="424.0" layoutY="116.0" prefHeight="25.0" prefWidth="195.0" promptText="Employee Level" />
       <Label layoutX="102.0" layoutY="116.0" prefHeight="25.0" prefWidth="261.0" text="Choose Employee level that want to hire" textFill="#0804ff">
          <font>
             <Font name="System Bold" size="13.0" />
@@ -45,7 +45,7 @@
       </Label>
       <ImageView fitHeight="25.0" fitWidth="33.0" layoutX="384.0" layoutY="116.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../../../../../../Desktop/Icone/essential-collection/png/controls.png" />
+            <Image url="@../../../Pics/controls.jpg" />
          </image>
       </ImageView>
    </children>

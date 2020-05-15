@@ -15,20 +15,20 @@
             <Label layoutX="46.0" layoutY="173.0" prefHeight="22.0" prefWidth="154.0" text="NetWork Security Expert" />
             <ProgressIndicator layoutX="87.0" layoutY="98.0" />
             <ProgressIndicator layoutX="87.0" layoutY="213.0" />
-            <Label alignment="CENTER" layoutX="99.0" layoutY="112.0" prefHeight="22.0" prefWidth="26.0" text="0" />
-            <Label alignment="CENTER" layoutX="99.0" layoutY="227.0" prefHeight="22.0" prefWidth="26.0" text="0" />
+            <Label fx:id="lblFullStackNumber" alignment="CENTER" layoutX="99.0" layoutY="112.0" prefHeight="22.0" prefWidth="26.0" text="0" />
+            <Label fx:id="lblSecurityNumber" alignment="CENTER" layoutX="99.0" layoutY="227.0" prefHeight="22.0" prefWidth="26.0" text="0" />
             <Label layoutX="251.0" layoutY="56.0" prefHeight="22.0" prefWidth="131.0" text="Front-end Developers" />
             <Label layoutX="272.0" layoutY="173.0" prefHeight="22.0" prefWidth="88.0" text="App Developer" />
             <ProgressIndicator layoutX="292.0" layoutY="98.0" />
             <ProgressIndicator layoutX="293.0" layoutY="213.0" />
-            <Label alignment="CENTER" layoutX="305.0" layoutY="112.0" prefHeight="22.0" prefWidth="26.0" text="0" />
-            <Label alignment="CENTER" layoutX="305.0" layoutY="227.0" prefHeight="22.0" prefWidth="26.0" text="0" />
+            <Label fx:id="lblFrontNumber" alignment="CENTER" layoutX="305.0" layoutY="112.0" prefHeight="22.0" prefWidth="26.0" text="0" />
+            <Label fx:id="lblAppDeveloperNumber" alignment="CENTER" layoutX="305.0" layoutY="227.0" prefHeight="22.0" prefWidth="26.0" text="0" />
             <Label layoutX="475.0" layoutY="56.0" prefHeight="22.0" prefWidth="131.0" text="Back-end Developers" />
             <Label layoutX="490.0" layoutY="173.0" prefHeight="22.0" prefWidth="131.0" text="Data Base Expert" />
             <ProgressIndicator layoutX="507.0" layoutY="98.0" />
             <ProgressIndicator layoutX="516.0" layoutY="207.0" />
-            <Label alignment="CENTER" layoutX="519.0" layoutY="112.0" prefHeight="22.0" prefWidth="26.0" text="0" />
-            <Label alignment="CENTER" layoutX="528.0" layoutY="221.0" prefHeight="22.0" prefWidth="26.0" text="0" />
+            <Label fx:id="lblBackNumber" alignment="CENTER" layoutX="519.0" layoutY="112.0" prefHeight="22.0" prefWidth="26.0" text="0" />
+            <Label fx:id="lblDataBaseExNumber" alignment="CENTER" layoutX="528.0" layoutY="221.0" prefHeight="22.0" prefWidth="26.0" text="0" />
             <Separator layoutX="206.0" layoutY="40.0" orientation="VERTICAL" prefHeight="241.0" prefWidth="7.0" />
             <Separator layoutX="427.0" layoutY="40.0" orientation="VERTICAL" prefHeight="241.0" prefWidth="7.0" />
             <Label alignment="CENTER" layoutX="14.0" layoutY="14.0" prefHeight="22.0" prefWidth="99.0" style="-fx-border-color: #003C8F; -fx-border-radius: 5;" text="Numbers Of :">
@@ -44,13 +44,13 @@
                <font>
                   <Font name="System Bold" size="12.0" />
                </font></Label>
-            <Label layoutX="34.0" layoutY="78.0" prefHeight="17.0" prefWidth="99.0" text="Company Type :">
+            <Label layoutX="330.0" layoutY="28.0" prefHeight="17.0" prefWidth="99.0" text="Company Type :">
                <font>
                   <Font name="System Bold" size="12.0" />
                </font>
             </Label>
-            <Label layoutX="140.0" layoutY="26.0" prefHeight="22.0" prefWidth="106.0" text=" " />
-            <Label layoutX="140.0" layoutY="76.0" prefHeight="22.0" prefWidth="106.0" text=" " />
+            <Label fx:id="lblCname" layoutX="149.0" layoutY="26.0" prefHeight="22.0" prefWidth="106.0" text=" " />
+            <Label fx:id="lblCtype" layoutX="453.0" layoutY="26.0" prefHeight="22.0" prefWidth="106.0" text=" " />
          </children>
       </Pane>
    </children>
