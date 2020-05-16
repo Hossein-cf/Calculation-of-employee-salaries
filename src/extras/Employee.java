@@ -3,14 +3,19 @@ package extras;
 import employeeTypes.EmployeeType;
 
 public class Employee extends Person implements CalculationSalary {
-    private JobInformation jobInformation;
+   private SalaryInformation salaryInformation;
     private long employeeNumber;
     private EmployeeType employeeType;
     private String certificate;
     private int workExperience;
 
+    public SalaryInformation getSalaryInformation() {
+        return salaryInformation;
+    }
 
-
+    public void setSalaryInformation(SalaryInformation salaryInformation) {
+        this.salaryInformation = salaryInformation;
+    }
 
     public String getCertificate() {
         return certificate;
@@ -28,13 +33,6 @@ public class Employee extends Person implements CalculationSalary {
         this.workExperience = workExperience;
     }
 
-    public JobInformation getJobInformation() {
-        return jobInformation;
-    }
-
-    public void setJobInformation(JobInformation jobInformation) {
-        this.jobInformation = jobInformation;
-    }
 
     public EmployeeType getEmployeeType() {
         return employeeType;
@@ -65,9 +63,45 @@ public class Employee extends Person implements CalculationSalary {
         this.employeeNumber = employeeNumber;
     }
 
+
+
     @Override
-    public double calculate() {
+    public double calculateSalaryForHolidayWorks(int days) {
         return 0;
     }
 
+    @Override
+    public double calculateSalaryForOverTimeWork(double hours) {
+        return 0;
+    }
+
+    @Override
+    public double calculateSalaryForNightWork(int days) {
+        return 0;
+    }
+
+    @Override
+    public double calculateSalaryForMorningWork(int days) {
+        return 0;
+    }
+
+    @Override
+    public double calculateSalaryForAfternoonWork(int days) {
+        return 0;
+    }
+
+    @Override
+    public double calculateSalaryForFullTimeWork(int days) {
+        return 0;
+    }
+
+    @Override
+    public double calculateSalaryForVacationHour(double hours) {
+        return 0;
+    }
+
+    @Override
+    public double calculateSalaryForTax(double salary) {
+        return 0;
+    }
 }

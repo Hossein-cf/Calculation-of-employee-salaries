@@ -13,7 +13,7 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class EmployeeDashbordController implements Initializable {
+public class EmployeeDashbordController  {
 
     public JFXButton btnHomePage;
     public JFXButton btnSalaryPage;
@@ -68,9 +68,5 @@ public class EmployeeDashbordController implements Initializable {
         Pane2.setVisible(false);
     }
 
-    @Override
-    public void initialize(URL location, ResourceBundle resources) {
-//        managerLoginController =  new ManagerLoginController();
-//        settingCompanyName(managerLoginController.CName, managerLoginController.CType);
-    }
+
 }

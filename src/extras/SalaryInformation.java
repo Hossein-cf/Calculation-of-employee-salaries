@@ -2,10 +2,56 @@ package extras;
 
 import employeeTypes.EmployeeType;
 
-public class JobInformation {
+import java.util.Date;
+
+public class SalaryInformation {
     private double OverWorkTime, HolidayWorkTime, VacationHour;
-    private int MorningWorkDays, AfternoonWorkDays, NightWorkDays;
-    private boolean MorningWork, AfternoonWork, NightWork;
+    private int MorningWorkDays, AfternoonWorkDays, NightWorkDays,fullTimeWorks;
+    private boolean MorningWork, AfternoonWork, NightWork,fullTime;
+    private double salary;
+    private double baseSalary;
+    private Date salaryDate;
+
+
+    public double getSalary() {
+        return salary;
+    }
+
+    public void setSalary(double salary) {
+        this.salary = salary;
+    }
+
+    public double getBaseSalary() {
+        return baseSalary;
+    }
+
+    public void setBaseSalary(double baseSalary) {
+        this.baseSalary = baseSalary;
+    }
+
+    public Date getSalaryDate() {
+        return salaryDate;
+    }
+
+    public void setSalaryDate(Date salaryDate) {
+        this.salaryDate = salaryDate;
+    }
+
+    public int getFullTimeWorks() {
+        return fullTimeWorks;
+    }
+
+    public void setFullTimeWorks(int fullTimeWorks) {
+        this.fullTimeWorks = fullTimeWorks;
+    }
+
+    public boolean isFullTime() {
+        return fullTime;
+    }
+
+    public void setFullTime(boolean fullTime) {
+        this.fullTime = fullTime;
+    }
 
     public double getOverWorkTime() {
         return OverWorkTime;

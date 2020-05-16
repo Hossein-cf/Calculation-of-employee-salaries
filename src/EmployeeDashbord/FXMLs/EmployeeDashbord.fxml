@@ -13,7 +13,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="544.0" prefWidth="854.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="EmployeeDashbord.Controllers.EmployeeDashbordController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="544.0" prefWidth="854.0" xmlns="http://javafx.com/javafx/8.0.221" xmlns:fx="http://javafx.com/fxml/1" fx:controller="EmployeeDashbord.Controllers.EmployeeDashbordController">
    <children>
       <VBox prefHeight="544.0" prefWidth="105.0" style="-fx-background-color: #00cccc;" AnchorPane.bottomAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
@@ -77,13 +77,22 @@
                   <JFXTextField fx:id="txtCompanyName" labelFloat="true" layoutX="20.0" layoutY="91.0" prefHeight="25.0" prefWidth="105.0" promptText="Company Name" text=" " />
                   <JFXTextField fx:id="txtCompanyType" labelFloat="true" layoutX="171.0" layoutY="91.0" prefHeight="25.0" prefWidth="105.0" promptText="Company Type" text=" " />
                   <ProgressIndicator layoutX="337.0" layoutY="210.0" prefHeight="43.0" prefWidth="57.0" />
-                  <Label alignment="CENTER" layoutX="305.0" layoutY="150.0" prefHeight="25.0" prefWidth="124.0" text="Recieved Salary" />
+                  <Label alignment="CENTER" layoutX="305.0" layoutY="150.0" prefHeight="25.0" prefWidth="124.0" text="Recieved Salary">
+                     <font>
+                        <Font size="14.0" />
+                     </font></Label>
                   <Label fx:id="lblRecievedSalary" alignment="CENTER" layoutX="359.0" layoutY="180.0" text="0" />
                   <ProgressIndicator layoutX="450.0" layoutY="210.0" prefHeight="43.0" prefWidth="58.0" />
-                  <Label alignment="CENTER" layoutX="418.0" layoutY="150.0" prefHeight="25.0" prefWidth="124.0" text="over time hour " />
+                  <Label alignment="CENTER" layoutX="418.0" layoutY="150.0" prefHeight="25.0" prefWidth="124.0" text="over time hour ">
+                     <font>
+                        <Font size="14.0" />
+                     </font></Label>
                   <Label fx:id="lblOverTime" alignment="CENTER" layoutX="472.0" layoutY="180.0" text="0" />
                   <ProgressIndicator layoutX="556.0" layoutY="210.0" prefHeight="43.0" prefWidth="58.0" />
-                  <Label alignment="CENTER" layoutX="523.0" layoutY="150.0" prefHeight="25.0" prefWidth="124.0" text="vacation hour " />
+                  <Label alignment="CENTER" layoutX="523.0" layoutY="150.0" prefHeight="25.0" prefWidth="124.0" text="vacation hour ">
+                     <font>
+                        <Font size="14.0" />
+                     </font></Label>
                   <Label fx:id="lblVacation" alignment="CENTER" layoutX="578.0" layoutY="180.0" text="0" />
                   <Label layoutX="316.0" layoutY="18.0" prefHeight="17.0" prefWidth="113.0" text="Your Job infos" textFill="#030f8d">
                      <font>
@@ -91,7 +100,7 @@
                      </font>
                   </Label>
                   <ProgressIndicator layoutX="124.0" layoutY="202.0" prefHeight="64.0" prefWidth="39.0" />
-                  <Label alignment="CENTER" layoutX="52.0" layoutY="148.0" prefHeight="25.0" prefWidth="182.0" text="Numbers of Company members" />
+                  <Label alignment="CENTER" layoutX="7.0" layoutY="150.0" prefHeight="27.0" prefWidth="277.0" text="Numbers of Company members" />
                   <Label fx:id="lblNumbersOfCompany" alignment="CENTER" layoutX="140.0" layoutY="183.0" text="0" />
                   <Label layoutX="16.0" layoutY="18.0" prefHeight="25.0" prefWidth="158.0" text="Your Company infos" textFill="#030f8d">
                      <font>
