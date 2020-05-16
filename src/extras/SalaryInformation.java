@@ -8,34 +8,6 @@ public class SalaryInformation {
     private double OverWorkTime, HolidayWorkTime, VacationHour;
     private int MorningWorkDays, AfternoonWorkDays, NightWorkDays,fullTimeWorks;
     private boolean MorningWork, AfternoonWork, NightWork,fullTime;
-    private double salary;
-    private double baseSalary;
-    private Date salaryDate;
-
-
-    public double getSalary() {
-        return salary;
-    }
-
-    public void setSalary(double salary) {
-        this.salary = salary;
-    }
-
-    public double getBaseSalary() {
-        return baseSalary;
-    }
-
-    public void setBaseSalary(double baseSalary) {
-        this.baseSalary = baseSalary;
-    }
-
-    public Date getSalaryDate() {
-        return salaryDate;
-    }
-
-    public void setSalaryDate(Date salaryDate) {
-        this.salaryDate = salaryDate;
-    }
 
     public int getFullTimeWorks() {
         return fullTimeWorks;

@@ -1,14 +1,16 @@
 package extras;
 
 public interface CalculationSalary {
-    double calculateSalaryForHolidayWorks(int days);
-    double calculateSalaryForOverTimeWork(double hours);
-    double calculateSalaryForNightWork(int days);
-    double calculateSalaryForMorningWork(int days);
-    double calculateSalaryForAfternoonWork(int days);
-    double calculateSalaryForFullTimeWork(int days);
-    double calculateSalaryForVacationHour(double hours);
-    double calculateSalaryForTax(double salary);
+    double calculateMoneyForHolidayWorks(int days);
+    double calculateMoneyForOverTimeWork(double hours);
+    double calculateMoneyForNightWork(int days);
+    double calculateMoneyForMorningWork(int days);
+    double calculateMoneyForAfternoonWork(int days);
+    double calculateMoneyForFullTimeWork(int days);
+    double calculateMoneyForVacationHour(double hours);
+    double calculateMoneyForTax(double salary);
+    double calculateInsurance(double insurance);
+    double calculateRightToHousing(double baseSalary);
 
 
 }

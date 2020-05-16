@@ -3,11 +3,17 @@ package extras;
 import employeeTypes.EmployeeType;
 
 public class Employee extends Person implements CalculationSalary {
-   private SalaryInformation salaryInformation;
+    final double INSURANCE = 2000000;
+    private SalaryInformation salaryInformation;
     private long employeeNumber;
     private EmployeeType employeeType;
     private String certificate;
     private int workExperience;
+
+
+    public double getINSURANCE() {
+        return INSURANCE;
+    }
 
     public SalaryInformation getSalaryInformation() {
         return salaryInformation;
@@ -41,16 +47,17 @@ public class Employee extends Person implements CalculationSalary {
     public void setEmployeeType(EmployeeType employeeType) {
         this.employeeType = employeeType;
     }
+
     public void setEmployeeType(String employeeType) {
         if (employeeType.equals(EmployeeType.BackEnd.toString())) {
             this.employeeType = EmployeeType.BackEnd;
-        }else if (employeeType.equals(EmployeeType.DBExpert.toString())) {
+        } else if (employeeType.equals(EmployeeType.DBExpert.toString())) {
             this.employeeType = EmployeeType.DBExpert;
-        }else if (employeeType.equals(EmployeeType.FrontEnd.toString())) {
+        } else if (employeeType.equals(EmployeeType.FrontEnd.toString())) {
             this.employeeType = EmployeeType.FrontEnd;
-        }else if (employeeType.equals(EmployeeType.FullStack.toString())) {
+        } else if (employeeType.equals(EmployeeType.FullStack.toString())) {
             this.employeeType = EmployeeType.FullStack;
-        }else if (employeeType.equals(EmployeeType.NetworkSecurityExpert.toString())) {
+        } else if (employeeType.equals(EmployeeType.NetworkSecurityExpert.toString())) {
             this.employeeType = EmployeeType.NetworkSecurityExpert;
         }
     }
@@ -64,44 +71,53 @@ public class Employee extends Person implements CalculationSalary {
     }
 
 
-
     @Override
-    public double calculateSalaryForHolidayWorks(int days) {
+    public double calculateMoneyForHolidayWorks(int days) {
         return 0;
     }
 
     @Override
-    public double calculateSalaryForOverTimeWork(double hours) {
+    public double calculateMoneyForOverTimeWork(double hours) {
         return 0;
     }
 
     @Override
-    public double calculateSalaryForNightWork(int days) {
+    public double calculateMoneyForNightWork(int days) {
         return 0;
     }
 
     @Override
-    public double calculateSalaryForMorningWork(int days) {
+    public double calculateMoneyForMorningWork(int days) {
         return 0;
     }
 
     @Override
-    public double calculateSalaryForAfternoonWork(int days) {
+    public double calculateMoneyForAfternoonWork(int days) {
         return 0;
     }
 
     @Override
-    public double calculateSalaryForFullTimeWork(int days) {
+    public double calculateMoneyForFullTimeWork(int days) {
         return 0;
     }
 
     @Override
-    public double calculateSalaryForVacationHour(double hours) {
+    public double calculateMoneyForVacationHour(double hours) {
         return 0;
     }
 
     @Override
-    public double calculateSalaryForTax(double salary) {
+    public double calculateMoneyForTax(double salary) {
+        return 0;
+    }
+
+    @Override
+    public double calculateInsurance(double insurance) {
+        return 0;
+    }
+
+    @Override
+    public double calculateRightToHousing(double baseSalary) {
         return 0;
     }
 }
