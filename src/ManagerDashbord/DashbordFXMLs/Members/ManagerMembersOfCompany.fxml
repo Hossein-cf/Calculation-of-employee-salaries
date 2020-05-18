@@ -9,7 +9,7 @@
 
 <AnchorPane prefHeight="532.0" prefWidth="735.0" style="-fx-background-color: #e6ffff; -fx-background-radius: 30;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ManagerDashbord.DashbordControllers.ManagerMembersOfCompany">
    <children>
-      <Pane layoutX="34.0" layoutY="181.0" prefHeight="312.0" prefWidth="667.0" style="-fx-background-color: #64B5F6; -fx-background-radius: 15;">
+      <Pane layoutX="34.0" layoutY="181.0" prefHeight="312.0" prefWidth="667.0" style="-fx-background-color: #80e5ff; -fx-background-radius: 15;">
          <children>
             <Label layoutX="46.0" layoutY="56.0" prefHeight="22.0" prefWidth="131.0" text="Full Stack Developers" />
             <Label layoutX="46.0" layoutY="173.0" prefHeight="22.0" prefWidth="154.0" text="NetWork Security Expert" />
@@ -38,7 +38,7 @@
             </Label>
          </children>
       </Pane>
-      <Pane layoutX="38.0" layoutY="39.0" prefHeight="123.0" prefWidth="659.0" style="-fx-background-color: #64B5F6; -fx-background-radius: 15;">
+      <Pane layoutX="38.0" layoutY="39.0" prefHeight="123.0" prefWidth="659.0" style="-fx-background-color: #80e5ff; -fx-background-radius: 15;">
          <children>
             <Label layoutX="34.0" layoutY="28.0" prefHeight="17.0" prefWidth="99.0" text="Company Name :">
                <font>

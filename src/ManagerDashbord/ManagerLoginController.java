@@ -20,8 +20,8 @@ public class ManagerLoginController implements Initializable {
     public TextField txtCompanyName;
     public JFXButton btnStartToCooperation;
     public Label lbl1;
-    public static String CName;
-    public static String CType;
+    public static String CName ="";
+    public static String CType ="";
 
     private void alert(String message, Label lbl, String color) {
         lbl.setText(message);

@@ -25,7 +25,7 @@
                <children>
                   <TextField fx:id="txtUserName" layoutX="66.0" layoutY="154.0" prefHeight="25.0" prefWidth="187.0" promptText="UserName(national Code)" />
                   <TextField fx:id="txtPassWord" layoutX="66.0" layoutY="223.0" prefHeight="25.0" prefWidth="187.0" promptText="PassWord(employee code)" />
-                  <JFXButton fx:id="btnCheckProfile" layoutX="81.0" layoutY="288.0" prefHeight="37.0" prefWidth="155.0" ripplerFill="#3680c6" style="-fx-border-color: B2EBF2; -fx-border-radius: 5;" text="Check out Profile" onMouseClicked="#loadDashBoard">
+                  <JFXButton fx:id="btnCheckProfile" layoutX="81.0" layoutY="288.0" onMouseClicked="#loadDashBoard" prefHeight="37.0" prefWidth="155.0" ripplerFill="#3680c6" style="-fx-border-color: B2EBF2; -fx-border-radius: 5;" text="Check out Profile">
                      <font>
                         <Font name="System Bold" size="14.0" />
                      </font>
@@ -59,16 +59,16 @@
                      <graphic>
                         <ImageView fitHeight="34.0" fitWidth="23.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../../Pics/icons8-close-window-50-2.png" />
+                              <Image url="@../../Pics/icons8-close-window-50.jpg" />
                            </image>
                         </ImageView>
                      </graphic>
                   </JFXButton>
                   <JFXButton fx:id="btnBack" contentDisplay="CENTER" prefHeight="50.0" prefWidth="27.0" text=" ">
                      <graphic>
-                        <ImageView fitHeight="23.0" fitWidth="22.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fitHeight="32.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../../Pics/icons8-exit-50.jpg" />
+                              <Image url="@../../Pics/icons8-exit-50-2.jpg" />
                            </image>
                         </ImageView>
                      </graphic>

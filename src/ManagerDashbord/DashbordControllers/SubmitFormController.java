@@ -52,6 +52,12 @@ public class SubmitFormController implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+            String[] LevelOfEduction = {"Diploma","Bachelor","MA"};
+            String[] Gender = {"Male","FeMale"};
+            String[] WorkExperience = {"does not have","Under one year","Over a year", "More than four years"};
+            comboLevelOfEduction.getItems().addAll(LevelOfEduction);
+            comboGender.getItems().addAll(Gender);
+            comboExperience.getItems().addAll(WorkExperience);
 
     }
 }
