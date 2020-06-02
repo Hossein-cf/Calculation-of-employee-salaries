@@ -6,12 +6,15 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
+import javafx.scene.control.ButtonType;
 import javafx.scene.control.Label;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
 import java.io.IOException;
 import java.net.URL;
+import java.util.Optional;
 import java.util.ResourceBundle;
 
 public class MainLoginController implements Initializable {
@@ -20,6 +23,7 @@ public class MainLoginController implements Initializable {
     public JFXComboBox comboUseCase;
     public JFXButton btnGo;
     public Label lbl1;
+    public JFXButton btnClose;
 
     private void alert(String message, Label lbl, String color) {
         lbl.setText(message);
@@ -34,8 +38,23 @@ public class MainLoginController implements Initializable {
             loadEmployeePage();
         }
         if (comboUseCase.getSelectionModel().getSelectedIndex() == -1)
-            alert("Choose the Use Case",lbl1,"red");
+            alert("Choose one of the Use Cases",lbl1,"red");
 
+    }
+
+    public void exit() {
+
+        Alert alert = new Alert(Alert.AlertType.WARNING, "Do you want to go out ", ButtonType.YES, ButtonType.NO);
+        alert.setTitle("اخطار");
+        alert.setHeaderText(null);
+        ButtonType yes = new ButtonType("YES");
+        ButtonType no = new ButtonType("NO");
+        alert.getButtonTypes().setAll(yes,no);
+        Optional<ButtonType> result = alert.showAndWait();
+
+        if (result.isPresent())
+            if (result.get() == yes)
+                System.exit(0);
     }
 
     public void loadManagerPage() {

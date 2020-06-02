@@ -13,7 +13,7 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class EmployeeDashbordController  {
+public class EmployeeDashbordController implements Initializable {
 
     public JFXButton btnHomePage;
     public JFXButton btnSalaryPage;
@@ -32,6 +32,7 @@ public class EmployeeDashbordController  {
     public Pane Pane1;
     public Pane Pane2;
     private ManagerLoginController managerLoginController;
+
 
     public void settingCompanyName(String CompanyName, String CompanyType) {
         txtCompanyName.setText(CompanyName);
@@ -69,4 +70,11 @@ public class EmployeeDashbordController  {
     }
 
 
+    @Override
+    public void initialize(URL location, ResourceBundle resources) {
+
+        managerLoginController =  new ManagerLoginController();
+        settingCompanyName(managerLoginController.CName, managerLoginController.CType);
+
+    }
 }

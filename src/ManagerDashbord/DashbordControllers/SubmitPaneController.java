@@ -27,7 +27,7 @@ public class SubmitPaneController implements Initializable {
 
         } catch (IOException ex) {
 
-            System.out.println("problem in loadnig");
+            System.out.println("problem in loading");
         }
 
     }
