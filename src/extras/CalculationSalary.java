@@ -11,6 +11,6 @@ public interface CalculationSalary {
     double calculateMoneyForTax(double salary);
     double calculateInsurance(double insurance);
     double calculateRightToHousing(double baseSalary);
-
+    double calculateFinalSalary();
 
 }

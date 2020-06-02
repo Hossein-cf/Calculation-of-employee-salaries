@@ -4,7 +4,7 @@ import employeeTypes.EmployeeType;
 
 import java.util.Date;
 
-public class SalaryInformation {
+public class SalaryInformation  {
     private double OverWorkTime, HolidayWorkTime, VacationHour;
     private int MorningWorkDays, AfternoonWorkDays, NightWorkDays,fullTimeWorks;
     private boolean MorningWork, AfternoonWork, NightWork,fullTime;
