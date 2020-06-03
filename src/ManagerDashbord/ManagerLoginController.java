@@ -17,6 +17,9 @@ import java.util.ResourceBundle;
 
 public class ManagerLoginController implements Initializable {
     public JFXComboBox comboCompanyType;
+    private final String USER_NAME = "123456";
+    private final String PASSWORD = "123456";
+
     public TextField txtCompanyName;
     public JFXButton btnStartToCooperation;
     public Label lbl1;

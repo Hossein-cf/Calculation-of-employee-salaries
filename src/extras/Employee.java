@@ -9,7 +9,15 @@ public class Employee extends Person implements CalculationSalary {
     private EmployeeType employeeType;
     private String certificate;
     private int workExperience;
+    private String employeeLevel;
 
+    public String getEmployeeLevel() {
+        return employeeLevel;
+    }
+
+    public void setEmployeeLevel(String employeeLevel) {
+        this.employeeLevel = employeeLevel;
+    }
 
     public double getINSURANCE() {
         return INSURANCE;

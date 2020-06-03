@@ -1,4 +1,4 @@
-package ManagerDashbord.DashbordControllers;
+package ManagerDashbord.DashboardControllers;
 
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXCheckBox;

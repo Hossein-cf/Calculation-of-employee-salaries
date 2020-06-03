@@ -1,4 +1,4 @@
-package ManagerDashbord.DashbordControllers;
+package ManagerDashbord.DashboardControllers;
 
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -22,7 +22,7 @@ public class SubmitPaneController implements Initializable {
 
 
         try {
-            Node node = (Node) FXMLLoader.load(getClass().getResource("../DashbordFXMLs/Employment/SubmitForm.fxml"));
+            Node node = (Node) FXMLLoader.load(getClass().getResource("../DashboardFXMLs/Employment/SubmitForm.fxml"));
             SubmitScrollPane.setContent(node);
 
         } catch (IOException ex) {

@@ -1,4 +1,4 @@
-package ManagerDashbord.DashbordControllers;
+package ManagerDashbord.DashboardControllers;
 
 import javafx.scene.control.Label;
 

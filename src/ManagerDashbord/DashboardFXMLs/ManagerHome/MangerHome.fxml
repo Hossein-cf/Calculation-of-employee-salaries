@@ -11,7 +11,7 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="532.0" prefWidth="735.0" style="-fx-background-color: #ffffff; -fx-background-radius: 30;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ManagerDashbord.DashbordControllers.ManagerHomeController">
+<AnchorPane prefHeight="532.0" prefWidth="735.0" style="-fx-background-color: #ffffff; -fx-background-radius: 30;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ManagerDashbord.DashboardControllers.ManagerHomeController">
    <children>
       <ImageView fx:id="HomeImage" fitHeight="204.0" fitWidth="206.0" layoutX="480.0" pickOnBounds="true" preserveRatio="true" AnchorPane.rightAnchor="85.5911865234375" AnchorPane.topAnchor="0.0">
          <image>
