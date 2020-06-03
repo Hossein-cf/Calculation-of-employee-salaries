@@ -40,16 +40,18 @@ public class EmployeeDashboardController implements Initializable {
     public Pane Pane2;
     public JFXButton btnClose;
     public JFXButton btnBack;
+    public Label lblRecievedSalary;
     private ManagerLoginController managerLoginController;
+    private boolean flag ;
 
 
     public void exit() {
 
-        Alert alert = new Alert(Alert.AlertType.WARNING, "آیا میخواهید خارج شوید؟ ", ButtonType.YES, ButtonType.NO);
-        alert.setTitle("اخطار");
+        Alert alert = new Alert(Alert.AlertType.WARNING, "Do you want to go out ", ButtonType.YES, ButtonType.NO);
+        alert.setTitle("WARNING");
         alert.setHeaderText(null);
-        ButtonType yes = new ButtonType("بله");
-        ButtonType no = new ButtonType("خیر");
+        ButtonType yes = new ButtonType("YES");
+        ButtonType no = new ButtonType("NO");
         alert.getButtonTypes().setAll(yes,no);
         Optional<ButtonType> result = alert.showAndWait();
 
@@ -57,13 +59,12 @@ public class EmployeeDashboardController implements Initializable {
             if (result.get() == yes)
                 System.exit(0);
     }
-
     public void back() {
-        Alert alert = new Alert(Alert.AlertType.WARNING, "آیا می خواهید به صفحه اصلی برگردید؟ ", ButtonType.YES, ButtonType.NO);
-        alert.setTitle("اخطار");
+        Alert alert = new Alert(Alert.AlertType.WARNING, "Do you want to go back to the home screen? ", ButtonType.YES, ButtonType.NO);
+        alert.setTitle("WARNING");
         alert.setHeaderText(null);
-        ButtonType yes = new ButtonType("بله");
-        ButtonType no = new ButtonType("خیر");
+        ButtonType yes = new ButtonType("YES");
+        ButtonType no = new ButtonType("NO");
         alert.getButtonTypes().setAll(yes,no);
         Optional<ButtonType> result = alert.showAndWait();
 
@@ -74,7 +75,7 @@ public class EmployeeDashboardController implements Initializable {
                 try {
                     Stage stage = (Stage) btnBack.getScene().getWindow();
                     stage.close();
-                    FXMLLoader loader = new FXMLLoader(getClass().getResource("../loginPages/MainLogin.fxml"));
+                    FXMLLoader loader = new FXMLLoader(getClass().getResource("../../loginPages/MainLogin.fxml"));
                     root = loader.load();
                     stage = new Stage();
                     Stage finalStage = stage;
@@ -99,14 +100,19 @@ public class EmployeeDashboardController implements Initializable {
     }
 
     public void loadHomePage(){
-        hidingThings();
-        loadAnchorPane.setVisible(true);
-        try {
-            AnchorPane anchorPane = FXMLLoader.load(getClass().getResource("/EmployeeDashboard/FXMLs/HomePage.fxml"));
-            loadAnchorPane.getChildren().addAll(anchorPane);
-        } catch (IOException ex) {
-            System.out.println("Problem in loading");
-        }
+//        hidingThings();
+        loadAnchorPane.setVisible(false);
+        Pane1.setVisible(true);
+        Pane2.setVisible(true);
+
+
+//        loadAnchorPane.setVisible(true);
+//        try {
+//            AnchorPane anchorPane = FXMLLoader.load(getClass().getResource("/EmployeeDashboard/FXMLs/HomePage.fxml"));
+//            loadAnchorPane.getChildren().addAll(anchorPane);
+//        } catch (IOException ex) {
+//            System.out.println("Problem in loading");
+//        }
 
 
     }

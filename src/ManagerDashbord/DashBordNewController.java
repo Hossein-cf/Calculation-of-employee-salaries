@@ -44,11 +44,11 @@ public class DashBordNewController implements Initializable {
     }
     public void exit() {
 
-        Alert alert = new Alert(Alert.AlertType.WARNING, "آیا میخواهید خارج شوید؟ ", ButtonType.YES, ButtonType.NO);
+        Alert alert = new Alert(Alert.AlertType.WARNING, "Do you want to go out ", ButtonType.YES, ButtonType.NO);
         alert.setTitle("اخطار");
         alert.setHeaderText(null);
-        ButtonType yes = new ButtonType("بله");
-        ButtonType no = new ButtonType("خیر");
+        ButtonType yes = new ButtonType("YES");
+        ButtonType no = new ButtonType("NO");
         alert.getButtonTypes().setAll(yes,no);
         Optional<ButtonType> result = alert.showAndWait();
 
@@ -58,11 +58,11 @@ public class DashBordNewController implements Initializable {
     }
 
     public void back() {
-        Alert alert = new Alert(Alert.AlertType.WARNING, "آیا می خواهید به صفحه اصلی برگردید؟ ", ButtonType.YES, ButtonType.NO);
-        alert.setTitle("اخطار");
+        Alert alert = new Alert(Alert.AlertType.WARNING, "Do you want to go back to the home screen?  ", ButtonType.YES, ButtonType.NO);
+        alert.setTitle("WARNING");
         alert.setHeaderText(null);
-        ButtonType yes = new ButtonType("بله");
-        ButtonType no = new ButtonType("خیر");
+        ButtonType yes = new ButtonType("YES");
+        ButtonType no = new ButtonType("NO");
         alert.getButtonTypes().setAll(yes,no);
         Optional<ButtonType> result = alert.showAndWait();
 
@@ -91,14 +91,18 @@ public class DashBordNewController implements Initializable {
 
     }
     public void loadHomePage(){
-        hideThings();
-        loadAnchorPane.setVisible(true);
-        try {
-            AnchorPane anchorPane = FXMLLoader.load(getClass().getResource("DashboardFXMLs/ManagerHome/MangerHome.fxml"));
-            loadAnchorPane.getChildren().addAll(anchorPane);
-        } catch (IOException ex) {
-            System.out.println("Problem in loading");
-        }
+//        hideThings();
+        loadAnchorPane.setVisible(false);
+        creditPane.setVisible(true);
+        TeamPane.setVisible(true);
+        Pane1.setVisible(true);
+        HomeImage.setVisible(true);
+//        try {
+//            AnchorPane anchorPane = FXMLLoader.load(getClass().getResource("DashboardFXMLs/ManagerHome/MangerHome.fxml"));
+//            loadAnchorPane.getChildren().addAll(anchorPane);
+//        } catch (IOException ex) {
+//            System.out.println("Problem in loading");
+//        }
 
     }
     public void loadEmploymentPage(){
