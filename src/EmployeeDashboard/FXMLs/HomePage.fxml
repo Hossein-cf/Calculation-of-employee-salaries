@@ -1,41 +1,81 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ProgressIndicator?>
 <?import javafx.scene.control.Separator?>
 <?import javafx.scene.effect.DropShadow?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
 
 <AnchorPane prefHeight="552.0" prefWidth="732.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="EmployeeDashboard.Controllers.EmployeeHomePage">
    <children>
-      <AnchorPane layoutY="1.0" prefHeight="552.0" prefWidth="732.0" style="-fx-background-color: #ffffff; -fx-background-radius: 30;">
+      <Pane fx:id="Pane1" layoutX="46.0" layoutY="43.0" opacity="0.76" prefHeight="164.0" prefWidth="660.0" style="-fx-background-color: #e6ffff; -fx-background-radius: 10;">
          <children>
-            <AnchorPane fx:id="loadAnchorPane" layoutX="7.0" layoutY="7.0" prefHeight="532.0" prefWidth="735.0" style="-fx-background-color: #e6ffff; -fx-background-radius: 30;" visible="false" />
-            <Pane layoutX="46.0" layoutY="43.0" opacity="0.76" prefHeight="164.0" prefWidth="660.0" style="-fx-background-color: #e6ffff; -fx-background-radius: 10;">
-               <children>
-                  <ImageView fitHeight="182.0" fitWidth="252.0" layoutX="-12.0" layoutY="-8.0" opacity="0.61" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../../Pics/Work.jpg" />
-                     </image>
-                  </ImageView>
-                  <JFXTextField labelFloat="true" layoutX="286.0" layoutY="33.0" prefHeight="25.0" prefWidth="124.0" promptText="FirstName" text=" " />
-                  <JFXTextField labelFloat="true" layoutX="286.0" layoutY="82.0" prefHeight="25.0" prefWidth="124.0" promptText="lastName" text=" " />
-                  <JFXTextField labelFloat="true" layoutX="467.0" layoutY="33.0" promptText="job" text=" " />
-                  <JFXTextField labelFloat="true" layoutX="467.0" layoutY="82.0" promptText="EmployeeCode" text=" " />
-               </children>
-            </Pane>
-            <Pane layoutX="46.0" layoutY="220.0" prefHeight="289.0" prefWidth="660.0" style="-fx-background-color: #ffffff; -fx-background-radius: 10;">
-               <effect>
-                  <DropShadow />
-               </effect>
-               <children>
-                  <Separator layoutX="293.0" layoutY="18.0" orientation="VERTICAL" prefHeight="254.0" prefWidth="8.0" />
-                  <JFXTextField labelFloat="true" layoutX="31.0" layoutY="44.0" prefHeight="25.0" prefWidth="105.0" promptText="Bsae Salary" text=" " />
-               </children>
-            </Pane>
+            <ImageView fitHeight="182.0" fitWidth="252.0" layoutX="-12.0" layoutY="-8.0" opacity="0.61" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../Pics/Work.jpg" />
+               </image>
+            </ImageView>
+            <JFXTextField fx:id="txtFirstName" labelFloat="true" layoutX="301.0" layoutY="58.0" prefHeight="25.0" prefWidth="124.0" promptText="FirstName" text=" " />
+            <JFXTextField fx:id="txtLastName" labelFloat="true" layoutX="301.0" layoutY="117.0" prefHeight="25.0" prefWidth="124.0" promptText="lastName" text=" " />
+            <JFXTextField fx:id="txtJob" labelFloat="true" layoutX="466.0" layoutY="58.0" promptText="job" text=" " />
+            <JFXTextField fx:id="txtEmployeeCode" labelFloat="true" layoutX="466.0" layoutY="117.0" promptText="EmployeeCode" text=" " />
+            <Label layoutX="237.0" layoutY="8.0" prefHeight="25.0" prefWidth="158.0" text="Your Personal Info">
+               <font>
+                  <Font name="System Bold" size="17.0" />
+               </font>
+            </Label>
          </children>
-      </AnchorPane>
+      </Pane>
+      <Pane fx:id="Pane2" layoutX="46.0" layoutY="220.0" prefHeight="289.0" prefWidth="660.0" style="-fx-background-color: #ffffff; -fx-background-radius: 10;">
+         <effect>
+            <DropShadow />
+         </effect>
+         <children>
+            <Separator layoutX="293.0" layoutY="18.0" orientation="VERTICAL" prefHeight="254.0" prefWidth="8.0" />
+            <JFXTextField fx:id="txtBaseSalary" labelFloat="true" layoutX="408.0" layoutY="91.0" prefHeight="25.0" prefWidth="135.0" promptText="Bsae Salary" text=" " />
+            <JFXTextField fx:id="txtCompanyName" labelFloat="true" layoutX="20.0" layoutY="91.0" prefHeight="25.0" prefWidth="105.0" promptText="Company Name" text=" " />
+            <JFXTextField fx:id="txtCompanyType" labelFloat="true" layoutX="171.0" layoutY="91.0" prefHeight="25.0" prefWidth="105.0" promptText="Company Type" text=" " />
+            <ProgressIndicator layoutX="337.0" layoutY="210.0" prefHeight="43.0" prefWidth="57.0" />
+            <Label alignment="CENTER" layoutX="305.0" layoutY="150.0" prefHeight="25.0" prefWidth="124.0" text="Recieved Salary">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Label fx:id="lblRecievedSalary" alignment="CENTER" layoutX="359.0" layoutY="180.0" text="0" />
+            <ProgressIndicator layoutX="450.0" layoutY="210.0" prefHeight="43.0" prefWidth="58.0" />
+            <Label alignment="CENTER" layoutX="418.0" layoutY="150.0" prefHeight="25.0" prefWidth="124.0" text="over time hour ">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Label fx:id="lblOverTime" alignment="CENTER" layoutX="472.0" layoutY="180.0" text="0" />
+            <ProgressIndicator layoutX="556.0" layoutY="210.0" prefHeight="43.0" prefWidth="58.0" />
+            <Label alignment="CENTER" layoutX="523.0" layoutY="150.0" prefHeight="25.0" prefWidth="124.0" text="vacation hour ">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Label fx:id="lblVacation" alignment="CENTER" layoutX="578.0" layoutY="180.0" text="0" />
+            <Label layoutX="316.0" layoutY="18.0" prefHeight="17.0" prefWidth="113.0" text="Your Job infos" textFill="#030f8d">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </Label>
+            <ProgressIndicator layoutX="124.0" layoutY="202.0" prefHeight="64.0" prefWidth="39.0" />
+            <Label alignment="CENTER" layoutX="7.0" layoutY="150.0" prefHeight="27.0" prefWidth="277.0" text="Numbers of Company members" />
+            <Label fx:id="lblNumbersOfCompany" alignment="CENTER" layoutX="140.0" layoutY="183.0" text="0" />
+            <Label layoutX="16.0" layoutY="18.0" prefHeight="25.0" prefWidth="158.0" text="Your Company infos" textFill="#030f8d">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+      <AnchorPane fx:id="loadAnchorPane" layoutX="-3.0" layoutY="-1.0" prefHeight="552.0" prefWidth="732.0" style="-fx-background-color: #e6ffff; -fx-background-radius: 30;" visible="false" />
    </children>
 </AnchorPane>
