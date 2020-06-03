@@ -17,6 +17,17 @@ public class FrontEnd  implements CalculationSalary {
     private boolean ES6 ;
     private boolean yarn ;
 
+
+    public boolean npm ;
+    public boolean CSSResponsive ;
+    public boolean json;
+    public boolean ajax ;
+    public boolean materialDesign ;
+    public boolean bootStrap ;
+    public boolean W3Css;
+
+
+
     public boolean isHtml() {
         return html;
     }
@@ -169,13 +180,6 @@ public class FrontEnd  implements CalculationSalary {
         W3Css = w3Css;
     }
 
-    public boolean npm ;
-    public boolean CSSResponsive ;
-    public boolean json;
-    public boolean ajax ;
-    public boolean materialDesign ;
-    public boolean bootStrap ;
-    public boolean W3Css;
 
 
     @Override
