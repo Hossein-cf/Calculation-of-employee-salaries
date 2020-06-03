@@ -94,7 +94,7 @@ public class DashBordNewController implements Initializable {
         hideThings();
         loadAnchorPane.setVisible(true);
         try {
-            AnchorPane anchorPane = FXMLLoader.load(getClass().getResource("../ManagerDashbord/DashbordFXMLs/ManagerHome/MangerHome.fxml"));
+            AnchorPane anchorPane = FXMLLoader.load(getClass().getResource("DashboardFXMLs/ManagerHome/MangerHome.fxml"));
             loadAnchorPane.getChildren().addAll(anchorPane);
         } catch (IOException ex) {
             System.out.println("Problem in loading");
@@ -105,7 +105,7 @@ public class DashBordNewController implements Initializable {
         hideThings();
         loadAnchorPane.setVisible(true);
         try {
-            AnchorPane anchorPane = FXMLLoader.load(getClass().getResource("../ManagerDashbord/DashbordFXMLs/Employment/ManagerEmployment.fxml"));
+            AnchorPane anchorPane = FXMLLoader.load(getClass().getResource("DashboardFXMLs/Employment/ManagerEmployment.fxml"));
             loadAnchorPane.getChildren().addAll(anchorPane);
         } catch (IOException ex) {
             System.out.println("Problem in loading");
@@ -116,7 +116,7 @@ public class DashBordNewController implements Initializable {
         hideThings();
         loadAnchorPane.setVisible(true);
         try {
-            AnchorPane anchorPane = FXMLLoader.load(getClass().getResource("../ManagerDashbord/DashbordFXMLs/Salary/ManagerSalaryPane.fxml"));
+            AnchorPane anchorPane = FXMLLoader.load(getClass().getResource("DashboardFXMLs/Salary/ManagerSalaryPane.fxml"));
             loadAnchorPane.getChildren().addAll(anchorPane);
         } catch (IOException ex) {
             System.out.println("Problem in loading");
@@ -127,7 +127,7 @@ public class DashBordNewController implements Initializable {
         hideThings();
         loadAnchorPane.setVisible(true);
         try {
-            AnchorPane anchorPane = FXMLLoader.load(getClass().getResource("./DashbordFXMLs/Members/ManagerMembersOfCompany.fxml"));
+            AnchorPane anchorPane = FXMLLoader.load(getClass().getResource("DashboardFXMLs/Members/ManagerMembersOfCompany.fxml"));
             loadAnchorPane.getChildren().addAll(anchorPane);
         } catch (IOException ex) {
             System.out.println("Problem in loading");

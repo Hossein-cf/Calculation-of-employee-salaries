@@ -13,7 +13,7 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="881.0" prefWidth="672.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ManagerDashbord.DashbordControllers.SubmitFormController">
+<AnchorPane prefHeight="881.0" prefWidth="672.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/8.0.221" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ManagerDashbord.DashboardControllers.SubmitFormController">
    <children>
       <Pane layoutX="14.0" layoutY="14.0" prefHeight="254.0" prefWidth="643.0" style="-fx-background-color: #e6ffff; -fx-background-radius: 20;">
          <children>
@@ -81,7 +81,7 @@
       <Pane layoutX="14.0" layoutY="456.0" prefHeight="404.0" prefWidth="643.0" style="-fx-background-color: #e6ffff; -fx-background-radius: 20;">
          <children>
             <Label layoutX="25.0" layoutY="14.0" prefHeight="17.0" prefWidth="92.0" />
-            <TableView layoutX="49.0" layoutY="33.0" prefHeight="304.0" prefWidth="559.0">
+            <TableView fx:id="tblSpecialties" layoutX="49.0" layoutY="33.0" prefHeight="304.0" prefWidth="559.0">
               <columns>
                 <TableColumn fx:id="clmRow" prefWidth="55.0" text="Row" />
                 <TableColumn fx:id="clmExpertise" prefWidth="329.0" text="Expertise" />
