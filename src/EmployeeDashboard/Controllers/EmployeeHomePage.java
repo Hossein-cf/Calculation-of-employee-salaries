@@ -1,4 +1,4 @@
-package EmployeeDashbord.Controllers;
+package EmployeeDashboard.Controllers;
 
 import javafx.scene.layout.AnchorPane;
 

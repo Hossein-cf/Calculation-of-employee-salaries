@@ -1,4 +1,4 @@
-package EmployeeDashbord.Controllers;
+package EmployeeDashboard.Controllers;
 
 public class EmployeeSalaryReceipt {
 }

@@ -1,4 +1,4 @@
-package EmployeeDashbord.Controllers;
+package EmployeeDashboard.Controllers;
 
 import ManagerDashbord.ManagerLoginController;
 import com.jfoenix.controls.JFXButton;
@@ -13,7 +13,7 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class EmployeeDashbordController implements Initializable {
+public class EmployeeDashboardController implements Initializable {
 
     public JFXButton btnHomePage;
     public JFXButton btnSalaryPage;
@@ -25,7 +25,7 @@ public class EmployeeDashbordController implements Initializable {
     public JFXTextField txtBaseSalary;
     public JFXTextField txtCompanyName;
     public JFXTextField txtCompanyType;
-    public Label lblRecievedSalary;
+    public Label lblReceivedSalary;
     public Label lblOverTime;
     public Label lblVacation;
     public Label lblNumbersOfCompany;
@@ -44,7 +44,7 @@ public class EmployeeDashbordController implements Initializable {
         hidingThings();
         loadAnchorPane.setVisible(true);
         try {
-            AnchorPane anchorPane = FXMLLoader.load(getClass().getResource("/EmployeeDashbord/FXMLs/HomePage.fxml"));
+            AnchorPane anchorPane = FXMLLoader.load(getClass().getResource("/EmployeeDashboard/FXMLs/HomePage.fxml"));
             loadAnchorPane.getChildren().addAll(anchorPane);
         } catch (IOException ex) {
             System.out.println("Problem in loading");
@@ -56,7 +56,7 @@ public class EmployeeDashbordController implements Initializable {
         hidingThings();
         loadAnchorPane.setVisible(true);
         try {
-            AnchorPane anchorPane = FXMLLoader.load(getClass().getResource("/EmployeeDashbord/FXMLs/SalaryReceipt.fxml"));
+            AnchorPane anchorPane = FXMLLoader.load(getClass().getResource("/EmployeeDashboard/FXMLs/SalaryReceipt.fxml"));
             loadAnchorPane.getChildren().addAll(anchorPane);
         } catch (IOException ex) {
             System.out.println("Problem in loading");
