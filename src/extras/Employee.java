@@ -120,4 +120,9 @@ public class Employee extends Person implements CalculationSalary {
     public double calculateRightToHousing(double baseSalary) {
         return 0;
     }
+
+    @Override
+    public double calculateFinalSalary() {
+        return 0;
+    }
 }

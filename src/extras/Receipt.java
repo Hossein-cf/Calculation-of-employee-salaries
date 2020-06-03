@@ -1,10 +1,8 @@
 package extras;
 
-import com.sun.xml.internal.ws.addressing.policy.AddressingPolicyMapConfigurator;
-
 import java.util.Date;
 
-public class Receipt {
+public class Receipt extends SalaryInformation{
     private double finalSalary;
     private double baseSalary;
     private Date salaryDate;
