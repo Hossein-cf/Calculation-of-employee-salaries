@@ -1,7 +1,8 @@
 package employeeTypes;
 
 public class FullStack {
-    public boolean HTML ;
+    private boolean HTML ;
+    
     public boolean CSS ;
     public boolean JC ;
     public boolean reactJs ;

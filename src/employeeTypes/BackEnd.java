@@ -4,17 +4,17 @@ import extras.Employee;
 
 public class BackEnd extends Employee {
 
-    public boolean python ;
-    public boolean ruby ;
-    public boolean node_JS;
-    public boolean PHP7;
-    public boolean ASP_NET ;
-    public boolean webServer;
-    public boolean SQLServer;
-    public boolean OracleDatabase ;
-    public boolean RestfulAPIs ;
-    public boolean Security ;
-    public boolean Docker ;
+    private boolean python ;
+    private boolean ruby ;
+    private boolean node_JS;
+    private boolean PHP7;
+    private boolean ASP_NET ;
+    private boolean webServer;
+    private boolean SQLServer;
+    private boolean OracleDatabase ;
+    private boolean RestfulAPIs ;
+    private boolean Security ;
+    private boolean Docker ;
 
     public boolean isPython() {
         return python;

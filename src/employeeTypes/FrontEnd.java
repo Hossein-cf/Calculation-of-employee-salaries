@@ -2,18 +2,18 @@ package employeeTypes;
 
 public class FrontEnd {
 
-    public boolean html ;
-    public boolean HTTP;
-    public boolean XHTR;
-    public boolean HTMLDOM;
-    public boolean JAVAScript;
-    public boolean ReactJs;
-    public boolean Angular;
-    public boolean VueJs ;
-    public boolean jQuery ;
-    public boolean TypeScript ;
-    public boolean ES6 ;
-    public boolean yarn ;
+    private boolean html ;
+    private boolean HTTP;
+    private boolean XHTR;
+    private boolean HTMLDOM;
+    private boolean JAVAScript;
+    private boolean ReactJs;
+    private boolean Angular;
+    private boolean VueJs ;
+    private boolean jQuery ;
+    private boolean TypeScript ;
+    private boolean ES6 ;
+    private boolean yarn ;
 
     public boolean isHtml() {
         return html;
