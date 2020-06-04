@@ -8,6 +8,7 @@ public interface CalculationSalary {
     double calculateMoneyForTax(double finalSalary ); //مالیات
     double calculateInsurance(double finalSalary); // بیمه
     double calculateYears(int years , double baseSalary);
+    double calculatePrimarySalary( double overTimeWork , double nightWork , double vacationHour , double yearsSalary  );
     double calculateFinalSalary();
     double calculateBaseSalary(int score ,String level  ,String workTime );
 

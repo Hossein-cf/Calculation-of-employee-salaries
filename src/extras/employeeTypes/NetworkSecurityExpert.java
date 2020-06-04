@@ -92,38 +92,25 @@ public class NetworkSecurityExpert implements CalculationSalary {
         this.PLC = PLC;
     }
 
+
+
     @Override
-    public double calculateMoneyForHolidayWorks(int days) {
+    public double calculateMoneyForHolidayWorks(double baseSalary) {
         return 0;
     }
 
     @Override
-    public double calculateMoneyForOverTimeWork(double hours) {
+    public double calculateMoneyForOverTimeWork(double hours, double baseSalary) {
         return 0;
     }
 
     @Override
-    public double calculateMoneyForNightWork(int days) {
+    public double calculateMoneyForNightWork(double hours, double baseSalary) {
         return 0;
     }
 
     @Override
-    public double calculateMoneyForMorningWork(int days) {
-        return 0;
-    }
-
-    @Override
-    public double calculateMoneyForAfternoonWork(int days) {
-        return 0;
-    }
-
-    @Override
-    public double calculateMoneyForFullTimeWork(int days) {
-        return 0;
-    }
-
-    @Override
-    public double calculateMoneyForVacationHour(double hours) {
+    public double calculateMoneyForVacationHour(double hours, double baseSalary) {
         return 0;
     }
 
@@ -138,9 +125,16 @@ public class NetworkSecurityExpert implements CalculationSalary {
     }
 
     @Override
-    public double calculateRightToHousing(double baseSalary) {
+    public double calculateYears(int years, double baseSalary) {
         return 0;
     }
+
+    @Override
+    public double calculatePrimarySalary( double overTimeWork, double nightWork, double vacationHour, double yearsSalary) {
+        return 0;
+    }
+
+
 
     @Override
     public double calculateFinalSalary() {

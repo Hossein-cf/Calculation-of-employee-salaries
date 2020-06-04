@@ -1,5 +1,6 @@
 package extras.employeeTypes;
 
+import ManagerDashbord.DashboardControllers.ManagerEmploymentController;
 import extras.CalculationSalary;
 
 public class BackEnd implements CalculationSalary {
@@ -109,6 +110,8 @@ public class BackEnd implements CalculationSalary {
         Docker = docker;
     }
 
+    ManagerEmploymentController employ = new ManagerEmploymentController();
+
     @Override
     public double calculateMoneyForHolidayWorks( double baseSalary) {
 
@@ -133,32 +136,32 @@ public class BackEnd implements CalculationSalary {
     }
 
     @Override
-    public double calculateMoneyForTax(double finalSalary) {
+    public double calculateMoneyForTax(double primarySalary) {
         double tax = 0 ;
-        if (finalSalary<=3300000){
+        if (primarySalary<=3300000){
             tax = 0;
         }
-        if (finalSalary>3300000&&finalSalary<=8250000){
-            tax = -(finalSalary*0.1);
+        if (primarySalary>3300000&&primarySalary<=8250000){
+            tax = -(primarySalary*0.1);
         }
-        if (finalSalary>8250000&&finalSalary<=11550000){
-            tax = -(finalSalary*0.15);
+        if (primarySalary>8250000&&primarySalary<=11550000){
+            tax = -(primarySalary*0.15);
         }
-        if (finalSalary>11550000&&finalSalary<=16500000){
-            tax = -(finalSalary*0.20);
+        if (primarySalary>11550000&&primarySalary<=16500000){
+            tax = -(primarySalary*0.20);
         }
-        if (finalSalary>16500000&&finalSalary<=23100000){
-            tax = -(finalSalary*0.25);
+        if (primarySalary>16500000&&primarySalary<=23100000){
+            tax = -(primarySalary*0.25);
         }
-        if (finalSalary>23100000){
-            tax = -(finalSalary*0.35);
+        if (primarySalary>23100000){
+            tax = -(primarySalary*0.35);
         }
         return tax ;
     }
 
     @Override
-    public double calculateInsurance(double finalSalary) {
-        return -(finalSalary*0.07);
+    public double calculateInsurance(double primarySalary) {
+        return -(primarySalary*0.07);
     }
 
     @Override
@@ -170,10 +173,15 @@ public class BackEnd implements CalculationSalary {
         return yearSalary;
     }
 
+    @Override
+    public double calculatePrimarySalary( double overTimeWork, double nightWork, double vacationHour, double yearsSalary) {
+        return  overTimeWork + nightWork + vacationHour + yearsSalary;
+    }
 
 
     @Override
     public double calculateFinalSalary() {
+
         return 0;
     }
 
