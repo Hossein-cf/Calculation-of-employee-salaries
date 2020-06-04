@@ -41,6 +41,7 @@ public class EmployeeDashboardController implements Initializable {
     public JFXButton btnClose;
     public JFXButton btnBack;
     public Label lblRecievedSalary;
+    public JFXButton btnAttendance;
     private ManagerLoginController managerLoginController;
     private boolean flag ;
 
@@ -125,6 +126,20 @@ public class EmployeeDashboardController implements Initializable {
         } catch (IOException ex) {
             System.out.println("Problem in loading");
         }
+
+    }
+
+
+    public void loadAttendancePage(){
+        hidingThings();
+        loadAnchorPane.setVisible(true);
+        try {
+            AnchorPane anchorPane = FXMLLoader.load(getClass().getResource("/EmployeeDashboard/FXMLs/Attendance.fxml"));
+            loadAnchorPane.getChildren().addAll(anchorPane);
+        } catch (IOException ex) {
+            System.out.println("Problem in loading");
+        }
+
 
     }
 

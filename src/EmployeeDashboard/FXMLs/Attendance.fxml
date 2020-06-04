@@ -1,15 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.TextField?>
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTimePicker?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
-
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="552.0" prefWidth="732.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="EmployeeDashboard.Controllers.AttendanceController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="552.0" prefWidth="732.0" xmlns="http://javafx.com/javafx/8.0.221" xmlns:fx="http://javafx.com/fxml/1" fx:controller="EmployeeDashboard.Controllers.AttendanceController">
    <children>
-      <AnchorPane layoutX="37.0" layoutY="28.0" prefHeight="482.0" prefWidth="665.0" style="-fx-background-color: #e6ffff; -fx-background-radius: 30;">
+      <AnchorPane layoutX="50.0" layoutY="20.0" prefHeight="505.0" prefWidth="650.0" style="-fx-background-color: #e6ffff; -fx-background-radius: 30;">
          <children>
-            <TextField layoutX="264.0" layoutY="127.0" />
-            <TextField layoutX="253.0" layoutY="236.0" />
+            <Label alignment="CENTER" layoutX="230.0" layoutY="22.0" prefHeight="39.0" prefWidth="205.0" text="Confirm your Attendance" textFill="#2509da">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </Label>
+            <JFXTimePicker defaultColor="#00a42f" layoutX="159.0" layoutY="100.0" prefHeight="28.0" prefWidth="143.0" promptText="Enter time" />
+            <JFXTimePicker defaultColor="#ff0202" layoutX="353.0" layoutY="100.0" prefHeight="28.0" prefWidth="143.0" promptText="Exit time" />
+            <JFXButton fx:id="btnConfirm" layoutX="286.0" layoutY="213.0" prefHeight="32.0" prefWidth="94.0" style="-fx-border-color: #000051; -fx-border-radius: 10;" text="Confirm" textFill="#3f0097">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </JFXButton>
          </children>
       </AnchorPane>
    </children>

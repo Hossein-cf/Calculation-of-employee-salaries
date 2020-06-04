@@ -137,7 +137,7 @@ public class SubmitFormController implements Initializable {
                 if (txt_TextField.getText().length() >= max_Lengh) {
                     e.consume();
                 }
-                if (e.getCharacter().matches("[ا-ی-ن]") || e.getCharacter().matches("[ ]")) {
+                if (e.getCharacter().matches("[ا-ی-ن]") || e.getCharacter().matches("[ ]")|| e.getCharacter().matches("[A-Za-z]")) {
                 } else {
                     e.consume();
                 }
