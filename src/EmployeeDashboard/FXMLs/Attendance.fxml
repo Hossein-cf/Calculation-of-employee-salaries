@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="552.0" prefWidth="732.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="EmployeeDashboard.Controllers.AttendanceController">
+   <children>
+      <AnchorPane layoutX="37.0" layoutY="28.0" prefHeight="482.0" prefWidth="665.0" style="-fx-background-color: #e6ffff; -fx-background-radius: 30;">
+         <children>
+            <TextField layoutX="264.0" layoutY="127.0" />
+            <TextField layoutX="253.0" layoutY="236.0" />
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

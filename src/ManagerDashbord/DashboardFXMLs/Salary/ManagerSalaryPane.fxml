@@ -34,31 +34,33 @@
             <Label alignment="CENTER" layoutX="61.0" layoutY="72.0" prefHeight="17.0" prefWidth="526.0" text=" " />
          </children>
       </AnchorPane>
-      <Pane fx:id="finalSalaryPane" layoutX="43.0" layoutY="216.0" prefHeight="302.0" prefWidth="663.0" style="-fx-background-color: #e6ffff; -fx-background-radius: 10;" visible="false">
+      <Pane fx:id="finalSalaryPane" layoutX="43.0" layoutY="216.0" prefHeight="302.0" prefWidth="663.0" style="-fx-background-color: #e6ffff; -fx-background-radius: 10;">
          <children>
             <Label alignment="CENTER" layoutX="182.0" layoutY="14.0" prefHeight="19.0" prefWidth="284.0" text="Calculating Final Salary " textFill="#2907ae">
                <font>
                   <Font name="System Bold" size="13.0" />
                </font>
             </Label>
-            <TextField fx:id="txtOverTimeHour" alignment="CENTER" layoutX="185.0" layoutY="90.0" prefHeight="34.0" prefWidth="39.0" />
+            <TextField fx:id="txtOverTimeHour" alignment="CENTER" layoutX="253.0" layoutY="92.0" prefHeight="34.0" prefWidth="39.0" />
             <Label alignment="CENTER" layoutX="14.0" layoutY="46.0" prefHeight="19.0" prefWidth="284.0" text="complete the information about the Eployee">
                <font>
                   <Font name="System Bold" size="13.0" />
                </font>
             </Label>
-            <Label layoutX="95.0" layoutY="98.0" prefHeight="17.0" prefWidth="81.0" text="overtime hour" />
-            <Label layoutX="255.0" layoutY="101.0" prefHeight="17.0" prefWidth="81.0" text="vacation hour" />
-            <Label layoutX="438.0" layoutY="101.0" prefHeight="17.0" prefWidth="81.0" text="Absence Days" />
-            <TextField fx:id="txtVacationHour" alignment="CENTER" layoutX="343.0" layoutY="91.0" prefHeight="34.0" prefWidth="39.0" />
+            <Label layoutX="169.0" layoutY="101.0" prefHeight="17.0" prefWidth="81.0" text="overtime hour" />
+            <Label layoutX="305.0" layoutY="102.0" prefHeight="17.0" prefWidth="81.0" text="vacation hour" />
+            <Label layoutX="448.0" layoutY="102.0" prefHeight="17.0" prefWidth="74.0" text="Absence Days" />
+            <TextField fx:id="txtVacationHour" alignment="CENTER" layoutX="386.0" layoutY="90.0" prefHeight="34.0" prefWidth="39.0" />
             <TextField fx:id="txtAbsenceDays" alignment="CENTER" layoutX="530.0" layoutY="93.0" prefHeight="34.0" prefWidth="39.0" />
-            <TextArea fx:id="txtDescribeMission" layoutX="177.0" layoutY="183.0" prefHeight="62.0" prefWidth="294.0" promptText="Description of the mission" />
-            <JFXCheckBox fx:id="checkDoingMission" layoutX="91.0" layoutY="151.0" prefHeight="18.0" prefWidth="157.0" text="Doing any mission?" />
+            <TextArea fx:id="txtDescribeMission" layoutX="177.0" layoutY="183.0" prefHeight="62.0" prefWidth="294.0" promptText="Description of the mission or project" />
+            <JFXCheckBox fx:id="checkDoingMission" layoutX="91.0" layoutY="151.0" prefHeight="18.0" prefWidth="224.0" text="Doing any mission or project?" />
             <JFXButton fx:id="btnCalculateFinalSalary" buttonType="RAISED" layoutX="169.0" layoutY="257.0" prefHeight="34.0" prefWidth="310.0" text="Calculate final salary and Issuance of receipt" underline="true">
                <font>
                   <Font name="System Bold" size="13.0" />
                </font>
             </JFXButton>
+            <TextField fx:id="txtOverTimeHour1" alignment="CENTER" layoutX="104.0" layoutY="92.0" prefHeight="34.0" prefWidth="39.0" />
+            <Label layoutX="14.0" layoutY="100.0" prefHeight="17.0" prefWidth="81.0" text="working hours" />
          </children>
       </Pane>
    </children>

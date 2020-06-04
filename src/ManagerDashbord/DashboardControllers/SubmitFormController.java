@@ -5,9 +5,11 @@ import com.jfoenix.controls.JFXCheckBox;
 import employeeTypes.*;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.event.EventHandler;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.input.KeyEvent;
 
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -38,8 +40,19 @@ public class SubmitFormController implements Initializable {
     public JFXButton btnCheckTheStatus;
     public Label lbl1;
     public TableView tblSpecialties;
+    public Label lblAlert1;
+    public Label lblAlert2;
+
+
+    private void alert(String message, Label lbl, String color) {
+        lbl.setText(message);
+        lbl.setStyle("-fx-text-fill: " + color + ";");
+    }
 
     public void DonePersonalInfo() {
+        if(txtFirstName.getText().equals("")||txtLastName.getText().equals("")||txtFatherName.getText().equals("")||txtNationalCode.getText().equals("")||txtBornPlace.getText().equals("")||bornData.getValue()==null||comboGender.getSelectionModel().getSelectedIndex()==-1||comboLevelOfEduction.getSelectionModel().getSelectedIndex()==-1||txtAddress.getText().equals("")||txtPostalCode.getText().equals("")||txtPhoneNumber.getText().equals("")){
+            alert("Fill the blanks",lblAlert1,"red");
+        }
 
 
     }
@@ -47,9 +60,11 @@ public class SubmitFormController implements Initializable {
     public void DoneExperienceTime() {
 
 
+
     }
 
     public void checkTheFinalStatus() {
+
 
 
     }
@@ -114,8 +129,63 @@ public class SubmitFormController implements Initializable {
 
     }
 
+    public EventHandler<KeyEvent> letter_Validation(final Integer max_Lengh) {
+        return new EventHandler<KeyEvent>() {
+            @Override
+            public void handle(KeyEvent e) {
+                TextField txt_TextField = (TextField) e.getSource();
+                if (txt_TextField.getText().length() >= max_Lengh) {
+                    e.consume();
+                }
+                if (e.getCharacter().matches("[ا-ی-ن]") || e.getCharacter().matches("[ ]")) {
+                } else {
+                    e.consume();
+                }
+            }
+        };
+    }
+
+    public EventHandler<KeyEvent> numeric_Validation(final Integer max_Lengh) {
+        return new EventHandler<KeyEvent>() {
+            @Override
+            public void handle(KeyEvent e) {
+                TextField txt_TextField = (TextField) e.getSource();
+                if (txt_TextField.getText().length() >= max_Lengh) {
+                    e.consume();
+                }
+                if (e.getCharacter().matches("[0-9.]")) {
+                    if (txt_TextField.getText().contains(".") && e.getCharacter().matches("[.]")) {
+                        e.consume();
+                    } else if (txt_TextField.getText().length() == 0 && e.getCharacter().matches("[.]")) {
+                        e.consume();
+                    }
+                } else {
+                    e.consume();
+                }
+            }
+        };
+    }
+
+
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+
+        txtFirstName.addEventFilter(KeyEvent.KEY_TYPED, letter_Validation(15));
+        txtLastName.addEventFilter(KeyEvent.KEY_TYPED, letter_Validation(15));
+        txtLastName.addEventFilter(KeyEvent.KEY_TYPED, letter_Validation(15));
+        txtFatherName.addEventFilter(KeyEvent.KEY_TYPED, letter_Validation(15));
+        txtNationalCode.addEventFilter(KeyEvent.KEY_TYPED, numeric_Validation(10));
+        txtBornPlace.addEventFilter(KeyEvent.KEY_TYPED, letter_Validation(15));
+        txtAddress.addEventFilter(KeyEvent.KEY_TYPED, letter_Validation(15));
+        txtPostalCode.addEventFilter(KeyEvent.KEY_TYPED, letter_Validation(15));
+        txtPhoneNumber.addEventFilter(KeyEvent.KEY_TYPED, numeric_Validation(10));
+        txtLastCompanyName.addEventFilter(KeyEvent.KEY_TYPED, letter_Validation(15));
+
+
+
+
+
+
         setTableEmployeeSpecialties();
         String[] LevelOfEduction = {"Diploma", "Bachelor", "MA"};
         String[] Gender = {"Male", "FeMale"};
