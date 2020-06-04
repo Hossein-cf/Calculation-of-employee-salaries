@@ -55,7 +55,7 @@
             <Separator layoutX="478.0" layoutY="28.0" orientation="VERTICAL" prefHeight="374.0" prefWidth="6.0" />
             <HBox layoutX="5.0" layoutY="5.0" prefHeight="46.0" prefWidth="155.0">
                <children>
-                  <JFXButton fx:id="btnClose" contentDisplay="CENTER" prefHeight="50.0" prefWidth="29.0" text=" ">
+                  <JFXButton fx:id="btnClose" contentDisplay="CENTER" prefHeight="50.0" prefWidth="29.0" text=" " onMouseClicked="#exit">
                      <graphic>
                         <ImageView fitHeight="34.0" fitWidth="23.0" pickOnBounds="true" preserveRatio="true">
                            <image>
@@ -64,7 +64,7 @@
                         </ImageView>
                      </graphic>
                   </JFXButton>
-                  <JFXButton fx:id="btnBack" contentDisplay="CENTER" prefHeight="50.0" prefWidth="27.0" text=" ">
+                  <JFXButton fx:id="btnBack" contentDisplay="CENTER" prefHeight="50.0" prefWidth="27.0" text=" " onMouseClicked="#back">
                      <graphic>
                         <ImageView fitHeight="32.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
                            <image>

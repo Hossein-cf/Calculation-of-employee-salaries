@@ -56,10 +56,10 @@
                         <Image url="@../../Pics/Work.jpg" />
                      </image>
                   </ImageView>
-                  <JFXTextField fx:id="txtFirstName" labelFloat="true" layoutX="301.0" layoutY="58.0" prefHeight="25.0" prefWidth="124.0" promptText="FirstName" text=" " />
-                  <JFXTextField fx:id="txtLastName" labelFloat="true" layoutX="301.0" layoutY="117.0" prefHeight="25.0" prefWidth="124.0" promptText="lastName" text=" " />
-                  <JFXTextField fx:id="txtJob" labelFloat="true" layoutX="466.0" layoutY="58.0" promptText="job" text=" " />
-                  <JFXTextField fx:id="txtEmployeeCode" labelFloat="true" layoutX="466.0" layoutY="117.0" promptText="EmployeeCode" text=" " />
+                  <JFXTextField fx:id="txtFirstName" editable="false" labelFloat="true" layoutX="301.0" layoutY="58.0" prefHeight="25.0" prefWidth="124.0" promptText="FirstName" text=" " />
+                  <JFXTextField fx:id="txtLastName" editable="false" labelFloat="true" layoutX="301.0" layoutY="117.0" prefHeight="25.0" prefWidth="124.0" promptText="lastName" text=" " />
+                  <JFXTextField fx:id="txtJob" editable="false" labelFloat="true" layoutX="466.0" layoutY="58.0" promptText="job" text=" " />
+                  <JFXTextField fx:id="txtEmployeeCode" editable="false" labelFloat="true" layoutX="466.0" layoutY="117.0" promptText="EmployeeCode" text=" " />
                   <Label layoutX="237.0" layoutY="8.0" prefHeight="25.0" prefWidth="158.0" text="Your Personal Info">
                      <font>
                         <Font name="System Bold" size="17.0" />
@@ -73,9 +73,9 @@
                </effect>
                <children>
                   <Separator layoutX="293.0" layoutY="18.0" orientation="VERTICAL" prefHeight="254.0" prefWidth="8.0" />
-                  <JFXTextField fx:id="txtBaseSalary" labelFloat="true" layoutX="408.0" layoutY="91.0" prefHeight="25.0" prefWidth="135.0" promptText="Bsae Salary" text=" " />
-                  <JFXTextField fx:id="txtCompanyName" labelFloat="true" layoutX="20.0" layoutY="91.0" prefHeight="25.0" prefWidth="105.0" promptText="Company Name" text=" " />
-                  <JFXTextField fx:id="txtCompanyType" labelFloat="true" layoutX="171.0" layoutY="91.0" prefHeight="25.0" prefWidth="105.0" promptText="Company Type" text=" " />
+                  <JFXTextField fx:id="txtBaseSalary" editable="false" labelFloat="true" layoutX="408.0" layoutY="91.0" prefHeight="25.0" prefWidth="135.0" promptText="Bsae Salary" text=" " />
+                  <JFXTextField fx:id="txtCompanyName" editable="false" labelFloat="true" layoutX="20.0" layoutY="91.0" prefHeight="25.0" prefWidth="135.0" promptText="Company Name" text=" " />
+                  <JFXTextField fx:id="txtCompanyType" editable="false" labelFloat="true" layoutX="171.0" layoutY="91.0" prefHeight="25.0" prefWidth="105.0" promptText="Company Type" text=" " />
                   <ProgressIndicator layoutX="337.0" layoutY="210.0" prefHeight="43.0" prefWidth="57.0" />
                   <Label alignment="CENTER" layoutX="305.0" layoutY="150.0" prefHeight="25.0" prefWidth="124.0" text="Recieved Salary">
                      <font>
@@ -109,12 +109,12 @@
                   </Label>
                </children>
             </Pane>
-            <AnchorPane fx:id="loadAnchorPane" layoutX="-3.0" layoutY="-1.0" prefHeight="552.0" prefWidth="732.0" style="-fx-background-color: #e6ffff; -fx-background-radius: 30;" visible="false" />
+            <AnchorPane fx:id="loadAnchorPane" layoutX="-3.0" layoutY="-1.0" prefHeight="552.0" prefWidth="732.0" style="-fx-background-radius: 30; -fx-background-color: #e6ffff;" visible="false" />
          </children>
       </AnchorPane>
       <VBox layoutX="658.0" layoutY="-1.0" prefHeight="525.0" prefWidth="32.0" style="-fx-background-color: #e6ffff;" AnchorPane.bottomAnchor="1.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="-1.0">
          <children>
-            <JFXButton alignment="CENTER" contentDisplay="CENTER" prefHeight="36.0" prefWidth="32.0" text=" ">
+            <JFXButton fx:id="btnClose" alignment="CENTER" contentDisplay="CENTER" onMouseClicked="#exit" prefHeight="36.0" prefWidth="32.0" text=" ">
                <graphic>
                   <ImageView fitHeight="24.0" fitWidth="23.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -123,7 +123,7 @@
                   </ImageView>
                </graphic>
             </JFXButton>
-            <JFXButton fx:id="btnBack" alignment="CENTER" contentDisplay="CENTER" prefHeight="36.0" prefWidth="32.0" text=" " onMouseClicked="#back">
+            <JFXButton fx:id="btnBack" alignment="CENTER" contentDisplay="CENTER" onMouseClicked="#back" prefHeight="36.0" prefWidth="32.0" text=" ">
                <graphic>
                   <ImageView fitHeight="24.0" fitWidth="23.0" pickOnBounds="true" preserveRatio="true">
                      <image>
