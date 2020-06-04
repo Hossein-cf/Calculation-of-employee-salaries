@@ -1,11 +1,41 @@
 package employeeTypes;
 
 public class DBExpert {
+
+    public boolean DataBaseImplementationAndDesign;
+    public boolean Bottleneck;
+    public boolean BackupAndRecovery;
     public boolean SQL ;
-    public boolean replication ;
+    public boolean Replication;
     public boolean dataBaseAdministration ;
     public boolean backUpAndRecovery ;
     public boolean clustering ;
+
+    public boolean isDataBaseImplementationAndDesign() {
+        return DataBaseImplementationAndDesign;
+    }
+
+    public void setDataBaseImplementationAndDesign(boolean dataBaseImplementationAndDesign) {
+        DataBaseImplementationAndDesign = dataBaseImplementationAndDesign;
+    }
+
+    public boolean isBottleneck() {
+        return Bottleneck;
+    }
+
+    public void setBottleneck(boolean bottleneck) {
+        Bottleneck = bottleneck;
+    }
+
+    public boolean isBackupAndRecovery() {
+        return BackupAndRecovery;
+    }
+
+    public void setBackupAndRecovery(boolean backupAndRecovery) {
+        BackupAndRecovery = backupAndRecovery;
+    }
+
+
 
     public boolean isSQL() {
         return SQL;
@@ -16,11 +46,11 @@ public class DBExpert {
     }
 
     public boolean isReplication() {
-        return replication;
+        return Replication;
     }
 
     public void setReplication(boolean replication) {
-        this.replication = replication;
+        this.Replication = replication;
     }
 
     public boolean isDataBaseAdministration() {

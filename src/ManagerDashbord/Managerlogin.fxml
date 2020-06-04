@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import com.jfoenix.controls.JFXButton?>
-<?import com.jfoenix.controls.JFXComboBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.Separator?>
 <?import javafx.scene.control.TextField?>
@@ -13,7 +12,7 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="502.0" prefWidth="815.0" style="-fx-border-radius: 5; -fx-background-color: #BBDEFB;" xmlns="http://javafx.com/javafx/8.0.221" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ManagerDashbord.ManagerLoginController">
+<AnchorPane prefHeight="502.0" prefWidth="815.0" style="-fx-border-radius: 5; -fx-background-color: #BBDEFB;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ManagerDashbord.ManagerLoginController">
    <children>
       <Pane layoutX="31.0" layoutY="26.0" prefHeight="451.0" prefWidth="754.0" style="-fx-background-radius: 5; -fx-background-color: #fff; -fx-border-radius: 5;">
          <effect>
@@ -32,7 +31,7 @@
                         <Image url="@../Pics/building-business-company-19953138.jpg" />
                      </image>
                   </ImageView>
-                  <JFXButton fx:id="btnStartToCooperation" buttonType="RAISED" layoutX="52.0" layoutY="333.0" onMouseClicked="#loadDashBoard" prefHeight="32.0" prefWidth="163.0" ripplerFill="#16c1ff" style="-fx-border-radius: 5; -fx-border-color: #B2EBF2;" text="Start to Cooperation">
+                  <JFXButton fx:id="btnStartToCooperation" buttonType="RAISED" layoutX="48.0" layoutY="326.0" onMouseClicked="#loadDashBoard" prefHeight="32.0" prefWidth="163.0" ripplerFill="#16c1ff" style="-fx-border-radius: 5; -fx-border-color: #B2EBF2;" text="Login as Test User">
                      <font>
                         <Font name="System Bold" size="12.0" />
                      </font>
@@ -42,20 +41,20 @@
                         <Font name="System Bold Italic" size="12.0" />
                      </font>
                   </Label>
-                  <TextField fx:id="txtCompanyName" layoutX="57.0" layoutY="188.0" prefHeight="25.0" prefWidth="175.0" promptText="Company Name" />
+                  <TextField fx:id="txtCompanyName" layoutX="57.0" layoutY="188.0" prefHeight="25.0" prefWidth="175.0" promptText="User name" />
                   <ImageView fitHeight="47.0" fitWidth="39.0" layoutX="10.0" layoutY="181.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../Pics/icons8-business-building-100.jpg" />
                      </image>
                   </ImageView>
-                  <ImageView fitHeight="32.0" fitWidth="39.0" layoutX="14.0" layoutY="255.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="32.0" fitWidth="39.0" layoutX="14.0" layoutY="240.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../Pics/icons8-business-building-64.jpg" />
                      </image>
                   </ImageView>
-                  <JFXComboBox fx:id="comboCompanyType" layoutX="57.0" layoutY="259.0" opacity="0.51" prefHeight="25.0" prefWidth="145.0" promptText="CompanyType" />
                   <Separator layoutX="246.0" layoutY="16.0" orientation="VERTICAL" prefHeight="369.0" prefWidth="5.0" />
                   <Label fx:id="lbl1" alignment="CENTER" layoutX="31.0" layoutY="392.0" prefHeight="17.0" prefWidth="181.0" text=" " />
+                  <TextField fx:id="txtCompanyName1" layoutX="57.0" layoutY="247.0" prefHeight="25.0" prefWidth="175.0" promptText="Pass word" />
                </children>
             </Pane>
             <HBox alignment="CENTER_RIGHT" layoutX="592.0" layoutY="6.0" prefHeight="46.0" prefWidth="155.0">

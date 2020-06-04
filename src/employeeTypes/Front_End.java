@@ -1,18 +1,18 @@
 package employeeTypes;
 
 public enum Front_End {
-    html((byte) 1),
-    HTTP((byte) 1),
-    XHTR((byte) 1),
-    HTMLDOM((byte) 1),
-    JAVAScript((byte) 1),
-    ReactJs((byte) 1),
-    Angular((byte) 1),
-    VueJs((byte) 1),
-    jQuery((byte) 1),
-    TypeScript((byte) 1),
-    ES6((byte) 1),
-    yarn((byte) 1);
+    html((byte) 10),
+    HTTP((byte) 5),
+    XHTR((byte) 5),
+    HTMLDOM((byte) 5),
+    JAVAScript((byte) 10),
+    ReactJs((byte) 10),
+    Angular((byte) 10),
+    VueJs((byte) 10),
+    jQuery((byte) 10),
+    TypeScript((byte) 7),
+    ES6((byte) 5),
+    yarn((byte) 5);
 
     private final byte value;
     Front_End(byte b) {
