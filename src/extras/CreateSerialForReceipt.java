@@ -1,6 +1,6 @@
 package extras;
 
-public class CreateEmployeeNumber {
+public class CreateSerialForReceipt {
 
     public static String createEmployeeCode(){
         double r = Math.random();

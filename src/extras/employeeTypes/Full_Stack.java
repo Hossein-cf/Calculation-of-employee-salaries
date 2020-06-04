@@ -1,4 +1,4 @@
-package employeeTypes;
+package extras.employeeTypes;
 
 public enum Full_Stack {
     CSS((byte) 5),

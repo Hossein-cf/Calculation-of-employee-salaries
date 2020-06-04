@@ -1,4 +1,4 @@
-package employeeTypes;
+package extras.employeeTypes;
 
 public enum EmployeeType {
     FullStack((byte) 0), FrontEnd((byte) 1), BackEnd((byte) 2), NetworkSecurityExpert((byte) 3), DBExpert((byte) 4);

@@ -1,25 +1,78 @@
-package employeeTypes;
+package extras.employeeTypes;
 
 import extras.CalculationSalary;
-import extras.Employee;
 
-public class BackEnd  implements CalculationSalary {
-
-    private boolean python ;
-    private boolean ruby ;
-    private boolean node_JS;
-    private boolean PHP7;
-    private boolean ASP_NET ;
-    private boolean webServer;
-    private boolean SQLServer;
-    private boolean OracleDatabase ;
-    private boolean RestfulAPIs ;
-    private boolean Security ;
-    private boolean Docker ;
-    private final int FINAL_SCORE=50;
+public class FullStack implements CalculationSalary {
+    private boolean HTML ;
+    
+    public boolean CSS ;
+    public boolean JC ;
+    public boolean reactJs ;
+    public boolean jQuery ;
+    public boolean mobilePrograming ;
+    public boolean python ;
+    public boolean ruby ;
+    public boolean nodeJs ;
+    public boolean PHP7 ;
+    public boolean ASPNET ;
+    public boolean webServer ;
+    public boolean  SQLServer ;
+    public boolean oracleDatabase ;
+    public boolean xamarin ;
+    public boolean security ;
+    public boolean docker ;
+    private final int FINAL_SCORE=60;
 
     public int getFINAL_SCORE() {
         return FINAL_SCORE;
+    }
+
+    public boolean isHTML() {
+        return HTML;
+    }
+
+    public void setHTML(boolean HTML) {
+        this.HTML = HTML;
+    }
+
+    public boolean isCSS() {
+        return CSS;
+    }
+
+    public void setCSS(boolean CSS) {
+        this.CSS = CSS;
+    }
+
+    public boolean isJC() {
+        return JC;
+    }
+
+    public void setJC(boolean JC) {
+        this.JC = JC;
+    }
+
+    public boolean isReactJs() {
+        return reactJs;
+    }
+
+    public void setReactJs(boolean reactJs) {
+        this.reactJs = reactJs;
+    }
+
+    public boolean isjQuery() {
+        return jQuery;
+    }
+
+    public void setjQuery(boolean jQuery) {
+        this.jQuery = jQuery;
+    }
+
+    public boolean isMobilePrograming() {
+        return mobilePrograming;
+    }
+
+    public void setMobilePrograming(boolean mobilePrograming) {
+        this.mobilePrograming = mobilePrograming;
     }
 
     public boolean isPython() {
@@ -38,12 +91,12 @@ public class BackEnd  implements CalculationSalary {
         this.ruby = ruby;
     }
 
-    public boolean isNode_JS() {
-        return node_JS;
+    public boolean isNodeJs() {
+        return nodeJs;
     }
 
-    public void setNode_JS(boolean node_JS) {
-        this.node_JS = node_JS;
+    public void setNodeJs(boolean nodeJs) {
+        this.nodeJs = nodeJs;
     }
 
     public boolean isPHP7() {
@@ -54,12 +107,12 @@ public class BackEnd  implements CalculationSalary {
         this.PHP7 = PHP7;
     }
 
-    public boolean isASP_NET() {
-        return ASP_NET;
+    public boolean isASPNET() {
+        return ASPNET;
     }
 
-    public void setASP_NET(boolean ASP_NET) {
-        this.ASP_NET = ASP_NET;
+    public void setASPNET(boolean ASPNET) {
+        this.ASPNET = ASPNET;
     }
 
     public boolean isWebServer() {
@@ -79,35 +132,35 @@ public class BackEnd  implements CalculationSalary {
     }
 
     public boolean isOracleDatabase() {
-        return OracleDatabase;
+        return oracleDatabase;
     }
 
     public void setOracleDatabase(boolean oracleDatabase) {
-        OracleDatabase = oracleDatabase;
+        this.oracleDatabase = oracleDatabase;
     }
 
-    public boolean isRestfulAPIs() {
-        return RestfulAPIs;
+    public boolean isXamarin() {
+        return xamarin;
     }
 
-    public void setRestfulAPIs(boolean restfulAPIs) {
-        RestfulAPIs = restfulAPIs;
+    public void setXamarin(boolean xamarin) {
+        this.xamarin = xamarin;
     }
 
     public boolean isSecurity() {
-        return Security;
+        return security;
     }
 
     public void setSecurity(boolean security) {
-        Security = security;
+        this.security = security;
     }
 
     public boolean isDocker() {
-        return Docker;
+        return docker;
     }
 
     public void setDocker(boolean docker) {
-        Docker = docker;
+        this.docker = docker;
     }
 
     @Override

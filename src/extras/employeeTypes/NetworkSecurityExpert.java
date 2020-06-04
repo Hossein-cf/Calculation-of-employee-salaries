@@ -1,4 +1,4 @@
-package employeeTypes;
+package extras.employeeTypes;
 
 import extras.CalculationSalary;
 
