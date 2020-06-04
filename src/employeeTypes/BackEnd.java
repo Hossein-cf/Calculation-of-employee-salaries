@@ -16,7 +16,7 @@ public class BackEnd  implements CalculationSalary {
     private boolean RestfulAPIs ;
     private boolean Security ;
     private boolean Docker ;
-    private final int FINAL_SCORE=0;
+    private final int FINAL_SCORE=50;
 
     public int getFINAL_SCORE() {
         return FINAL_SCORE;

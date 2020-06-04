@@ -41,14 +41,14 @@ public class SubmitFormController implements Initializable {
     public JFXButton btnCheckTheStatus;
     public Label lbl1;
     public TableView<TableFormat> tblSpecialties;
-    private final byte GIT = 1;
-    private final byte TELEWORKING = 1;
-    private final byte MAC_LINUX = 1;
+    private final byte GIT = 5;
+    private final byte TELEWORKING = 3;
+    private final byte MAC_LINUX = 5;
 
-    private final byte NOT_HAVE = 1;
-    private final byte UNDER_ONE_YEAR = 1;
-    private final byte OVER_A_YEAR = 1;
-    private final byte MORE_THAN_FOUR_YEAR = 1;
+    private final byte NOT_HAVE = 0;
+    private final byte UNDER_ONE_YEAR = 5;
+    private final byte OVER_A_YEAR = 7;
+    private final byte MORE_THAN_FOUR_YEAR = 15;
     private int Score = 0;
     private Employee employee;
 
