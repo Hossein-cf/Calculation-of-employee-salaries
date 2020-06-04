@@ -46,12 +46,13 @@ public class SubmitFormController implements Initializable {
     private final byte TELEWORKING = 1;
     private final byte MAC_LINUX = 1;
 
-    private final byte NOT_HAVE = 1;
-    private final byte UNDER_ONE_YEAR = 1;
-    private final byte OVER_A_YEAR = 1;
-    private final byte MORE_THAN_FOUR_YEAR = 1;
+    private final byte NOT_HAVE = 0;
+    private final byte UNDER_ONE_YEAR = 5;
+    private final byte OVER_A_YEAR = 7;
+    private final byte MORE_THAN_FOUR_YEAR = 15;
     private int Score = 0;
     private Employee employee;
+
 
     public Label lblAlert1;
     public Label lblAlert2;
@@ -94,7 +95,7 @@ public class SubmitFormController implements Initializable {
         if (teleWorkingCheck.isSelected()) {
             Score += TELEWORKING;
         }
-        String experience = comboExperience.getValue();
+        String experience = comboExperience.getValue().toString();
         employee.setWorkExperience(experience);
         switch (experience) {
             case "does not have":
@@ -226,7 +227,7 @@ public class SubmitFormController implements Initializable {
                 if (txt_TextField.getText().length() >= max_Lengh) {
                     e.consume();
                 }
-                if (e.getCharacter().matches("[ا-ی-ن]") || e.getCharacter().matches("[ ]") || e.getCharacter().matches("[A-Za-z]")) {
+                if (e.getCharacter().matches("[ا-ی-ن]") || e.getCharacter().matches("[ ]")|| e.getCharacter().matches("[A-Za-z]")) {
                 } else {
                     e.consume();
                 }

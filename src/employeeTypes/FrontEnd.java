@@ -25,7 +25,7 @@ public class FrontEnd  implements CalculationSalary {
     public boolean materialDesign ;
     public boolean bootStrap ;
     public boolean W3Css;
-    private final int FINAL_SCORE=0;
+    private final int FINAL_SCORE=60;
 
     public int getFINAL_SCORE() {
         return FINAL_SCORE;
