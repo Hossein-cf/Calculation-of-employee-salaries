@@ -18,9 +18,15 @@ public class BackEnd  implements CalculationSalary {
     private boolean Docker ;
     private final int FINAL_SCORE=0;
 
+    public double baseSalary = 0 ;
+    public final double finalSalary = finalSalaryFormula(baseSalary);
+
+
     public int getFINAL_SCORE() {
         return FINAL_SCORE;
     }
+
+
 
     public boolean isPython() {
         return python;
@@ -164,4 +170,13 @@ public class BackEnd  implements CalculationSalary {
     public double calculateFinalSalary() {
         return 0;
     }
+
+    private double finalSalaryFormula(double baseSalary){
+
+
+
+
+        return finalSalary;
+    }
+
 }
