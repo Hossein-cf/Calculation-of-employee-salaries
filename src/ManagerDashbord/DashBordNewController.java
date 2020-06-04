@@ -35,6 +35,9 @@ public class DashBordNewController implements Initializable {
     public JFXButton btnClose;
     public JFXButton btnBack;
     public ManagerLoginController managerLoginController;
+    public Label lblEmployeeNumbers;
+    public Label lblPayedSalaries;
+    public JFXButton btnDailyRecords;
 
 
     public void settingCompanyName(String CompanyName, String CompanyType) {
@@ -136,6 +139,20 @@ public class DashBordNewController implements Initializable {
         } catch (IOException ex) {
             System.out.println("Problem in loading");
         }
+
+    }
+
+    public void loadDailyRecords(){
+        hideThings();
+        loadAnchorPane.setVisible(true);
+        try {
+            AnchorPane anchorPane = FXMLLoader.load(getClass().getResource("DashboardFXMLs/EmployeeSalaryInfos/DailyRecords.fxml"));
+            loadAnchorPane.getChildren().addAll(anchorPane);
+        } catch (IOException ex) {
+            System.out.println("Problem in loading");
+        }
+
+
 
     }
     public void hideThings(){

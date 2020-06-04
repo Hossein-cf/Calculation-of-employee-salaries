@@ -13,13 +13,13 @@ public enum Front_End {
     TypeScript((byte) 7),
     ES6((byte) 5),
     yarn((byte) 5),
-    npm((byte) 0),
-    CSSResponsive((byte) 0),
-    json((byte) 0),
-    ajax((byte) 0),
-    materialDesign((byte) 0),
-    bootStrap((byte) 0),
-    W3Css((byte) 0);
+    npm((byte) 5),
+    CSSResponsive((byte) 3),
+    json((byte) 3),
+    ajax((byte) 3),
+    materialDesign((byte) 3),
+    bootStrap((byte) 5),
+    W3Css((byte) 5);
 
     private final byte value;
 

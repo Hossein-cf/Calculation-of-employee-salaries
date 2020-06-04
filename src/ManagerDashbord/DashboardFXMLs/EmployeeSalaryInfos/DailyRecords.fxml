@@ -3,6 +3,7 @@
 <?import com.jfoenix.controls.JFXButton?>
 <?import com.jfoenix.controls.JFXCheckBox?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
 <?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
@@ -11,9 +12,9 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="532.0" prefWidth="735.0" style="-fx-background-color: #e6ffff; -fx-background-radius: 30;" xmlns="http://javafx.com/javafx/8.0.221" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ManagerDashbord.DashboardControllers.ManagerSalaryPaneController">
+<AnchorPane prefHeight="532.0" prefWidth="735.0" style="-fx-background-color: #e6ffff; -fx-background-radius: 30;" xmlns="http://javafx.com/javafx/8.0.221" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ManagerDashbord.DashboardControllers.DailyRecordsController">
    <children>
-      <AnchorPane layoutX="43.0" layoutY="14.0" prefHeight="207.0" prefWidth="663.0" style="-fx-background-color: #e6ffff; -fx-background-radius: 10;">
+      <AnchorPane layoutX="36.0" layoutY="14.0" prefHeight="207.0" prefWidth="663.0" style="-fx-background-color: #e6ffff; -fx-background-radius: 10;">
          <children>
             <Label alignment="CENTER" layoutX="176.0" layoutY="8.0" prefHeight="19.0" prefWidth="284.0" text="Search your employee with Employee Code" textFill="#2907ae">
                <font>
@@ -34,31 +35,31 @@
             <Label alignment="CENTER" layoutX="61.0" layoutY="72.0" prefHeight="17.0" prefWidth="526.0" text=" " />
          </children>
       </AnchorPane>
-      <Pane fx:id="finalSalaryPane" layoutX="43.0" layoutY="216.0" prefHeight="302.0" prefWidth="663.0" style="-fx-background-color: #e6ffff; -fx-background-radius: 10;" visible="false">
+      <Pane fx:id="RecordSalaryPane" layoutX="36.0" layoutY="245.0" prefHeight="266.0" prefWidth="663.0" style="-fx-background-color: #e6ffff; -fx-background-radius: 10;">
          <children>
-            <Label alignment="CENTER" layoutX="182.0" layoutY="14.0" prefHeight="19.0" prefWidth="284.0" text="Calculating Final Salary " textFill="#2907ae">
+            <Label alignment="CENTER" layoutX="182.0" layoutY="14.0" prefHeight="19.0" prefWidth="284.0" text="daily records of this Employee" textFill="#2907ae">
                <font>
                   <Font name="System Bold" size="13.0" />
                </font>
             </Label>
-            <TextField fx:id="txtOverTimeHour" alignment="CENTER" layoutX="185.0" layoutY="90.0" prefHeight="34.0" prefWidth="39.0" />
-            <Label alignment="CENTER" layoutX="14.0" layoutY="46.0" prefHeight="19.0" prefWidth="284.0" text="complete the information about the Eployee">
+            <TextField fx:id="txtOverTimeHour" alignment="CENTER" layoutX="330.0" layoutY="158.0" prefHeight="34.0" prefWidth="39.0" />
+            <Label alignment="CENTER" layoutX="176.0" layoutY="55.0" prefHeight="19.0" prefWidth="284.0" text="complete the information about the Eployee">
                <font>
                   <Font name="System Bold" size="13.0" />
                </font>
             </Label>
-            <Label layoutX="95.0" layoutY="98.0" prefHeight="17.0" prefWidth="81.0" text="overtime hour" />
-            <Label layoutX="255.0" layoutY="101.0" prefHeight="17.0" prefWidth="81.0" text="vacation hour" />
-            <Label layoutX="438.0" layoutY="101.0" prefHeight="17.0" prefWidth="81.0" text="Absence Days" />
-            <TextField fx:id="txtVacationHour" alignment="CENTER" layoutX="343.0" layoutY="91.0" prefHeight="34.0" prefWidth="39.0" />
-            <TextField fx:id="txtAbsenceDays" alignment="CENTER" layoutX="530.0" layoutY="93.0" prefHeight="34.0" prefWidth="39.0" />
-            <TextArea fx:id="txtDescribeMission" layoutX="177.0" layoutY="183.0" prefHeight="62.0" prefWidth="294.0" promptText="Description of the mission" />
-            <JFXCheckBox fx:id="checkDoingMission" layoutX="91.0" layoutY="151.0" prefHeight="18.0" prefWidth="157.0" text="Doing any mission?" />
-            <JFXButton fx:id="btnCalculateFinalSalary" buttonType="RAISED" layoutX="169.0" layoutY="257.0" prefHeight="34.0" prefWidth="310.0" text="Calculate final salary and Issuance of receipt" underline="true">
+            <Label layoutX="243.0" layoutY="166.0" prefHeight="17.0" prefWidth="81.0" text="overtime hour" />
+            <Label layoutX="457.0" layoutY="170.0" prefHeight="17.0" prefWidth="81.0" text="vacation hour" />
+            <TextField fx:id="txtVacationHour" alignment="CENTER" layoutX="538.0" layoutY="158.0" prefHeight="34.0" prefWidth="39.0" />
+            <JFXButton fx:id="btnConfirm" buttonType="RAISED" layoutX="241.0" layoutY="218.0" prefHeight="34.0" prefWidth="155.0" text="Confirm" underline="true">
                <font>
                   <Font name="System Bold" size="13.0" />
                </font>
             </JFXButton>
+            <TextField fx:id="txtWorkingTime" alignment="CENTER" layoutX="149.0" layoutY="157.0" prefHeight="34.0" prefWidth="39.0" />
+            <Label layoutX="59.0" layoutY="165.0" prefHeight="17.0" prefWidth="81.0" text="working hours" />
+            <JFXCheckBox fx:id="checkAbsent" layoutX="259.0" layoutY="94.0" onMouseClicked="#checkAbsence" prefHeight="18.0" prefWidth="130.0" text="Was Absent today?" />
+            <Separator layoutX="120.0" layoutY="138.0" prefHeight="3.0" prefWidth="420.0" />
          </children>
       </Pane>
    </children>

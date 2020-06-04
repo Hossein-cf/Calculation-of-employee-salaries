@@ -6,9 +6,11 @@ import employeeTypes.*;
 import extras.Employee;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.event.EventHandler;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.input.KeyEvent;
 
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -50,6 +52,15 @@ public class SubmitFormController implements Initializable {
     private int Score = 0;
     private Employee employee;
 
+    public TableView tblSpecialties;
+    public Label lblAlert1;
+    public Label lblAlert2;
+
+
+    private void alert(String message, Label lbl, String color) {
+        lbl.setText(message);
+        lbl.setStyle("-fx-text-fill: " + color + ";");
+    }
 
     public void DonePersonalInfo() {
         employee.setName(txtFirstName.getText());
@@ -63,9 +74,17 @@ public class SubmitFormController implements Initializable {
         employee.setPhoneNumber(Long.parseLong(txtPhoneNumber.getText()));
         employee.setAddress(txtAddress.getText());
         employee.setCertificate(comboLevelOfEduction.getValue().toString());
+        if(txtFirstName.getText().equals("")||txtLastName.getText().equals("")||txtFatherName.getText().equals("")||txtNationalCode.getText().equals("")||txtBornPlace.getText().equals("")||bornData.getValue()==null||comboGender.getSelectionModel().getSelectedIndex()==-1||comboLevelOfEduction.getSelectionModel().getSelectedIndex()==-1||txtAddress.getText().equals("")||txtPostalCode.getText().equals("")||txtPhoneNumber.getText().equals("")){
+            alert("Fill the blanks",lblAlert1,"red");
+        }
+
+
     }
 
     public void DoneExperienceTime() {
+
+
+
         if (gitCheck.isSelected()) {
             Score += GIT;
         }
@@ -101,6 +120,7 @@ public class SubmitFormController implements Initializable {
                 Score += EmployeeType.valueOf(tableFormat.getExpertise()).getValue();
             }
         }
+
 
     }
 
@@ -180,10 +200,65 @@ public class SubmitFormController implements Initializable {
 
     }
 
+    public EventHandler<KeyEvent> letter_Validation(final Integer max_Lengh) {
+        return new EventHandler<KeyEvent>() {
+            @Override
+            public void handle(KeyEvent e) {
+                TextField txt_TextField = (TextField) e.getSource();
+                if (txt_TextField.getText().length() >= max_Lengh) {
+                    e.consume();
+                }
+                if (e.getCharacter().matches("[ا-ی-ن]") || e.getCharacter().matches("[ ]")|| e.getCharacter().matches("[A-Za-z]")) {
+                } else {
+                    e.consume();
+                }
+            }
+        };
+    }
+
+    public EventHandler<KeyEvent> numeric_Validation(final Integer max_Lengh) {
+        return new EventHandler<KeyEvent>() {
+            @Override
+            public void handle(KeyEvent e) {
+                TextField txt_TextField = (TextField) e.getSource();
+                if (txt_TextField.getText().length() >= max_Lengh) {
+                    e.consume();
+                }
+                if (e.getCharacter().matches("[0-9.]")) {
+                    if (txt_TextField.getText().contains(".") && e.getCharacter().matches("[.]")) {
+                        e.consume();
+                    } else if (txt_TextField.getText().length() == 0 && e.getCharacter().matches("[.]")) {
+                        e.consume();
+                    }
+                } else {
+                    e.consume();
+                }
+            }
+        };
+    }
+
+
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         employee = new Employee();
         employee.setEmployeeType(ManagerEmploymentController.getEmployeeType());
+
+
+        txtFirstName.addEventFilter(KeyEvent.KEY_TYPED, letter_Validation(15));
+        txtLastName.addEventFilter(KeyEvent.KEY_TYPED, letter_Validation(15));
+        txtLastName.addEventFilter(KeyEvent.KEY_TYPED, letter_Validation(15));
+        txtFatherName.addEventFilter(KeyEvent.KEY_TYPED, letter_Validation(15));
+        txtNationalCode.addEventFilter(KeyEvent.KEY_TYPED, numeric_Validation(10));
+        txtBornPlace.addEventFilter(KeyEvent.KEY_TYPED, letter_Validation(15));
+        txtAddress.addEventFilter(KeyEvent.KEY_TYPED, letter_Validation(15));
+        txtPostalCode.addEventFilter(KeyEvent.KEY_TYPED, letter_Validation(15));
+        txtPhoneNumber.addEventFilter(KeyEvent.KEY_TYPED, numeric_Validation(10));
+        txtLastCompanyName.addEventFilter(KeyEvent.KEY_TYPED, letter_Validation(15));
+
+
+
+
+
 
         setTableEmployeeSpecialties();
         String[] LevelOfEduction = {"Diploma", "Bachelor", "MA"};

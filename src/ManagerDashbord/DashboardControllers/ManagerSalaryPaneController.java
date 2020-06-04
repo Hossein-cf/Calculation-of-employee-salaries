@@ -17,4 +17,13 @@ public class ManagerSalaryPaneController  {
     public TextArea txtDescribeMission;
     public JFXCheckBox checkDoingMission;
     public JFXButton btnCalculateFinalSalary;
+
+
+    public void loadSalaryReceipt(){
+
+
+
+    }
+
+
 }
