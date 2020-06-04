@@ -18,8 +18,7 @@ public class BackEnd  implements CalculationSalary {
     private boolean Docker ;
     private final int FINAL_SCORE=50;
 
-    public double baseSalary = 0 ;
-    public final double finalSalary = finalSalaryFormula(baseSalary);
+
 
 
     public int getFINAL_SCORE() {
@@ -115,67 +114,78 @@ public class BackEnd  implements CalculationSalary {
     }
 
     @Override
-    public double calculateMoneyForHolidayWorks(int days) {
-        return 0;
+    public double calculateMoneyForHolidayWorks( double baseSalary) {
+
+
+        return baseSalary*2;
     }
 
     @Override
-    public double calculateMoneyForOverTimeWork(double hours) {
-        return 0;
+    public double calculateMoneyForOverTimeWork(double hours , double baseSalary) {
+
+        return baseSalary/(192*1.4*hours);
     }
 
     @Override
-    public double calculateMoneyForNightWork(int days) {
-        return 0;
+    public double calculateMoneyForNightWork(double hours , double baseSalary) {
+        return baseSalary/(192*1.35*hours) ;
+    }
+
+
+
+
+
+    @Override
+    public double calculateMoneyForVacationHour(double hours , double baseSalary) {
+        return baseSalary/(192*1.4*hours);
     }
 
     @Override
-    public double calculateMoneyForMorningWork(int days) {
-        return 0;
+    public double calculateMoneyForTax(double finalSalary) {
+        double tax = 0 ;
+        if (finalSalary<=3300000){
+            tax = 0;
+        }
+        if (finalSalary>3300000&&finalSalary<=8250000){
+            tax = -(finalSalary*0.1);
+        }
+        if (finalSalary>8250000&&finalSalary<=11550000){
+            tax = -(finalSalary*0.15);
+        }
+        if (finalSalary>11550000&&finalSalary<=16500000){
+            tax = -(finalSalary*0.20);
+        }
+        if (finalSalary>16500000&&finalSalary<=23100000){
+            tax = -(finalSalary*0.25);
+        }
+        if (finalSalary>23100000){
+            tax = -(finalSalary*0.35);
+        }
+        return tax ;
     }
 
     @Override
-    public double calculateMoneyForAfternoonWork(int days) {
-        return 0;
+    public double calculateInsurance(double finalSalary) {
+        return -(finalSalary*0.07);
     }
 
     @Override
-    public double calculateMoneyForFullTimeWork(int days) {
-        return 0;
+    public double calculateYears(int years, double baseSalary) {
+        double yearSalary =baseSalary ;
+        for (int i = 0 ; i <years ; i++){
+            yearSalary += yearSalary * 0.2 ;
+        }
+        return yearSalary;
     }
 
-    @Override
-    public double calculateMoneyForVacationHour(double hours) {
-        return 0;
-    }
 
-    @Override
-    public double calculateMoneyForTax(double salary) {
-        return 0;
-    }
-
-    @Override
-    public double calculateInsurance(double insurance) {
-        return 0;
-    }
-
-    @Override
-    public double calculateRightToHousing(double baseSalary) {
-        return 0;
-    }
 
     @Override
     public double calculateFinalSalary() {
         return 0;
     }
 
-    private double finalSalaryFormula(double baseSalary){
 
-
-
-
-        return finalSalary;
-    }
 
 
     @Override
