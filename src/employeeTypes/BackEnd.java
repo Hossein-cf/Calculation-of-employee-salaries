@@ -1,8 +1,9 @@
 package employeeTypes;
 
+import extras.CalculationSalary;
 import extras.Employee;
 
-public class BackEnd extends Employee {
+public class BackEnd  implements CalculationSalary {
 
     private boolean python ;
     private boolean ruby ;
@@ -102,5 +103,60 @@ public class BackEnd extends Employee {
 
     public void setDocker(boolean docker) {
         Docker = docker;
+    }
+
+    @Override
+    public double calculateMoneyForHolidayWorks(int days) {
+        return 0;
+    }
+
+    @Override
+    public double calculateMoneyForOverTimeWork(double hours) {
+        return 0;
+    }
+
+    @Override
+    public double calculateMoneyForNightWork(int days) {
+        return 0;
+    }
+
+    @Override
+    public double calculateMoneyForMorningWork(int days) {
+        return 0;
+    }
+
+    @Override
+    public double calculateMoneyForAfternoonWork(int days) {
+        return 0;
+    }
+
+    @Override
+    public double calculateMoneyForFullTimeWork(int days) {
+        return 0;
+    }
+
+    @Override
+    public double calculateMoneyForVacationHour(double hours) {
+        return 0;
+    }
+
+    @Override
+    public double calculateMoneyForTax(double salary) {
+        return 0;
+    }
+
+    @Override
+    public double calculateInsurance(double insurance) {
+        return 0;
+    }
+
+    @Override
+    public double calculateRightToHousing(double baseSalary) {
+        return 0;
+    }
+
+    @Override
+    public double calculateFinalSalary() {
+        return 0;
     }
 }

@@ -1,6 +1,8 @@
 package employeeTypes;
 
-public class FrontEnd {
+import extras.CalculationSalary;
+
+public class FrontEnd  implements CalculationSalary {
 
     private boolean html ;
     private boolean HTTP;
@@ -176,4 +178,58 @@ public class FrontEnd {
     public boolean W3Css;
 
 
+    @Override
+    public double calculateMoneyForHolidayWorks(int days) {
+        return 0;
+    }
+
+    @Override
+    public double calculateMoneyForOverTimeWork(double hours) {
+        return 0;
+    }
+
+    @Override
+    public double calculateMoneyForNightWork(int days) {
+        return 0;
+    }
+
+    @Override
+    public double calculateMoneyForMorningWork(int days) {
+        return 0;
+    }
+
+    @Override
+    public double calculateMoneyForAfternoonWork(int days) {
+        return 0;
+    }
+
+    @Override
+    public double calculateMoneyForFullTimeWork(int days) {
+        return 0;
+    }
+
+    @Override
+    public double calculateMoneyForVacationHour(double hours) {
+        return 0;
+    }
+
+    @Override
+    public double calculateMoneyForTax(double salary) {
+        return 0;
+    }
+
+    @Override
+    public double calculateInsurance(double insurance) {
+        return 0;
+    }
+
+    @Override
+    public double calculateRightToHousing(double baseSalary) {
+        return 0;
+    }
+
+    @Override
+    public double calculateFinalSalary() {
+        return 0;
+    }
 }
