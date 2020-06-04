@@ -10,6 +10,16 @@ public class Employee extends Person {
     private String certificate;
     private String workExperience;
     private String employeeLevel;
+    private double baseSalary;
+
+
+    public double getBaseSalary() {
+        return baseSalary;
+    }
+
+    public void setBaseSalary(double baseSalary) {
+        this.baseSalary = baseSalary;
+    }
 
     public String getEmployeeLevel() {
         return employeeLevel;

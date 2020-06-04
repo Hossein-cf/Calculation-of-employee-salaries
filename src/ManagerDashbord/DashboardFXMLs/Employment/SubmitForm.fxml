@@ -13,7 +13,7 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="881.0" prefWidth="672.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ManagerDashbord.DashboardControllers.SubmitFormController">
+<AnchorPane prefHeight="881.0" prefWidth="672.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/8.0.221" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ManagerDashbord.DashboardControllers.SubmitFormController">
    <children>
       <Pane layoutX="14.0" layoutY="14.0" prefHeight="254.0" prefWidth="643.0" style="-fx-background-color: #e6ffff; -fx-background-radius: 20;">
          <children>
@@ -31,7 +31,7 @@
             <TextField fx:id="txtPhoneNumber" layoutX="35.0" layoutY="169.0" prefHeight="25.0" prefWidth="192.0" promptText="Phone Number" />
             <TextField fx:id="txtAddress" layoutX="35.0" layoutY="127.0" prefHeight="25.0" prefWidth="418.0" promptText="Address" />
             <TextField fx:id="txtPostalCode" layoutX="470.0" layoutY="127.0" prefHeight="25.0" prefWidth="139.0" promptText="Postal Code" />
-            <JFXButton fx:id="btnDonePersonalInfo" layoutX="287.0" layoutY="208.0" prefHeight="32.0" prefWidth="69.0" style="-fx-border-color: #000051; -fx-border-radius: 10;" text="Done!" textFill="#3f0097">
+            <JFXButton fx:id="btnDonePersonalInfo" layoutX="287.0" layoutY="208.0" onMouseClicked="#DonePersonalInfo" prefHeight="32.0" prefWidth="69.0" style="-fx-border-color: #000051; -fx-border-radius: 10;" text="Done!" textFill="#3f0097">
                <font>
                   <Font name="System Bold" size="14.0" />
                </font>
@@ -63,7 +63,7 @@
                   <Font name="System Bold" size="13.0" />
                </font>
             </Label>
-            <JFXButton fx:id="btnDoneExperience" layoutX="285.0" layoutY="130.0" prefHeight="21.0" prefWidth="69.0" style="-fx-border-color: #000051; -fx-border-radius: 10;" text="Done!" textFill="#3f0097">
+            <JFXButton fx:id="btnDoneExperience" layoutX="285.0" layoutY="130.0" onMouseClicked="#DoneExperienceTime" prefHeight="21.0" prefWidth="69.0" style="-fx-border-color: #000051; -fx-border-radius: 10;" text="Done!" textFill="#3f0097">
                <font>
                   <Font name="System Bold" size="14.0" />
                </font>
