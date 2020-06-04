@@ -180,9 +180,9 @@ public class BackEnd implements CalculationSalary {
 
 
     @Override
-    public double calculateFinalSalary() {
+    public double calculateFinalSalary(double primarySalary , double tax , double insurance) {
 
-        return 0;
+        return primarySalary + tax + insurance;
     }
 
     @Override
