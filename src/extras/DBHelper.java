@@ -47,7 +47,7 @@ public class DBHelper {
         close();
     }//end
 
-    private int insertJobInformation(double OverWorkTime, double HolidayWorkTime, int MorningWorkDays, int AfternoonWorkDays, int NightWorkDays, boolean MorningWork, boolean AfternoonWork, boolean NightWork, double VacationHour, boolean fullTime, int fullTimeWorks) {
+    private int insertJobInformation(double OverWorkTime, double HolidayWorkTime, double MorningWorkDays, double AfternoonWorkDays, double NightWorkDays, boolean MorningWork, boolean AfternoonWork, boolean NightWork, double VacationHour, boolean fullTime, double fullTimeWorks) {
         String select = "SELECT ID from JobInformation";
         String Query = "INSERT INTO JobInformation (OverWorkTime , HolidayWorkTime , MorningWorkDays ,AfternoonWorkDays , NightWorkDays , MorningWork , AfternoonWork , NightWork  ,VacationHour,FullTimeWork,FullTimeWorksDays) VALUE ('" + OverWorkTime + "' , '" + HolidayWorkTime + "' , '" + MorningWorkDays + "' ,'" + AfternoonWorkDays + "' , '" + NightWorkDays + "' , '" + MorningWork + "' , '" + AfternoonWork + "' , '" + NightWork + "'  ,'" + VacationHour + "','" + fullTime + "','" + fullTimeWorks + "');";
         try {

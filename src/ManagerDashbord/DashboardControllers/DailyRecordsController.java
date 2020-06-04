@@ -2,6 +2,8 @@ package ManagerDashbord.DashboardControllers;
 
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXCheckBox;
+import extras.DBHelper;
+import extras.Employee;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.Pane;
@@ -18,30 +20,26 @@ public class DailyRecordsController {
     public JFXButton btnConfirm;
     public TextField txtWorkingTime;
     public JFXCheckBox checkAbsent;
+    private Employee employee;
 
+    public void searchEmployee() {
+        employee =new DBHelper().selectEmployee(Long.parseLong(txtEmployeeCode.getText()));
+        //TODO set personal info to txtDescribeEmployee
 
-    public void searchEmployee(){
+    }
 
-
-
+    public void Confirm() {
 
 
     }
-    public void Confirm(){
 
+    public void checkAbsence() {
 
-
-
-
-    }
-    public void checkAbsence(){
-
-        if(checkAbsent.isSelected()){
+        if (checkAbsent.isSelected()) {
             txtWorkingTime.setDisable(true);
             txtOverTimeHour.setDisable(true);
             txtVacationHour.setDisable(true);
-        }
-        else {
+        } else {
 
             txtWorkingTime.setDisable(false);
             txtOverTimeHour.setDisable(false);
@@ -49,9 +47,6 @@ public class DailyRecordsController {
 
         }
     }
-
-
-
 
 
 }

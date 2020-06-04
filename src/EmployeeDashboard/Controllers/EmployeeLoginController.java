@@ -36,8 +36,8 @@ public class EmployeeLoginController implements Initializable {
 
 
         } else {
-             employee = dbHelper.selectEmployee(Long.parseLong(txtUserName.getText()));
-            if (employee != null && txtPassWord.getText().equals(employee.getNationalNumber())) {
+//             employee = dbHelper.selectEmployee(Long.parseLong(txtUserName.getText()));
+//            if (employee != null && txtPassWord.getText().equals(employee.getNationalNumber())) {
                 Parent root;
                 try {
                     Stage stage = (Stage) btnCheckProfile.getScene().getWindow();
@@ -53,9 +53,9 @@ public class EmployeeLoginController implements Initializable {
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
-            }else {
-                System.out.println("not found ");
-            }
+//            }else {
+//                System.out.println("not found ");
+//            }
         }
     }
     public void exit() {
