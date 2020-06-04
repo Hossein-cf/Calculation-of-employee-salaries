@@ -52,7 +52,7 @@ public class SubmitFormController implements Initializable {
     private int Score = 0;
     private Employee employee;
 
-    public TableView tblSpecialties;
+
     public Label lblAlert1;
     public Label lblAlert2;
 
