@@ -7,12 +7,12 @@ public class DBExpert implements CalculationSalary {
     public boolean DataBaseImplementationAndDesign;
     public boolean Bottleneck;
     public boolean BackupAndRecovery;
-    public boolean SQL ;
+    public boolean SQL;
     public boolean Replication;
-    public boolean dataBaseAdministration ;
-    public boolean backUpAndRecovery ;
-    public boolean clustering ;
-    private final int FINAL_SCORE=35;
+    public boolean dataBaseAdministration;
+    public boolean backUpAndRecovery;
+    public boolean clustering;
+    private final int FINAL_SCORE = 35;
 
     public int getFINAL_SCORE() {
         return FINAL_SCORE;
@@ -41,7 +41,6 @@ public class DBExpert implements CalculationSalary {
     public void setBackupAndRecovery(boolean backupAndRecovery) {
         BackupAndRecovery = backupAndRecovery;
     }
-
 
 
     public boolean isSQL() {
@@ -140,7 +139,49 @@ public class DBExpert implements CalculationSalary {
     }
 
     @Override
-    public double calculateBaseSalary(int score) {
-        return 0;
+    public double calculateBaseSalary(int score, String level, String workTime) {
+        double baseSalary = 0;
+
+        if (level.equals("Junior") && score > 35) {
+            baseSalary = 3000000;
+
+            if (score > 45) {
+
+                baseSalary = 3500000;
+            }
+            if (workTime.equals("full time")) {
+                baseSalary = 4000000;
+
+            }
+        } else if (level.equals("Mid-level") && score > 35) {
+            baseSalary = 6000000;
+
+            if (score > 45) {
+
+                baseSalary = 6500000;
+            }
+
+            if (workTime.equals("full time")) {
+
+                baseSalary = 7000000;
+            }
+        } else if (level.equals("Senior") && score > 35) {
+            baseSalary = 8500000;
+
+            if (score > 45) {
+
+                baseSalary = 9000000;
+            }
+
+            if (workTime.equals("full time")) {
+                baseSalary = 9500000 ;
+
+            }
+        }
+
+
+        return baseSalary;
     }
+
+
 }

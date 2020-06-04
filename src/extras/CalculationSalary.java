@@ -12,6 +12,6 @@ public interface CalculationSalary {
     double calculateInsurance(double insurance);
     double calculateRightToHousing(double baseSalary);
     double calculateFinalSalary();
-    double calculateBaseSalary(int score);
+    double calculateBaseSalary(int score ,String level  ,String workTime );
 
 }

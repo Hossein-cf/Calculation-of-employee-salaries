@@ -241,7 +241,33 @@ public class FrontEnd  implements CalculationSalary {
     }
 
     @Override
-    public double calculateBaseSalary(int score) {
-        return 0;
+    public double calculateBaseSalary(int score, String level, String workTime) {
+        double baseSalary = 0;
+        if (level.equals("Junior")&& score > 60) {
+            baseSalary = 2500000;
+            if(score>70) baseSalary  = 2700000;
+
+            if (workTime.equals("full time")) baseSalary = 3000000;
+
+        }
+
+        else if (level.equals("Mid-level")&& score > 60) {
+            baseSalary = 3500000;
+
+            if(score>70) baseSalary = 3800000;
+
+            if (workTime.equals("full time")) baseSalary = 4200000;
+        }
+
+        else if (level.equals("Senior")&& score > 60) {
+            baseSalary = 6000000;
+
+            if(score>70) baseSalary = 6300000;
+
+            if (workTime.equals("full time")) baseSalary = 6600000;
+        }
+        return baseSalary;
     }
+
+
 }
