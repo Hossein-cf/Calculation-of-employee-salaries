@@ -1,5 +1,6 @@
 package extras;
 
+import java.time.LocalDate;
 import java.util.Date;
 
 public class Person {
@@ -8,10 +9,20 @@ public class Person {
     private String fatherName;
     private String birthPlace;
     private String address;
+    private String gender;
     private long nationalNumber;
     private long phoneNumber;
-    private Date birthTime;
+    private LocalDate birthTime;
     private long postalCode;
+
+
+    public void setGender(String gender) {
+        this.gender = gender;
+    }
+
+    public String getGender() {
+        return gender;
+    }
 
     public String getName() {
         return name;
@@ -69,11 +80,11 @@ public class Person {
         this.phoneNumber = phoneNumber;
     }
 
-    public Date getBirthTime() {
+    public LocalDate getBirthTime() {
         return birthTime;
     }
 
-    public void setBirthTime(Date birthTime) {
+    public void setBirthTime(LocalDate birthTime) {
         this.birthTime = birthTime;
     }
 

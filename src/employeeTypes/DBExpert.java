@@ -12,6 +12,11 @@ public class DBExpert implements CalculationSalary {
     public boolean dataBaseAdministration ;
     public boolean backUpAndRecovery ;
     public boolean clustering ;
+    private final int FINAL_SCORE=0;
+
+    public int getFINAL_SCORE() {
+        return FINAL_SCORE;
+    }
 
     public boolean isDataBaseImplementationAndDesign() {
         return DataBaseImplementationAndDesign;

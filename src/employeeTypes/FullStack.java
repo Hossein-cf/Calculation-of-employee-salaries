@@ -21,6 +21,11 @@ public class FullStack implements CalculationSalary {
     public boolean xamarin ;
     public boolean security ;
     public boolean docker ;
+    private final int FINAL_SCORE=0;
+
+    public int getFINAL_SCORE() {
+        return FINAL_SCORE;
+    }
 
     public boolean isHTML() {
         return HTML;

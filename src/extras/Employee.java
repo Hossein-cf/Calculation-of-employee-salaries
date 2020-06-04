@@ -2,13 +2,13 @@ package extras;
 
 import employeeTypes.EmployeeType;
 
-public class Employee extends Person implements CalculationSalary {
+public class Employee extends Person {
     final double INSURANCE = 2000000;
     private SalaryInformation salaryInformation;
     private long employeeNumber;
     private EmployeeType employeeType;
     private String certificate;
-    private int workExperience;
+    private String workExperience;
     private String employeeLevel;
 
     public String getEmployeeLevel() {
@@ -39,11 +39,11 @@ public class Employee extends Person implements CalculationSalary {
         this.certificate = certificate;
     }
 
-    public int getWorkExperience() {
+    public String  getWorkExperience() {
         return workExperience;
     }
 
-    public void setWorkExperience(int workExperience) {
+    public void setWorkExperience(String  workExperience) {
         this.workExperience = workExperience;
     }
 
@@ -79,58 +79,4 @@ public class Employee extends Person implements CalculationSalary {
     }
 
 
-    @Override
-    public double calculateMoneyForHolidayWorks(int days) {
-        return 0;
-    }
-
-    @Override
-    public double calculateMoneyForOverTimeWork(double hours) {
-        return 0;
-    }
-
-    @Override
-    public double calculateMoneyForNightWork(int days) {
-        return 0;
-    }
-
-    @Override
-    public double calculateMoneyForMorningWork(int days) {
-        return 0;
-    }
-
-    @Override
-    public double calculateMoneyForAfternoonWork(int days) {
-        return 0;
-    }
-
-    @Override
-    public double calculateMoneyForFullTimeWork(int days) {
-        return 0;
-    }
-
-    @Override
-    public double calculateMoneyForVacationHour(double hours) {
-        return 0;
-    }
-
-    @Override
-    public double calculateMoneyForTax(double salary) {
-        return 0;
-    }
-
-    @Override
-    public double calculateInsurance(double insurance) {
-        return 0;
-    }
-
-    @Override
-    public double calculateRightToHousing(double baseSalary) {
-        return 0;
-    }
-
-    @Override
-    public double calculateFinalSalary() {
-        return 0;
-    }
 }

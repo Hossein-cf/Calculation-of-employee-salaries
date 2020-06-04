@@ -1,6 +1,7 @@
 package extras;
 
 import java.sql.*;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Date;
 
@@ -35,7 +36,7 @@ public class DBHelper {
         connection();
         SalaryInformation salaryInformation = employee.getSalaryInformation();
         int personID = insertPerson(employee.getName(), employee.getLastName(), employee.getFatherName(), employee.getNationalNumber(), employee.getBirthPlace() + "", employee.getBirthTime(), employee.getPhoneNumber() + "", employee.getAddress() + "", employee.getPostalCode() + "");
-        int jobInfoID = insertJobInformation(salaryInformation.getOverWorkTime(), salaryInformation.getHolidayWorkTime(), salaryInformation.getMorningWorkDays(), salaryInformation.getAfternoonWorkDays(), salaryInformation.getNightWorkDays(), salaryInformation.isMorningWork(), salaryInformation.isAfternoonWork(), salaryInformation.isNightWork(), salaryInformation.getVacationHour(), salaryInformation.isFullTime(), salaryInformation.getFullTimeWorks());
+        int jobInfoID = insertJobInformation(salaryInformation.getOverWorkTime(), salaryInformation.getHolidayWorkTime(), salaryInformation.getMorningWorkDays(), salaryInformation.getAfternoonWorkDays(), salaryInformation.getNightWorkDays(), salaryInformation.isMorningWork(), salaryInformation.isAfternoonWork(), salaryInformation.isNightWork(), salaryInformation.getVacationHour(), salaryInformation.isFullTime(), salaryInformation.getFullTimeWorksDays());
         String Query = "INSERT INTO Employee (IDPrson , IDJobInformation ,EmployeeNumber , Certificate , WorkExperience,EmployeeType) VALUE ('" + personID + "' , '" + jobInfoID + "' , '" + employee.getEmployeeNumber() + "','" + employee.getCertificate() + "','" + employee.getWorkExperience() + "','" + employee.getEmployeeType() + "');";
         try {
             statement.executeUpdate(Query);
@@ -80,7 +81,7 @@ public class DBHelper {
     }//end
 
     private void updateJobInformation(SalaryInformation jobInformation, int id) {
-        String Query = "UPDATE JobInformation set OverWorkTime = '" + jobInformation.getOverWorkTime() + "' , HolidayWorkTime = '" + jobInformation.getHolidayWorkTime() + "', MorningWorkDays = '" + jobInformation.getMorningWorkDays() + "' ,AfternoonWorkDays = '" + jobInformation.getAfternoonWorkDays() + "' , NightWorkDays = '" + jobInformation.getNightWorkDays() + "' , MorningWork = '" + jobInformation.isMorningWork() + "' , AfternoonWork = '" + jobInformation.isAfternoonWork() + "', NightWork = '" + jobInformation.isNightWork() + "'  ,VacationHour = '" + jobInformation.getVacationHour() + "' , FullTimeWorkDays = '" + jobInformation.getFullTimeWorks() + "' , FullTimeWork = '" + jobInformation.isFullTime() + "' where ID ='" + id + "';";
+        String Query = "UPDATE JobInformation set OverWorkTime = '" + jobInformation.getOverWorkTime() + "' , HolidayWorkTime = '" + jobInformation.getHolidayWorkTime() + "', MorningWorkDays = '" + jobInformation.getMorningWorkDays() + "' ,AfternoonWorkDays = '" + jobInformation.getAfternoonWorkDays() + "' , NightWorkDays = '" + jobInformation.getNightWorkDays() + "' , MorningWork = '" + jobInformation.isMorningWork() + "' , AfternoonWork = '" + jobInformation.isAfternoonWork() + "', NightWork = '" + jobInformation.isNightWork() + "'  ,VacationHour = '" + jobInformation.getVacationHour() + "' , FullTimeWorkDays = '" + jobInformation.getFullTimeWorksDays() + "' , FullTimeWork = '" + jobInformation.isFullTime() + "' where ID ='" + id + "';";
         try {
             statement.executeUpdate(Query);
         } catch (SQLException e) {
@@ -88,7 +89,7 @@ public class DBHelper {
         }
     }//end
 
-    private void updatePeron(String name, String lastName, String fatherName, long nationalNumber, String bornPlace, Date birthTime, String phoneNumber, String address, String postalCode, int id) {
+    private void updatePeron(String name, String lastName, String fatherName, long nationalNumber, String bornPlace, LocalDate birthTime, String phoneNumber, String address, String postalCode, int id) {
         String Query = "UPDATE Person set Name = '" + name + "' , LastName = '" + lastName + "',FatherName ='" + fatherName + "', NationalNumber = '" + nationalNumber + "',BornPlace = '" + bornPlace + "' , Address = '" + address + "' , PhoneNumber ='" + phoneNumber + "' , BirthTime = '" + birthTime + "' , PostalCode= '" + postalCode + "' where ID = '" + id + "'";
         try {
             statement.executeUpdate(Query);
@@ -107,7 +108,7 @@ public class DBHelper {
                 person.setName(resultSet.getString("Name"));
                 person.setLastName(resultSet.getString("LastName"));
                 person.setNationalNumber(resultSet.getLong("NationalNumber"));
-                person.setBirthTime(resultSet.getTime("BirthTime"));
+                person.setBirthTime(LocalDate.parse(resultSet.getString("BirthTime")));
                 person.setBirthPlace(resultSet.getString("BornPlace"));
                 person.setPhoneNumber(resultSet.getLong("PhoneNumber"));
                 person.setPostalCode(resultSet.getInt("PostalCode"));
@@ -137,7 +138,7 @@ public class DBHelper {
                 jobInformation.setNightWork(resultSet.getBoolean("NightWork"));
                 jobInformation.setVacationHour(resultSet.getDouble("VacationHour"));
                 jobInformation.setFullTime(resultSet.getBoolean("FullTimeWork"));
-                jobInformation.setFullTimeWorks(resultSet.getInt("FullTimeWorkDays"));
+                jobInformation.setFullTimeWorksDays(resultSet.getInt("FullTimeWorkDays"));
                 return jobInformation;
             } else
                 return null;
@@ -161,7 +162,7 @@ public class DBHelper {
                 employee.setEmployeeNumber(employeeNumber);
                 employee.setEmployeeType(resultSet.getString("EmployeeType"));
                 employee.setCertificate(resultSet.getNString("Certificate"));
-                employee.setWorkExperience(resultSet.getInt("WorkExperience"));
+                employee.setWorkExperience(resultSet.getString("WorkExperience"));
                 employee.setSalaryInformation(selectJobInformation(jobInfoID));
                 Person person = selectPerson(personID);
                 employee.setName(person.getName());
@@ -187,7 +188,7 @@ public class DBHelper {
         return null;
     }//end
 
-    public static int insertPerson(String name, String lastName, String fatherName, long nationalNumber, String bornPlace, Date birthTime, String phoneNumber, String address, String postalCode) {
+    public static int insertPerson(String name, String lastName, String fatherName, long nationalNumber, String bornPlace, LocalDate birthTime, String phoneNumber, String address, String postalCode) {
         String Query = "INSERT INTO Person (Name , LastName,FatherName , NationalNumber,BornPlace , Address , PhoneNumber , BirthTime , PostalCode) VALUES ('" + name + "','" + lastName + "','" + fatherName + "','" + nationalNumber + "','" + bornPlace + "','" + address + "','" + phoneNumber + "','" + birthTime + "','" + postalCode + "'); ";
         try {
             statement.executeUpdate(Query);

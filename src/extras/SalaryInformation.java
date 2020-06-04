@@ -1,20 +1,16 @@
 package extras;
 
-import employeeTypes.EmployeeType;
-
-import java.util.Date;
-
 public class SalaryInformation  {
     private double OverWorkTime, HolidayWorkTime, VacationHour;
-    private int MorningWorkDays, AfternoonWorkDays, NightWorkDays,fullTimeWorks;
+    private int MorningWorkDays, AfternoonWorkDays, NightWorkDays,fullTimeWorksDays;
     private boolean MorningWork, AfternoonWork, NightWork,fullTime;
 
-    public int getFullTimeWorks() {
-        return fullTimeWorks;
+    public int getFullTimeWorksDays() {
+        return fullTimeWorksDays;
     }
 
-    public void setFullTimeWorks(int fullTimeWorks) {
-        this.fullTimeWorks = fullTimeWorks;
+    public void setFullTimeWorksDays(int fullTimeWorks) {
+        this.fullTimeWorksDays = fullTimeWorks;
     }
 
     public boolean isFullTime() {
