@@ -54,6 +54,8 @@ public class SubmitFormController implements Initializable {
     private Employee employee;
 
 
+
+
     public Label lblAlert1;
     public Label lblAlert2;
 
@@ -122,19 +124,20 @@ public class SubmitFormController implements Initializable {
             }
         }
         if (checkScore(Score)) {
+
             String employeeNumber = new GenerateEmployeeNumber().generateNumber();
             employee.setEmployeeNumber(Long.parseLong(employeeNumber));
             EmployeeType employeeType = ManagerEmploymentController.getEmployeeType();
             if (employeeType == EmployeeType.FullStack)
-                employee.setBaseSalary(new FullStack().calculateBaseSalary(Score));
+                employee.setBaseSalary(new FullStack().calculateBaseSalary(Score , ManagerEmploymentController.getEmployeeLevel(),ManagerEmploymentController.getWorkTime()));
             else if (employeeType == EmployeeType.FrontEnd)
-                employee.setBaseSalary(new FrontEnd().calculateBaseSalary(Score));
+                employee.setBaseSalary(new FrontEnd().calculateBaseSalary(Score, ManagerEmploymentController.getEmployeeLevel(),ManagerEmploymentController.getWorkTime()));
             else if (employeeType == EmployeeType.BackEnd)
-                employee.setBaseSalary(new BackEnd().calculateBaseSalary(Score));
+                employee.setBaseSalary(new BackEnd().calculateBaseSalary(Score, ManagerEmploymentController.getEmployeeLevel(),ManagerEmploymentController.getWorkTime()));
             else if (employeeType == EmployeeType.DBExpert)
-                employee.setBaseSalary(new DBExpert().calculateBaseSalary(Score));
+                employee.setBaseSalary(new DBExpert().calculateBaseSalary(Score, ManagerEmploymentController.getEmployeeLevel(),ManagerEmploymentController.getWorkTime()));
             else if (employeeType == EmployeeType.NetworkSecurityExpert)
-                employee.setBaseSalary(new NetworkSecurityExpert().calculateBaseSalary(Score));
+                employee.setBaseSalary(new NetworkSecurityExpert().calculateBaseSalary(Score, ManagerEmploymentController.getEmployeeLevel(),ManagerEmploymentController.getWorkTime()));
 
 
         } else {
@@ -142,6 +145,7 @@ public class SubmitFormController implements Initializable {
         }
 
     }
+
 
     private boolean checkScore(int Score) {
         EmployeeType employeeType = ManagerEmploymentController.getEmployeeType();
@@ -259,6 +263,7 @@ public class SubmitFormController implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+
         employee = new Employee();
         employee.setEmployeeType(ManagerEmploymentController.getEmployeeType());
 

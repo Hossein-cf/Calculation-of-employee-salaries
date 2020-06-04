@@ -3,20 +3,20 @@ package employeeTypes;
 import extras.CalculationSalary;
 import extras.Employee;
 
-public class BackEnd  implements CalculationSalary {
+public class BackEnd implements CalculationSalary {
 
-    private boolean python ;
-    private boolean ruby ;
+    private boolean python;
+    private boolean ruby;
     private boolean node_JS;
     private boolean PHP7;
-    private boolean ASP_NET ;
+    private boolean ASP_NET;
     private boolean webServer;
     private boolean SQLServer;
-    private boolean OracleDatabase ;
-    private boolean RestfulAPIs ;
-    private boolean Security ;
-    private boolean Docker ;
-    private final int FINAL_SCORE=50;
+    private boolean OracleDatabase;
+    private boolean RestfulAPIs;
+    private boolean Security;
+    private boolean Docker;
+    private final int FINAL_SCORE = 50;
 
     public int getFINAL_SCORE() {
         return FINAL_SCORE;
@@ -165,8 +165,46 @@ public class BackEnd  implements CalculationSalary {
         return 0;
     }
 
+
+
     @Override
-    public double calculateBaseSalary(int score) {
-        return 0;
+    public  double calculateBaseSalary(int score, String level, String workTime) {
+        double baseSalary = 0;
+        //"Junior", "Mid-level", "Senior"
+        //"full time", "Morning Work", "afternoon Work", "night work"
+        if (level.equals("Junior")&& score > 50) {
+            baseSalary = 2700000;
+                if(score>60) baseSalary = 3200000;
+                if(workTime.equals("full time")) baseSalary = 3700000;
+
+        } else if (level.equals("Mid-level")&& score > 50) {
+
+                baseSalary = 4000000;
+
+                if(score>60) {
+                    baseSalary = 4700000;
+                }
+            if(workTime.equals("full time")){
+
+                baseSalary = 5200000;
+            }
+        } else if (level.equals("Senior")&& score > 50) {
+                baseSalary = 7000000;
+
+                if(score>60) {
+                    baseSalary = 7900000;
+                }
+            if(workTime.equals("full time")){
+
+                baseSalary = 8500000;
+            }
+
+        }
+
+
+        return baseSalary;
     }
+
+
+
 }
