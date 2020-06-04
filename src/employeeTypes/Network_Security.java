@@ -1,15 +1,15 @@
 package employeeTypes;
 
 public enum Network_Security {
-    UTM((byte) 0),
-    ISMS((byte) 0),
-    PLC((byte) 0),
-    CEH((byte) 0),
-    CISSP((byte) 0),
-    CCNA((byte) 0),
-    QOD((byte) 0),
-    HAIPE_IP((byte) 0),
-    MPLS((byte) 0);
+    UTM((byte) 10),
+    ISMS((byte) 5),
+    PLC((byte) 5),
+    CEH((byte) 10),
+    CISSP((byte) 10),
+    CCNA((byte) 10),
+    QOD((byte) 5),
+    HAIPE_IP((byte) 5),
+    MPLS((byte) 5);
     public final byte value;
 
     Network_Security(byte value) {
