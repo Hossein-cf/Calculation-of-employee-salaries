@@ -17,7 +17,7 @@
                </font>
             </Label>
             <JFXTimePicker fx:id="EnterTime" defaultColor="#00a42f" layoutX="159.0" layoutY="100.0" prefHeight="28.0" prefWidth="143.0" promptText="Enter time" />
-            <JFXTimePicker fx:id="ExiteTime" defaultColor="#ff0202" layoutX="353.0" layoutY="100.0" prefHeight="28.0" prefWidth="143.0" promptText="Exit time" />
+            <JFXTimePicker fx:id="ExitTime" defaultColor="#ff0202" layoutX="353.0" layoutY="100.0" prefHeight="28.0" prefWidth="143.0" promptText="Exit time" />
             <JFXButton fx:id="btnConfirm" layoutX="278.0" layoutY="277.0" prefHeight="32.0" prefWidth="94.0" style="-fx-border-color: #000051; -fx-border-radius: 10;" text="Confirm" textFill="#3f0097">
                <font>
                   <Font name="System Bold" size="14.0" />
