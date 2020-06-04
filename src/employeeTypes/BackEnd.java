@@ -16,7 +16,7 @@ public class BackEnd  implements CalculationSalary {
     private boolean RestfulAPIs ;
     private boolean Security ;
     private boolean Docker ;
-    private final int FINAL_SCORE=0;
+    private final int FINAL_SCORE=50;
 
     public double baseSalary = 0 ;
     public final double finalSalary = finalSalaryFormula(baseSalary);
@@ -25,8 +25,6 @@ public class BackEnd  implements CalculationSalary {
     public int getFINAL_SCORE() {
         return FINAL_SCORE;
     }
-
-
 
     public boolean isPython() {
         return python;
@@ -179,4 +177,9 @@ public class BackEnd  implements CalculationSalary {
         return finalSalary;
     }
 
+
+    @Override
+    public double calculateBaseSalary(int score) {
+        return 0;
+    }
 }

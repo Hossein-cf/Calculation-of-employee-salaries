@@ -12,7 +12,7 @@ public class DBExpert implements CalculationSalary {
     public boolean dataBaseAdministration ;
     public boolean backUpAndRecovery ;
     public boolean clustering ;
-    private final int FINAL_SCORE=0;
+    private final int FINAL_SCORE=35;
 
     public int getFINAL_SCORE() {
         return FINAL_SCORE;
@@ -136,6 +136,11 @@ public class DBExpert implements CalculationSalary {
 
     @Override
     public double calculateFinalSalary() {
+        return 0;
+    }
+
+    @Override
+    public double calculateBaseSalary(int score) {
         return 0;
     }
 }

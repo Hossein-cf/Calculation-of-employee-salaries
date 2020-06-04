@@ -25,7 +25,7 @@ public class FrontEnd  implements CalculationSalary {
     public boolean materialDesign ;
     public boolean bootStrap ;
     public boolean W3Css;
-    private final int FINAL_SCORE=0;
+    private final int FINAL_SCORE=60;
 
     public int getFINAL_SCORE() {
         return FINAL_SCORE;
@@ -237,6 +237,11 @@ public class FrontEnd  implements CalculationSalary {
 
     @Override
     public double calculateFinalSalary() {
+        return 0;
+    }
+
+    @Override
+    public double calculateBaseSalary(int score) {
         return 0;
     }
 }

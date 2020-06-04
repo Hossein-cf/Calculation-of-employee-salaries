@@ -4,6 +4,7 @@ import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXCheckBox;
 import employeeTypes.*;
 import extras.Employee;
+import extras.GenerateEmployeeNumber;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.EventHandler;
@@ -45,14 +46,14 @@ public class SubmitFormController implements Initializable {
     private final byte TELEWORKING = 1;
     private final byte MAC_LINUX = 1;
 
-    private final byte NOT_HAVE = 1;
-    private final byte UNDER_ONE_YEAR = 1;
-    private final byte OVER_A_YEAR = 1;
-    private final byte MORE_THAN_FOUR_YEAR = 1;
+    private final byte NOT_HAVE = 0;
+    private final byte UNDER_ONE_YEAR = 5;
+    private final byte OVER_A_YEAR = 7;
+    private final byte MORE_THAN_FOUR_YEAR = 15;
     private int Score = 0;
     private Employee employee;
 
-    public TableView tblSpecialties;
+
     public Label lblAlert1;
     public Label lblAlert2;
 
@@ -63,26 +64,26 @@ public class SubmitFormController implements Initializable {
     }
 
     public void DonePersonalInfo() {
-        employee.setName(txtFirstName.getText());
-        employee.setLastName(txtLastName.getText());
-        employee.setFatherName(txtFatherName.getText());
-        employee.setNationalNumber(Long.parseLong(txtNationalCode.getText()));
-        employee.setBirthTime(bornData.getValue());
-        employee.setBirthPlace(txtBornPlace.getText());
-        employee.setGender(comboGender.getValue().toString());
-        employee.setPostalCode(Long.parseLong(txtPostalCode.getText()));
-        employee.setPhoneNumber(Long.parseLong(txtPhoneNumber.getText()));
-        employee.setAddress(txtAddress.getText());
-        employee.setCertificate(comboLevelOfEduction.getValue().toString());
-        if(txtFirstName.getText().equals("")||txtLastName.getText().equals("")||txtFatherName.getText().equals("")||txtNationalCode.getText().equals("")||txtBornPlace.getText().equals("")||bornData.getValue()==null||comboGender.getSelectionModel().getSelectedIndex()==-1||comboLevelOfEduction.getSelectionModel().getSelectedIndex()==-1||txtAddress.getText().equals("")||txtPostalCode.getText().equals("")||txtPhoneNumber.getText().equals("")){
-            alert("Fill the blanks",lblAlert1,"red");
-        }
+        if (txtFirstName.getText().equals("") || txtLastName.getText().equals("") || txtFatherName.getText().equals("") || txtNationalCode.getText().equals("") || txtBornPlace.getText().equals("") || bornData.getValue() == null || comboGender.getSelectionModel().getSelectedIndex() == -1 || comboLevelOfEduction.getSelectionModel().getSelectedIndex() == -1 || txtAddress.getText().equals("") || txtPostalCode.getText().equals("") || txtPhoneNumber.getText().equals("")) {
+            alert("Fill the blanks", lblAlert1, "red");
+        } else {
 
+            employee.setName(txtFirstName.getText());
+            employee.setLastName(txtLastName.getText());
+            employee.setFatherName(txtFatherName.getText());
+            employee.setNationalNumber(Long.parseLong(txtNationalCode.getText()));
+            employee.setBirthTime(bornData.getValue());
+            employee.setBirthPlace(txtBornPlace.getText());
+            employee.setGender(comboGender.getValue().toString());
+            employee.setPostalCode(Long.parseLong(txtPostalCode.getText()));
+            employee.setPhoneNumber(Long.parseLong(txtPhoneNumber.getText()));
+            employee.setAddress(txtAddress.getText());
+            employee.setCertificate(comboLevelOfEduction.getValue().toString());
+        }
 
     }
 
     public void DoneExperienceTime() {
-
 
 
         if (gitCheck.isSelected()) {
@@ -120,7 +121,25 @@ public class SubmitFormController implements Initializable {
                 Score += EmployeeType.valueOf(tableFormat.getExpertise()).getValue();
             }
         }
+        if (checkScore(Score)) {
+            String employeeNumber = new GenerateEmployeeNumber().generateNumber();
+            employee.setEmployeeNumber(Long.parseLong(employeeNumber));
+            EmployeeType employeeType = ManagerEmploymentController.getEmployeeType();
+            if (employeeType == EmployeeType.FullStack)
+                employee.setBaseSalary(new FullStack().calculateBaseSalary(Score));
+            else if (employeeType == EmployeeType.FrontEnd)
+                employee.setBaseSalary(new FrontEnd().calculateBaseSalary(Score));
+            else if (employeeType == EmployeeType.BackEnd)
+                employee.setBaseSalary(new BackEnd().calculateBaseSalary(Score));
+            else if (employeeType == EmployeeType.DBExpert)
+                employee.setBaseSalary(new DBExpert().calculateBaseSalary(Score));
+            else if (employeeType == EmployeeType.NetworkSecurityExpert)
+                employee.setBaseSalary(new NetworkSecurityExpert().calculateBaseSalary(Score));
 
+
+        } else {
+// karmand mojaz be estexdam nist
+        }
 
     }
 
@@ -254,10 +273,6 @@ public class SubmitFormController implements Initializable {
         txtPostalCode.addEventFilter(KeyEvent.KEY_TYPED, letter_Validation(15));
         txtPhoneNumber.addEventFilter(KeyEvent.KEY_TYPED, numeric_Validation(10));
         txtLastCompanyName.addEventFilter(KeyEvent.KEY_TYPED, letter_Validation(15));
-
-
-
-
 
 
         setTableEmployeeSpecialties();

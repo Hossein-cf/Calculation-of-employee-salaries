@@ -12,7 +12,7 @@ public class NetworkSecurityExpert implements CalculationSalary {
     public boolean QOD;
     public boolean HAIPE_IP;
     public boolean MPLS;
-    private final int FINAL_SCORE=0;
+    private final int FINAL_SCORE=40;
 
     public int getFINAL_SCORE() {
         return FINAL_SCORE;
@@ -144,6 +144,11 @@ public class NetworkSecurityExpert implements CalculationSalary {
 
     @Override
     public double calculateFinalSalary() {
+        return 0;
+    }
+
+    @Override
+    public double calculateBaseSalary(int score) {
         return 0;
     }
 }
