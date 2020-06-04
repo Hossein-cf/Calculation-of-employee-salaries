@@ -3,6 +3,7 @@ package ManagerDashbord.DashboardControllers;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXCheckBox;
 import employeeTypes.*;
+import extras.CreateEmployeeNumber;
 import extras.Employee;
 import extras.GenerateEmployeeNumber;
 import javafx.collections.FXCollections;
@@ -50,6 +51,9 @@ public class SubmitFormController implements Initializable {
     private final byte UNDER_ONE_YEAR = 5;
     private final byte OVER_A_YEAR = 7;
     private final byte MORE_THAN_FOUR_YEAR = 15;
+    public Label alert3;
+    public Label alert1;
+    public Label alert2;
     private int Score = 0;
     private Employee employee;
 
@@ -81,6 +85,9 @@ public class SubmitFormController implements Initializable {
             employee.setPhoneNumber(Long.parseLong(txtPhoneNumber.getText()));
             employee.setAddress(txtAddress.getText());
             employee.setCertificate(comboLevelOfEduction.getValue().toString());
+
+            alert("Information recorded Successfully",alert1,"green");
+            btnDonePersonalInfo.setDisable(true);
         }
 
     }
@@ -113,6 +120,8 @@ public class SubmitFormController implements Initializable {
                 Score += MORE_THAN_FOUR_YEAR;
                 break;
         }
+        alert("Information recorded Successfully",alert2,"green");
+        btnDoneExperience.setDisable(true);
     }
 
     public void checkTheFinalStatus() {
@@ -140,7 +149,19 @@ public class SubmitFormController implements Initializable {
                 employee.setBaseSalary(new NetworkSecurityExpert().calculateBaseSalary(Score, ManagerEmploymentController.getEmployeeLevel(),ManagerEmploymentController.getWorkTime()));
 
 
+            CreateEmployeeNumber createEmployeeNumber = new CreateEmployeeNumber();
+            String employeeCode = createEmployeeNumber.createEmployeeCode() ;
+
+            //TODO setting Employee code in employee object
+            alert("The hiring process was successful and the employee's code id" + employeeCode ,alert3,"green");
+            btnCheckTheStatus.setDisable(true);
+            //create employee Number
+
+
+
         } else {
+            alert("Employees are not allowed to be employed",alert3,"red");
+            btnCheckTheStatus.setDisable(true);
 // karmand mojaz be estexdam nist
         }
 
