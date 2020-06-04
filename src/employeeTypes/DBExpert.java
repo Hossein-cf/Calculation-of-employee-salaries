@@ -138,4 +138,9 @@ public class DBExpert implements CalculationSalary {
     public double calculateFinalSalary() {
         return 0;
     }
+
+    @Override
+    public double calculateBaseSalary(int score) {
+        return 0;
+    }
 }
