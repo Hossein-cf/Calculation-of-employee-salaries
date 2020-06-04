@@ -2,9 +2,13 @@ package ManagerDashbord.DashboardControllers;
 
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXCheckBox;
+import extras.employeeTypes.*;
+import extras.DBHelper;
 import employeeTypes.*;
+import extras.CreateEmployeeNumber;
 import extras.Employee;
 import extras.GenerateEmployeeNumber;
+import extras.SalaryInformation;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.EventHandler;
@@ -54,6 +58,8 @@ public class SubmitFormController implements Initializable {
     private Employee employee;
 
 
+
+
     public Label lblAlert1;
     public Label lblAlert2;
 
@@ -79,6 +85,9 @@ public class SubmitFormController implements Initializable {
             employee.setPhoneNumber(Long.parseLong(txtPhoneNumber.getText()));
             employee.setAddress(txtAddress.getText());
             employee.setCertificate(comboLevelOfEduction.getValue().toString());
+
+            alert("Information recorded Successfully",alert1,"green");
+            btnDonePersonalInfo.setDisable(true);
         }
 
     }
@@ -111,6 +120,8 @@ public class SubmitFormController implements Initializable {
                 Score += MORE_THAN_FOUR_YEAR;
                 break;
         }
+        alert("Information recorded Successfully",alert2,"green");
+        btnDoneExperience.setDisable(true);
     }
 
     public void checkTheFinalStatus() {
@@ -122,26 +133,54 @@ public class SubmitFormController implements Initializable {
             }
         }
         if (checkScore(Score)) {
+
             String employeeNumber = new GenerateEmployeeNumber().generateNumber();
             employee.setEmployeeNumber(Long.parseLong(employeeNumber));
             EmployeeType employeeType = ManagerEmploymentController.getEmployeeType();
             if (employeeType == EmployeeType.FullStack)
-                employee.setBaseSalary(new FullStack().calculateBaseSalary(Score));
+                employee.setBaseSalary(new FullStack().calculateBaseSalary(Score , ManagerEmploymentController.getEmployeeLevel(),ManagerEmploymentController.getWorkTime()));
             else if (employeeType == EmployeeType.FrontEnd)
-                employee.setBaseSalary(new FrontEnd().calculateBaseSalary(Score));
+                employee.setBaseSalary(new FrontEnd().calculateBaseSalary(Score, ManagerEmploymentController.getEmployeeLevel(),ManagerEmploymentController.getWorkTime()));
             else if (employeeType == EmployeeType.BackEnd)
-                employee.setBaseSalary(new BackEnd().calculateBaseSalary(Score));
+                employee.setBaseSalary(new BackEnd().calculateBaseSalary(Score, ManagerEmploymentController.getEmployeeLevel(),ManagerEmploymentController.getWorkTime()));
             else if (employeeType == EmployeeType.DBExpert)
-                employee.setBaseSalary(new DBExpert().calculateBaseSalary(Score));
+                employee.setBaseSalary(new DBExpert().calculateBaseSalary(Score, ManagerEmploymentController.getEmployeeLevel(),ManagerEmploymentController.getWorkTime()));
             else if (employeeType == EmployeeType.NetworkSecurityExpert)
+                employee.setBaseSalary(new NetworkSecurityExpert().calculateBaseSalary(Score, ManagerEmploymentController.getEmployeeLevel(),ManagerEmploymentController.getWorkTime()));
+
+
+            CreateEmployeeNumber createEmployeeNumber = new CreateEmployeeNumber();
+            String employeeCode = createEmployeeNumber.createEmployeeCode() ;
+
+            //TODO setting Employee code in employee object
+            alert("The hiring process was successful and the employee's code id" + employeeCode ,alert3,"green");
+            btnCheckTheStatus.setDisable(true);
+            //create employee Number
+
+
+
                 employee.setBaseSalary(new NetworkSecurityExpert().calculateBaseSalary(Score));
-
-
+            SalaryInformation salaryInformation = new SalaryInformation();
+            String workTime = ManagerEmploymentController.getWorkTime();
+            if (workTime.equals("full time")) {
+                salaryInformation.setFullTime(true);
+            } else if (workTime.equals("Morning Work")) {
+                salaryInformation.setMorningWork(true);
+            } else if (workTime.equals("afternoon Work")) {
+                salaryInformation.setAfternoonWork(true);
+            } else if (workTime.equals("night work")) {
+                salaryInformation.setNightWork(true);
+            }
+            employee.setSalaryInformation(salaryInformation);
+            new DBHelper().insertEmployee(employee);
         } else {
+            alert("Employees are not allowed to be employed",alert3,"red");
+            btnCheckTheStatus.setDisable(true);
 // karmand mojaz be estexdam nist
         }
 
     }
+
 
     private boolean checkScore(int Score) {
         EmployeeType employeeType = ManagerEmploymentController.getEmployeeType();
@@ -227,7 +266,7 @@ public class SubmitFormController implements Initializable {
                 if (txt_TextField.getText().length() >= max_Lengh) {
                     e.consume();
                 }
-                if (e.getCharacter().matches("[ا-ی-ن]") || e.getCharacter().matches("[ ]")|| e.getCharacter().matches("[A-Za-z]")) {
+                if (e.getCharacter().matches("[ا-ی-ن]") || e.getCharacter().matches("[ ]") || e.getCharacter().matches("[A-Za-z]")) {
                 } else {
                     e.consume();
                 }
@@ -259,6 +298,7 @@ public class SubmitFormController implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+
         employee = new Employee();
         employee.setEmployeeType(ManagerEmploymentController.getEmployeeType());
 

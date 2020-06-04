@@ -1,4 +1,4 @@
-package employeeTypes;
+package extras.employeeTypes;
 
 public enum DB_Expert {
     DataBaseImplementationAndDesign((byte)10),

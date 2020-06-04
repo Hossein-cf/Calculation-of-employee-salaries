@@ -1,4 +1,4 @@
-package employeeTypes;
+package extras.employeeTypes;
 
 import extras.CalculationSalary;
 
@@ -148,7 +148,32 @@ public class NetworkSecurityExpert implements CalculationSalary {
     }
 
     @Override
-    public double calculateBaseSalary(int score) {
-        return 0;
+    public double calculateBaseSalary(int score, String level, String workTime) {
+        double baseSalary = 0;
+        if (level.equals("Junior")&& score > 40) {
+
+            baseSalary = 2500000;
+            if(score>60) baseSalary = 3200000;
+            if(workTime.equals("full time")) baseSalary = 3700000;
+
+        }
+
+        else if (level.equals("Mid-level")&& score > 40) {
+            baseSalary = 4200000;
+            if(score>50) baseSalary = 4600000;
+            if(workTime.equals("full time")) baseSalary = 5100000;
+
+        }
+
+        else if (level.equals("Senior")&& score > 40) {
+            baseSalary = 8000000;
+            if(score>50) baseSalary = 8500000;
+            if(workTime.equals("full time")) baseSalary = 9700000;
+
+        }
+
+        return  baseSalary;
     }
+
+
 }

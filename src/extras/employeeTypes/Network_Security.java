@@ -1,4 +1,4 @@
-package employeeTypes;
+package extras.employeeTypes;
 
 public enum Network_Security {
     UTM((byte) 10),

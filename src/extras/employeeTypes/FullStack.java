@@ -1,4 +1,4 @@
-package employeeTypes;
+package extras.employeeTypes;
 
 import extras.CalculationSalary;
 
@@ -219,7 +219,37 @@ public class FullStack implements CalculationSalary {
     }
 
     @Override
-    public double calculateBaseSalary(int score) {
-        return 0;
+    public double calculateBaseSalary(int score, String level, String workTime) {
+        double baseSalary = 0;
+        if (level.equals("Junior")&& score > 60) {
+
+            baseSalary = 4000000;
+            if(score>70) baseSalary  = 4700000;
+
+            if (workTime.equals("full time")) baseSalary = 5200000;
+
+        }
+
+        else if (level.equals("Mid-level")&& score > 60) {
+
+            baseSalary = 5500000;
+            if(score>70) baseSalary  = 6000000;
+
+            if (workTime.equals("full time")) baseSalary = 6500000;
+
+        }
+
+        else if (level.equals("Senior")&& score > 60) {
+
+            baseSalary = 7000000;
+            if(score>70) baseSalary  = 7500000;
+
+            if (workTime.equals("full time")) baseSalary = 8500000;
+
+        }
+
+        return baseSalary;
     }
+
+
 }

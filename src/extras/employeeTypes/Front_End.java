@@ -1,4 +1,4 @@
-package employeeTypes;
+package extras.employeeTypes;
 
 public enum Front_End {
     html((byte) 10),

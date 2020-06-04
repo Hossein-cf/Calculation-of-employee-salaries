@@ -3,6 +3,7 @@ package EmployeeDashboard.Controllers;
 import ManagerDashbord.ManagerLoginController;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXTextField;
+import extras.Employee;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
@@ -44,7 +45,7 @@ public class EmployeeDashboardController implements Initializable {
     public JFXButton btnAttendance;
     private ManagerLoginController managerLoginController;
     private boolean flag ;
-
+    private Employee employee;
 
     public void exit() {
 
@@ -147,11 +148,20 @@ public class EmployeeDashboardController implements Initializable {
         Pane1.setVisible(false);
         Pane2.setVisible(false);
     }
+private void setPersonalInfo(){
 
+        txtFirstName.setText(employee.getName());
+        txtLastName.setText(employee.getLastName());
+        txtJob.setText(employee.getEmployeeType().toString());
+        txtBaseSalary.setText(employee.getBaseSalary()+"");
+        lblOverTime.setText(employee.getSalaryInformation().getOverWorkTime()+"");
+        lblVacation.setText(employee.getSalaryInformation().getVacationHour()+"");
+}
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-
+        employee=EmployeeLoginController.employee;
+        setPersonalInfo();
         managerLoginController =  new ManagerLoginController();
         settingCompanyName(managerLoginController.CName, managerLoginController.CType);
 
