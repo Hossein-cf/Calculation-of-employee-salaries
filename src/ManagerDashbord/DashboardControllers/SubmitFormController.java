@@ -148,8 +148,8 @@ public class SubmitFormController implements Initializable {
                 employee.setBaseSalary(new NetworkSecurityExpert().calculateBaseSalary(Score, ManagerEmploymentController.getEmployeeLevel(),ManagerEmploymentController.getWorkTime()));
 
 
-            CreateSerialForReceipt createEmployeeNumber = new CreateSerialForReceipt();
-            String employeeCode = createEmployeeNumber.createEmployeeCode() ;
+            GenerateEmployeeNumber createEmployeeNumber = new GenerateEmployeeNumber();
+            String employeeCode = createEmployeeNumber.generateNumber();
 
             //TODO setting Employee code in employee object
             alert("The hiring process was successful and the employee's code id" + employeeCode ,alert3,"green");

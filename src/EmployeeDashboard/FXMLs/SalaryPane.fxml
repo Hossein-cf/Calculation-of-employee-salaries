@@ -1,21 +1,51 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.control.Separator?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
 
-
-<AnchorPane prefHeight="552.0" prefWidth="732.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="EmployeeDashboard.FXMLs.SalaryPane">
+<AnchorPane prefHeight="552.0" prefWidth="732.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1"  fx:controller="EmployeeDashboard.Controllers.SalaryPaneController">
    <children>
-      <Pane layoutX="24.0" layoutY="21.0" prefHeight="506.0" prefWidth="687.0" style="-fx-background-color: #e6ffff; -fx-background-radius: 5;">
+      <Pane layoutX="24.0" layoutY="21.0" prefHeight="521.0" prefWidth="687.0" style="-fx-background-color: #e6ffff; -fx-background-radius: 5;">
          <children>
-            <TableView layoutX="26.0" layoutY="20.0" prefHeight="221.0" prefWidth="627.0">
+            <TableView fx:id="ReceiptTableView" layoutX="52.0" layoutY="8.0" prefHeight="128.0" prefWidth="570.0">
               <columns>
-                <TableColumn prefWidth="75.0" text="C1" />
-                <TableColumn prefWidth="75.0" text="C2" />
+                <TableColumn fx:id="clmDate" prefWidth="194.0" text="Receipt registration date" />
+                <TableColumn fx:id="clmSerial" minWidth="0.0" prefWidth="190.0" text="Receipt serial number" />
+                  <TableColumn fx:id="clmShowBtn" prefWidth="185.0" text="Show Receipt" />
               </columns>
             </TableView>
+            <AnchorPane fx:id="showReceiptAnchorPane" layoutX="18.0" layoutY="151.0" prefHeight="358.0" prefWidth="659.0" style="-fx-border-color: #000000; -fx-border-radius: 10;">
+               <children>
+                  <Pane layoutX="6.0" layoutY="6.0" prefHeight="342.0" prefWidth="646.0" style="-fx-background-color: #e6ffff; -fx-background-radius: 5;">
+                     <children>
+                        <JFXTextField fx:id="txtFirstName" editable="false" labelFloat="true" layoutX="28.0" layoutY="111.0" prefHeight="25.0" prefWidth="97.0" promptText="First Name" text=" " />
+                        <JFXTextField fx:id="txtLastName" editable="false" labelFloat="true" layoutX="157.0" layoutY="111.0" prefHeight="25.0" prefWidth="97.0" promptText="Last Name" text=" " />
+                        <JFXTextField fx:id="txtEmployeeCode" editable="false" labelFloat="true" layoutX="296.0" layoutY="111.0" prefHeight="25.0" prefWidth="127.0" promptText="Employee Code" text=" " />
+                        <JFXTextField fx:id="txtNationalCode" editable="false" labelFloat="true" layoutX="464.0" layoutY="111.0" prefHeight="25.0" prefWidth="138.0" promptText="National Code" text=" " />
+                        <JFXTextField fx:id="txtJob" editable="false" labelFloat="true" layoutX="59.0" layoutY="167.0" prefHeight="25.0" prefWidth="138.0" promptText="job in Company" text=" " />
+                        <JFXTextField fx:id="txtEmployeeLevel" editable="false" labelFloat="true" layoutX="258.0" layoutY="167.0" prefHeight="25.0" prefWidth="106.0" promptText="Employee level" text=" " />
+                        <JFXTextField fx:id="txtWorkingTime" editable="false" labelFloat="true" layoutX="452.0" layoutY="167.0" prefHeight="25.0" prefWidth="138.0" promptText="working time" text=" " />
+                        <Separator layoutX="25.0" layoutY="217.0" prefHeight="3.0" prefWidth="596.0" />
+                        <JFXTextField fx:id="txtOvertime" editable="false" labelFloat="true" layoutX="254.0" layoutY="246.0" prefHeight="25.0" prefWidth="138.0" promptText="The amount of overtime" text=" " />
+                        <JFXTextField fx:id="txtDeducted" editable="false" labelFloat="true" layoutX="452.0" layoutY="246.0" prefHeight="25.0" prefWidth="138.0" promptText="Deducted amount" text=" " />
+                        <JFXTextField fx:id="txtBaseSalary" editable="false" labelFloat="true" layoutX="59.0" layoutY="246.0" prefHeight="25.0" prefWidth="145.0" promptText="Base salary" text=" " />
+                        <JFXTextField fx:id="txtMoneyOfExperience" editable="false" labelFloat="true" layoutX="122.0" layoutY="303.0" prefHeight="25.0" prefWidth="160.0" promptText="Added amount for work experience" text=" " />
+                        <JFXTextField fx:id="txtFinalSalary" editable="false" labelFloat="true" layoutX="364.0" layoutY="303.0" prefHeight="25.0" prefWidth="160.0" promptText="Final Salary of Employee" text=" " />
+                        <ImageView fitHeight="86.0" fitWidth="115.0" layoutX="16.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../Pics/id-card-4.jpg" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </Pane>
+               </children>
+            </AnchorPane>
          </children>
       </Pane>
    </children>

@@ -122,7 +122,7 @@ public class EmployeeDashboardController implements Initializable {
         hidingThings();
         loadAnchorPane.setVisible(true);
         try {
-            AnchorPane anchorPane = FXMLLoader.load(getClass().getResource("/EmployeeDashboard/FXMLs/SalaryReceipt.fxml"));
+            AnchorPane anchorPane = FXMLLoader.load(getClass().getResource("/EmployeeDashboard/FXMLs/SalaryPane.fxml"));
             loadAnchorPane.getChildren().addAll(anchorPane);
         } catch (IOException ex) {
             System.out.println("Problem in loading");

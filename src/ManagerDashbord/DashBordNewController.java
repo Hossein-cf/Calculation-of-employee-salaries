@@ -155,6 +155,19 @@ public class DashBordNewController implements Initializable {
 
 
     }
+
+    public void loadReceiptPage(){
+        hideThings();
+        loadAnchorPane.setVisible(true);
+        try {
+            AnchorPane anchorPane = FXMLLoader.load(getClass().getResource("DashboardFXMLs/Salary/SalariesReceipt.fxml"));
+            loadAnchorPane.getChildren().addAll(anchorPane);
+        } catch (IOException ex) {
+            System.out.println("Problem in loading");
+        }
+
+    }
+
     public void hideThings(){
         creditPane.setVisible(false);
         TeamPane.setVisible(false);
