@@ -51,6 +51,12 @@ public class DailyRecordsController {
             overTimeCheck.setDisable(true);
             LeaveCheck.setDisable(true);
 
+            TPOverTimeStart.setVisible(false);
+            TPOverTimeEnd.setVisible(false);
+
+            TPVacationStart.setVisible(false);
+            TPVacationEnd.setVisible(false);
+
         } else {
             overTimeCheck.setDisable(false);
             LeaveCheck.setDisable(false);
