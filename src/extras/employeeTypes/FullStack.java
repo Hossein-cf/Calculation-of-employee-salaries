@@ -225,21 +225,20 @@ public class FullStack implements CalculationSalary {
     }
 
     @Override
-    public double calculatePrimarySalary( double overTimeWork, double nightWork, double vacationHour, double yearsSalary) {
-        return  overTimeWork + nightWork + vacationHour + yearsSalary;
+    public double calculatePrimarySalary( double overTimeWork, double nightWork, double vacationHour, double yearsSalary , int years , double baseSalary ) {
+        yearsSalary = calculateYears(years , baseSalary );
+        return  calculateMoneyForNightWork(nightWork , yearsSalary) + calculateMoneyForOverTimeWork(overTimeWork, yearsSalary) + calculateMoneyForVacationHour(vacationHour , yearsSalary) + yearsSalary;
     }
+
+
+
 
     @Override
-    public double calculateFinalSalary(double baseSalary, double overTime, double holidayTime, double nightTime, double afternoonTime, String experience) {
-        return 0;
+    public double calculateFinalSalary(double overTimeWork, double nightWork, double vacationHour, double yearsSalary , int years , double baseSalary , double primarySalary ) {
+        primarySalary = calculatePrimarySalary(overTimeWork , nightWork , vacationHour , yearsSalary , years , baseSalary);
+
+        return primarySalary + calculateMoneyForTax(primarySalary) + calculateInsurance(primarySalary)  ;
     }
-
-
-//    @Override
-//    public double calculateFinalSalary(double primarySalary , double tax , double insurance) {
-//
-//        return primarySalary + tax + insurance;
-//    }
 
     @Override
     public double calculateBaseSalary(int score, String level, String workTime) {
