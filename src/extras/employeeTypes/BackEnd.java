@@ -178,12 +178,17 @@ public class BackEnd implements CalculationSalary {
         return  overTimeWork + nightWork + vacationHour + yearsSalary;
     }
 
-
     @Override
-    public double calculateFinalSalary(double primarySalary , double tax , double insurance) {
-
-        return primarySalary + tax + insurance;
+    public double calculateFinalSalary(double baseSalary, double overTime, double holidayTime, double nightTime, double afternoonTime, String experience) {
+        return 0;
     }
+
+
+//    @Override
+//    public double calculateFinalSalary(double primarySalary , double tax , double insurance) {
+//
+//        return primarySalary + tax + insurance;
+//    }
 
     @Override
     public  double calculateBaseSalary(int score, String level, String workTime) {

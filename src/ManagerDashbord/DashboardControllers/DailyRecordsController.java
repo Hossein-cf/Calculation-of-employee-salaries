@@ -11,6 +11,8 @@ import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
 
+import java.time.LocalTime;
+
 public class DailyRecordsController {
 
 
@@ -35,12 +37,38 @@ public class DailyRecordsController {
 
     public void searchEmployee() {
 
-        employee =new DBHelper().selectEmployee(Long.parseLong(txtEmployeeCode.getText()));
+        employee = new DBHelper().selectEmployee(Long.parseLong(txtEmployeeCode.getText()));
         //TODO set personal info to txtDescribeEmployee
-
+        //TODO check null or not employee object
     }
 
     public void Confirm() {
+
+        if (checkAbsent.isSelected()) {
+            int absence = employee.getSalaryInformation().getAbsenceDays();
+            ++absence;
+            employee.getSalaryInformation().setAbsenceDays(absence);
+            new DBHelper().updateEmployee(employee);
+
+        } else {
+            if (overTimeCheck.isSelected()) {
+                LocalTime start = TPOverTimeStart.getValue();
+                LocalTime end = TPOverTimeEnd.getValue();
+                double last = employee.getSalaryInformation().getOverWorkTime();
+                last += sumHour(start, end, last);
+                employee.getSalaryInformation().setOverWorkTime(last);
+                new DBHelper().updateEmployee(employee);
+
+            }
+            if (LeaveCheck.isSelected()) {
+                LocalTime start = TPVacationStart.getValue();
+                LocalTime end = TPVacationEnd.getValue();
+                double last = employee.getSalaryInformation().getOverWorkTime();
+                last += sumHour(start, end, last);
+                employee.getSalaryInformation().setOverWorkTime(last);
+                new DBHelper().updateEmployee(employee);
+            }
+        }
 
 
     }
@@ -58,24 +86,42 @@ public class DailyRecordsController {
         }
     }
 
+    private double sumHour(LocalTime enter, LocalTime exit, double last) {
+        int resultHour = 0;
+        int enterHour = enter.getHour();
+        int enterMinute = enter.getMinute();
+        int exitHour = exit.getHour();
+        int exitMinute = exit.getMinute();
+        int resultMinute = exitMinute - enterMinute;
+        if (resultMinute < 0) {
+            --exitHour;
+            resultMinute += 60;
+        }
+        if (exitHour <= 12 && enterHour > 12) {
+            resultHour += (24 - enterHour + exitHour);
+        } else {
+            resultHour += (exitHour - enterHour);
+        }
+        String time = resultHour + "." + resultMinute;
+        last += Double.parseDouble(time);
+        return last;
+    }
 
     public void overTimeShow(MouseEvent mouseEvent) {
-        if(overTimeCheck.isSelected()) {
+        if (overTimeCheck.isSelected()) {
             TPOverTimeStart.setVisible(true);
             TPOverTimeEnd.setVisible(true);
-        }
-        else {
+        } else {
             TPOverTimeStart.setVisible(false);
             TPOverTimeEnd.setVisible(false);
         }
     }
 
     public void leaveShow(MouseEvent mouseEvent) {
-        if(LeaveCheck.isSelected()) {
+        if (LeaveCheck.isSelected()) {
             TPVacationStart.setVisible(true);
             TPVacationEnd.setVisible(true);
-        }
-        else {
+        } else {
             TPVacationStart.setVisible(false);
             TPVacationEnd.setVisible(false);
         }

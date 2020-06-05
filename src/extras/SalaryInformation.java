@@ -4,6 +4,15 @@ public class SalaryInformation  {
     private double OverWorkTime, HolidayWorkTime, VacationHour;
     private double MorningWorkDays, AfternoonWorkDays, NightWorkDays,fullTimeWorksDays;
     private boolean MorningWork, AfternoonWork, NightWork,fullTime;
+    private int absenceDays;
+
+    public int getAbsenceDays() {
+        return absenceDays;
+    }
+
+    public void setAbsenceDays(int absenceDays) {
+        this.absenceDays = absenceDays;
+    }
 
     public double getOverWorkTime() {
         return OverWorkTime;
