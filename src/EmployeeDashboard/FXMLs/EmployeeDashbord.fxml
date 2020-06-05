@@ -13,7 +13,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="544.0" prefWidth="854.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="EmployeeDashboard.Controllers.EmployeeDashboardController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="544.0" prefWidth="854.0" xmlns="http://javafx.com/javafx/8.0.221" xmlns:fx="http://javafx.com/fxml/1" fx:controller="EmployeeDashboard.Controllers.EmployeeDashboardController">
    <children>
       <VBox prefHeight="544.0" prefWidth="105.0" style="-fx-background-color: #00cccc;" AnchorPane.bottomAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
@@ -79,7 +79,7 @@
                   </Label>
                </children>
             </Pane>
-            <Pane fx:id="Pane2" layoutX="46.0" layoutY="220.0" prefHeight="289.0" prefWidth="660.0" style="-fx-background-color: #ffffff; -fx-background-radius: 10;">
+            <Pane fx:id="Pane2" layoutX="69.0" layoutY="218.0" prefHeight="289.0" prefWidth="660.0" style="-fx-background-color: #ffffff; -fx-background-radius: 10;">
                <effect>
                   <DropShadow />
                </effect>

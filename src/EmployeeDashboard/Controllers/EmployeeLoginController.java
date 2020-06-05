@@ -28,7 +28,7 @@ public class EmployeeLoginController implements Initializable {
     public JFXButton btnCheckProfile;
     public JFXButton btnClose;
     public JFXButton btnBack;
-
+    public static Employee employee;
     public void loadDashBoard() {
         DBHelper dbHelper = new DBHelper();
 
@@ -36,7 +36,7 @@ public class EmployeeLoginController implements Initializable {
 
 
         } else {
-//            Employee employee = dbHelper.selectEmployee(Long.parseLong(txtUserName.getText()));
+//             employee = dbHelper.selectEmployee(Long.parseLong(txtUserName.getText()));
 //            if (employee != null && txtPassWord.getText().equals(employee.getNationalNumber())) {
                 Parent root;
                 try {

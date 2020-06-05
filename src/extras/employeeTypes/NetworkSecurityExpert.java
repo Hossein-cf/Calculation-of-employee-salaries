@@ -1,4 +1,4 @@
-package employeeTypes;
+package extras.employeeTypes;
 
 import extras.CalculationSalary;
 
@@ -93,58 +93,76 @@ public class NetworkSecurityExpert implements CalculationSalary {
     }
 
     @Override
-    public double calculateMoneyForHolidayWorks(int days) {
-        return 0;
+    public double calculateMoneyForHolidayWorks( double baseSalary) {
+
+
+        return baseSalary*2;
     }
 
     @Override
-    public double calculateMoneyForOverTimeWork(double hours) {
-        return 0;
+    public double calculateMoneyForOverTimeWork(double hours , double baseSalary) {
+
+        return baseSalary/(192*1.4*hours);
     }
 
     @Override
-    public double calculateMoneyForNightWork(int days) {
-        return 0;
+    public double calculateMoneyForNightWork(double hours , double baseSalary) {
+        return baseSalary/(192*1.35*hours) ;
     }
 
     @Override
-    public double calculateMoneyForMorningWork(int days) {
-        return 0;
+    public double calculateMoneyForVacationHour(double hours , double baseSalary) {
+        return baseSalary/(192*1.4*hours);
     }
 
     @Override
-    public double calculateMoneyForAfternoonWork(int days) {
-        return 0;
+    public double calculateMoneyForTax(double primarySalary) {
+        double tax = 0 ;
+        if (primarySalary<=3300000){
+            tax = 0;
+        }
+        if (primarySalary>3300000&&primarySalary<=8250000){
+            tax = -(primarySalary*0.1);
+        }
+        if (primarySalary>8250000&&primarySalary<=11550000){
+            tax = -(primarySalary*0.15);
+        }
+        if (primarySalary>11550000&&primarySalary<=16500000){
+            tax = -(primarySalary*0.20);
+        }
+        if (primarySalary>16500000&&primarySalary<=23100000){
+            tax = -(primarySalary*0.25);
+        }
+        if (primarySalary>23100000){
+            tax = -(primarySalary*0.35);
+        }
+        return tax ;
     }
 
     @Override
-    public double calculateMoneyForFullTimeWork(int days) {
-        return 0;
+    public double calculateInsurance(double primarySalary) {
+        return -(primarySalary*0.07);
     }
 
     @Override
-    public double calculateMoneyForVacationHour(double hours) {
-        return 0;
+    public double calculateYears(int years, double baseSalary) {
+        double yearSalary =baseSalary ;
+        for (int i = 0 ; i <years ; i++){
+            yearSalary += yearSalary * 0.2 ;
+        }
+        return yearSalary;
     }
 
     @Override
-    public double calculateMoneyForTax(double salary) {
-        return 0;
+    public double calculatePrimarySalary( double overTimeWork, double nightWork, double vacationHour, double yearsSalary) {
+        return  overTimeWork + nightWork + vacationHour + yearsSalary;
     }
 
-    @Override
-    public double calculateInsurance(double insurance) {
-        return 0;
-    }
 
     @Override
-    public double calculateRightToHousing(double baseSalary) {
-        return 0;
-    }
+    public double calculateFinalSalary(double primarySalary , double tax , double insurance) {
 
-    @Override
-    public double calculateFinalSalary() {
-        return 0;
+        return primarySalary + tax + insurance;
     }
 
     @Override

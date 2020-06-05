@@ -1,6 +1,6 @@
 package extras;
 
-import employeeTypes.EmployeeType;
+import extras.employeeTypes.EmployeeType;
 
 public class Employee extends Person {
     final double INSURANCE = 2000000;

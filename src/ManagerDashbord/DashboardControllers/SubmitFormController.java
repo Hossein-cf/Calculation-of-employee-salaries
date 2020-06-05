@@ -2,10 +2,9 @@ package ManagerDashbord.DashboardControllers;
 
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXCheckBox;
-import employeeTypes.*;
-import extras.CreateEmployeeNumber;
-import extras.Employee;
-import extras.GenerateEmployeeNumber;
+import extras.*;
+import extras.employeeTypes.*;
+
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.EventHandler;
@@ -52,8 +51,8 @@ public class SubmitFormController implements Initializable {
     private final byte OVER_A_YEAR = 7;
     private final byte MORE_THAN_FOUR_YEAR = 15;
     public Label alert3;
-    public Label alert1;
     public Label alert2;
+    public Label alert1;
     private int Score = 0;
     private Employee employee;
 
@@ -149,7 +148,7 @@ public class SubmitFormController implements Initializable {
                 employee.setBaseSalary(new NetworkSecurityExpert().calculateBaseSalary(Score, ManagerEmploymentController.getEmployeeLevel(),ManagerEmploymentController.getWorkTime()));
 
 
-            CreateEmployeeNumber createEmployeeNumber = new CreateEmployeeNumber();
+            CreateSerialForReceipt createEmployeeNumber = new CreateSerialForReceipt();
             String employeeCode = createEmployeeNumber.createEmployeeCode() ;
 
             //TODO setting Employee code in employee object
@@ -159,6 +158,20 @@ public class SubmitFormController implements Initializable {
 
 
 
+                employee.setBaseSalary(new NetworkSecurityExpert().calculateBaseSalary(Score,ManagerEmploymentController.getEmployeeLevel(),ManagerEmploymentController.getWorkTime()));
+            SalaryInformation salaryInformation = new SalaryInformation();
+            String workTime = ManagerEmploymentController.getWorkTime();
+            if (workTime.equals("full time")) {
+                salaryInformation.setFullTime(true);
+            } else if (workTime.equals("Morning Work")) {
+                salaryInformation.setMorningWork(true);
+            } else if (workTime.equals("afternoon Work")) {
+                salaryInformation.setAfternoonWork(true);
+            } else if (workTime.equals("night work")) {
+                salaryInformation.setNightWork(true);
+            }
+            employee.setSalaryInformation(salaryInformation);
+            new DBHelper().insertEmployee(employee);
         } else {
             alert("Employees are not allowed to be employed",alert3,"red");
             btnCheckTheStatus.setDisable(true);
@@ -252,7 +265,7 @@ public class SubmitFormController implements Initializable {
                 if (txt_TextField.getText().length() >= max_Lengh) {
                     e.consume();
                 }
-                if (e.getCharacter().matches("[ا-ی-ن]") || e.getCharacter().matches("[ ]")|| e.getCharacter().matches("[A-Za-z]")) {
+                if (e.getCharacter().matches("[ا-ی-ن]") || e.getCharacter().matches("[ ]") || e.getCharacter().matches("[A-Za-z]")) {
                 } else {
                     e.consume();
                 }

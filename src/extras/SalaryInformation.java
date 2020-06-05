@@ -2,24 +2,8 @@ package extras;
 
 public class SalaryInformation  {
     private double OverWorkTime, HolidayWorkTime, VacationHour;
-    private int MorningWorkDays, AfternoonWorkDays, NightWorkDays,fullTimeWorksDays;
+    private double MorningWorkDays, AfternoonWorkDays, NightWorkDays,fullTimeWorksDays;
     private boolean MorningWork, AfternoonWork, NightWork,fullTime;
-
-    public int getFullTimeWorksDays() {
-        return fullTimeWorksDays;
-    }
-
-    public void setFullTimeWorksDays(int fullTimeWorks) {
-        this.fullTimeWorksDays = fullTimeWorks;
-    }
-
-    public boolean isFullTime() {
-        return fullTime;
-    }
-
-    public void setFullTime(boolean fullTime) {
-        this.fullTime = fullTime;
-    }
 
     public double getOverWorkTime() {
         return OverWorkTime;
@@ -45,28 +29,36 @@ public class SalaryInformation  {
         VacationHour = vacationHour;
     }
 
-    public int getMorningWorkDays() {
+    public double getMorningWorkDays() {
         return MorningWorkDays;
     }
 
-    public void setMorningWorkDays(int morningWorkDays) {
+    public void setMorningWorkDays(double morningWorkDays) {
         MorningWorkDays = morningWorkDays;
     }
 
-    public int getAfternoonWorkDays() {
+    public double getAfternoonWorkDays() {
         return AfternoonWorkDays;
     }
 
-    public void setAfternoonWorkDays(int afternoonWorkDays) {
+    public void setAfternoonWorkDays(double afternoonWorkDays) {
         AfternoonWorkDays = afternoonWorkDays;
     }
 
-    public int getNightWorkDays() {
+    public double getNightWorkDays() {
         return NightWorkDays;
     }
 
-    public void setNightWorkDays(int nightWorkDays) {
+    public void setNightWorkDays(double nightWorkDays) {
         NightWorkDays = nightWorkDays;
+    }
+
+    public double getFullTimeWorksDays() {
+        return fullTimeWorksDays;
+    }
+
+    public void setFullTimeWorksDays(double fullTimeWorksDays) {
+        this.fullTimeWorksDays = fullTimeWorksDays;
     }
 
     public boolean isMorningWork() {
@@ -91,5 +83,13 @@ public class SalaryInformation  {
 
     public void setNightWork(boolean nightWork) {
         NightWork = nightWork;
+    }
+
+    public boolean isFullTime() {
+        return fullTime;
+    }
+
+    public void setFullTime(boolean fullTime) {
+        this.fullTime = fullTime;
     }
 }
