@@ -71,7 +71,7 @@ public class SubmitFormController implements Initializable {
 
     public void DonePersonalInfo() {
         if (txtFirstName.getText().equals("") || txtLastName.getText().equals("") || txtFatherName.getText().equals("") || txtNationalCode.getText().equals("") || txtBornPlace.getText().equals("") || bornData.getValue() == null || comboGender.getSelectionModel().getSelectedIndex() == -1 || comboLevelOfEduction.getSelectionModel().getSelectedIndex() == -1 || txtAddress.getText().equals("") || txtPostalCode.getText().equals("") || txtPhoneNumber.getText().equals("")) {
-            alert("Fill the blanks", lblAlert1, "red");
+            alert("Fill the blanks", alert1, "red");
         } else {
 
             employee.setName(txtFirstName.getText());
@@ -296,7 +296,7 @@ public class SubmitFormController implements Initializable {
         txtNationalCode.addEventFilter(KeyEvent.KEY_TYPED, numeric_Validation(10));
         txtBornPlace.addEventFilter(KeyEvent.KEY_TYPED, letter_Validation(15));
         txtAddress.addEventFilter(KeyEvent.KEY_TYPED, letter_Validation(15));
-        txtPostalCode.addEventFilter(KeyEvent.KEY_TYPED, letter_Validation(15));
+        txtPostalCode.addEventFilter(KeyEvent.KEY_TYPED, numeric_Validation(15));
         txtPhoneNumber.addEventFilter(KeyEvent.KEY_TYPED, numeric_Validation(10));
         txtLastCompanyName.addEventFilter(KeyEvent.KEY_TYPED, letter_Validation(15));
 

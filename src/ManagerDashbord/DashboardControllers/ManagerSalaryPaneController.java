@@ -19,6 +19,12 @@ public class ManagerSalaryPaneController  {
     public JFXButton btnCalculateFinalSalary;
 
 
+
+    public void searchEmployee(){
+
+        finalSalaryPane.setVisible(true);
+    }
+
     public void loadSalaryReceipt(){
 
 
