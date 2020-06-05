@@ -2,11 +2,13 @@ package ManagerDashbord.DashboardControllers;
 
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXCheckBox;
+import com.jfoenix.controls.JFXDatePicker;
 import com.jfoenix.controls.JFXTimePicker;
 import extras.DBHelper;
 import extras.Employee;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
 
 public class DailyRecordsController {
@@ -26,6 +28,9 @@ public class DailyRecordsController {
     public JFXTimePicker TPVacationStart;
     public JFXTimePicker TPOverTimeEnd;
     public JFXTimePicker TPVacationEnd;
+    public JFXDatePicker chooseDateForDailyRecords;
+    public JFXCheckBox overTimeCheck;
+    public JFXCheckBox LeaveCheck;
     private Employee employee;
 
     public void searchEmployee() {
@@ -43,13 +48,38 @@ public class DailyRecordsController {
     public void checkAbsence() {
 
         if (checkAbsent.isSelected()) {
+            overTimeCheck.setDisable(true);
+            LeaveCheck.setDisable(true);
 
         } else {
-
-
+            overTimeCheck.setDisable(false);
+            LeaveCheck.setDisable(false);
 
         }
     }
 
 
+    public void overTimeShow(MouseEvent mouseEvent) {
+        if(overTimeCheck.isSelected()) {
+            TPOverTimeStart.setVisible(true);
+            TPOverTimeEnd.setVisible(true);
+        }
+        else {
+            TPOverTimeStart.setVisible(false);
+            TPOverTimeEnd.setVisible(false);
+        }
+    }
+
+    public void leaveShow(MouseEvent mouseEvent) {
+        if(LeaveCheck.isSelected()) {
+            TPVacationStart.setVisible(true);
+            TPVacationEnd.setVisible(true);
+        }
+        else {
+            TPVacationStart.setVisible(false);
+            TPVacationEnd.setVisible(false);
+        }
+
+
+    }
 }
