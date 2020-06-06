@@ -255,8 +255,8 @@ public class FrontEnd  implements CalculationSalary {
 
 
     @Override
-    public double calculateFinalSalary(double overTimeWork, double nightWork, double vacationHour, double yearsSalary , int years , double baseSalary , double primarySalary ) {
-        primarySalary = calculatePrimarySalary(overTimeWork , nightWork , vacationHour , yearsSalary , years , baseSalary);
+    public double calculateFinalSalary(double overTimeWork, double nightWork, double vacationHour, double yearsSalary , int years , double baseSalary  ) {
+      double  primarySalary = calculatePrimarySalary(overTimeWork , nightWork , vacationHour , yearsSalary , years , baseSalary);
 
         return primarySalary + calculateMoneyForTax(primarySalary) + calculateInsurance(primarySalary)  ;
     }
