@@ -9,14 +9,14 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
 
-<AnchorPane prefHeight="552.0" prefWidth="732.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1"  fx:controller="EmployeeDashboard.Controllers.SalaryPaneController">
+<AnchorPane prefHeight="552.0" prefWidth="732.0" xmlns="http://javafx.com/javafx/8.0.221" xmlns:fx="http://javafx.com/fxml/1" fx:controller="EmployeeDashboard.Controllers.SalaryPaneController">
    <children>
       <Pane layoutX="24.0" layoutY="21.0" prefHeight="521.0" prefWidth="687.0" style="-fx-background-color: #e6ffff; -fx-background-radius: 5;">
          <children>
             <TableView fx:id="ReceiptTableView" layoutX="52.0" layoutY="8.0" prefHeight="128.0" prefWidth="570.0">
               <columns>
-                <TableColumn fx:id="clmDate" prefWidth="194.0" text="Receipt registration date" />
-                <TableColumn fx:id="clmSerial" minWidth="0.0" prefWidth="190.0" text="Receipt serial number" />
+                <TableColumn fx:id="clmDate" prefWidth="179.0" text="Receipt registration date" />
+                <TableColumn fx:id="clmSerial" minWidth="0.0" prefWidth="205.0" text="Receipt serial number" />
                   <TableColumn fx:id="clmShowBtn" prefWidth="185.0" text="Show Receipt" />
               </columns>
             </TableView>

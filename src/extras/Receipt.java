@@ -15,7 +15,15 @@ public class Receipt extends SalaryInformation{
     private double fullTimeSalary;
     private double rightToHousing;
     private double Insurance;
+    private long serial;
 
+    public long getSerial() {
+        return serial;
+    }
+
+    public void setSerial(long serial) {
+        this.serial = serial;
+    }
 
     public double getFinalSalary() {
         return finalSalary;
