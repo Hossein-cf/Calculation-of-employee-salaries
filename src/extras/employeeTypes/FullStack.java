@@ -183,7 +183,7 @@ public class FullStack implements CalculationSalary {
 
     @Override
     public double calculateMoneyForVacationHour(double hours , double baseSalary) {
-        return (baseSalary/192)*1.4*hours;
+        return -baseSalary/(192*1.4*hours);
     }
 
     @Override
@@ -217,7 +217,7 @@ public class FullStack implements CalculationSalary {
 
     @Override
     public double calculateYears(int years, double baseSalary) {
-        double yearSalary =baseSalary * 192 ;
+        double yearSalary =baseSalary ;
         for (int i = 0 ; i <years ; i++){
             yearSalary += yearSalary * 0.2 ;
         }

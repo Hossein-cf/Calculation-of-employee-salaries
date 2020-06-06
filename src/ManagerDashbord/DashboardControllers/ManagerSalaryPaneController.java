@@ -50,7 +50,8 @@ public class ManagerSalaryPaneController implements Initializable {
     public void loadSalaryReceipt() {
         EmployeeType employeeType = employee.getEmployeeType();
         if (employeeType == EmployeeType.BackEnd) {
-//            new BackEnd().calculateFinalSalary(employee.getBaseSalary(),employee.getEmployeeLevel())
+          //  double overTimeWork, double nightWork, double vacationHour, double yearsSalary , int years , double baseSalary ) {
+//            new BackEnd().calculateFinalSalary(employee.getSalaryInformation().getOverWorkTime(),employee.getSalaryInformation().getNightWorkDays(),employee.getSalaryInformation())
         } else if (employeeType == EmployeeType.FrontEnd) {
 
         } else if (employeeType == EmployeeType.DBExpert) {
