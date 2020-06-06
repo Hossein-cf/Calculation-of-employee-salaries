@@ -31,7 +31,15 @@ public class EmployeeLoginController implements Initializable {
     public JFXButton btnBack;
     public static Employee employee;
     public Label lblAlert;
+    private static long employeeNumber;
 
+    public static long getEmployeeNumber() {
+        return employeeNumber;
+    }
+
+    public static void setEmployeeNumber(long employeeNumber) {
+        EmployeeLoginController.employeeNumber = employeeNumber;
+    }
 
     private void alert(String message, Label lbl, String color) {
         lbl.setText(message);
@@ -47,10 +55,12 @@ public class EmployeeLoginController implements Initializable {
 
         } else {
             employee = dbHelper.selectEmployee(Long.parseLong(txtUserName.getText()));
+            System.out.println(employee.getNationalNumber()+"///////");
             System.out.println(employee.getNationalNumber());
             System.out.println(txtPassWord.getText());
             if (employee != null && (Long.parseLong(txtPassWord.getText())==employee.getNationalNumber())) {
                 Parent root;
+                setEmployeeNumber(Long.parseLong(txtUserName.getText()));
                 try {
                     Stage stage = (Stage) btnCheckProfile.getScene().getWindow();
                     stage.close();

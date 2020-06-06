@@ -2,7 +2,7 @@ package extras;
 
 import extras.employeeTypes.EmployeeType;
 
-public class Employee extends Person {
+public class Employee extends Person implements Cloneable{
     final double INSURANCE = 2000000;
     private SalaryInformation salaryInformation;
     private long employeeNumber;
@@ -86,6 +86,11 @@ public class Employee extends Person {
 
     public void setEmployeeNumber(long employeeNumber) {
         this.employeeNumber = employeeNumber;
+    }
+
+    @Override
+    public Object clone() throws CloneNotSupportedException {
+        return super.clone();
     }
 
 

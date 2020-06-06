@@ -126,7 +126,7 @@ public class EmployeeDashboardController implements Initializable {
         hidingThings();
         loadAnchorPane.setVisible(true);
         try {
-            AnchorPane anchorPane = FXMLLoader.load(getClass().getResource("/EmployeeDashboard/FXMLs/SalaryPane.fxml"));
+            AnchorPane anchorPane = FXMLLoader.load(getClass().getResource("../FXMLs/SalaryPane.fxml"));
             loadAnchorPane.getChildren().addAll(anchorPane);
         } catch (IOException ex) {
             System.out.println("Problem in loading");
@@ -174,7 +174,12 @@ public class EmployeeDashboardController implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        employee = EmployeeLoginController.employee;
+        try {
+            employee = (Employee) EmployeeLoginController.employee.clone();
+        } catch (CloneNotSupportedException e) {
+            e.printStackTrace();
+        }
+
         setPersonalInfo();
         managerLoginController = new ManagerLoginController();
         settingCompanyName(managerLoginController.CName, managerLoginController.CType);

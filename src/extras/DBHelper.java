@@ -288,14 +288,17 @@ public class DBHelper {
                 receipt.setSerial(resultSet.getLong("Serial"));
                 receipts.add(receipt);
                 System.out.println("Select receipt successful");
+                close();
+
+                return receipts;
 
             }
         } catch (SQLException e) {
             System.out.println(e.getMessage()+"SELECT RECEIPT");
         }
         close();
+        receipts.add(new Receipt());
         return receipts;
-
     }//end
 
     public void insertReceipt(Receipt receipt, long EmployeeNumber) {

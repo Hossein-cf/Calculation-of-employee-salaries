@@ -44,9 +44,12 @@ public class SalaryPaneController implements Initializable {
 
     private void setReceiptInfoToTable() {
 
-
+        ArrayList<Receipt> receipts;
         // TODO hossein inja error hast chon null mide
-            ArrayList<Receipt> receipts = new DBHelper().selectReceipts(employee.getEmployeeNumber());
+//        if (new DBHelper().selectReceipts(employee.getEmployeeNumber()) != null)
+        System.out.println(employee == null);
+        System.out.println(employee.getNationalNumber() + "llklko");
+        receipts = new DBHelper().selectReceipts(employee.getEmployeeNumber());
 
 
         ObservableList<TableFormat> list = FXCollections.observableArrayList();
@@ -80,11 +83,15 @@ public class SalaryPaneController implements Initializable {
     }
 
 
-
-
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+
+        employee =  EmployeeLoginController.employee;
+//        new DBHelper().selectEmployee(EmployeeLoginController.getEmployeeNumber(
+
         setReceiptInfoToTable();
-        employee = EmployeeLoginController.employee;
+
+
+//        System.out.println(employee.getEmployeeNumber()+"11111111111111111");
     }
 }
