@@ -3,7 +3,9 @@ package EmployeeDashboard.Controllers;
 import ManagerDashbord.ManagerLoginController;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXTextField;
+import extras.DBHelper;
 import extras.Employee;
+import extras.employeeTypes.EmployeeType;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
@@ -44,7 +46,7 @@ public class EmployeeDashboardController implements Initializable {
     public Label lblRecievedSalary;
     public JFXButton btnAttendance;
     private ManagerLoginController managerLoginController;
-    private boolean flag ;
+    private boolean flag;
     private Employee employee;
 
     public void exit() {
@@ -54,7 +56,7 @@ public class EmployeeDashboardController implements Initializable {
         alert.setHeaderText(null);
         ButtonType yes = new ButtonType("YES");
         ButtonType no = new ButtonType("NO");
-        alert.getButtonTypes().setAll(yes,no);
+        alert.getButtonTypes().setAll(yes, no);
         Optional<ButtonType> result = alert.showAndWait();
 
         if (result.isPresent())
@@ -68,7 +70,7 @@ public class EmployeeDashboardController implements Initializable {
         alert.setHeaderText(null);
         ButtonType yes = new ButtonType("YES");
         ButtonType no = new ButtonType("NO");
-        alert.getButtonTypes().setAll(yes,no);
+        alert.getButtonTypes().setAll(yes, no);
         Optional<ButtonType> result = alert.showAndWait();
 
         if (result.isPresent()) {
@@ -102,7 +104,7 @@ public class EmployeeDashboardController implements Initializable {
 
     }
 
-    public void loadHomePage(){
+    public void loadHomePage() {
 //        hidingThings();
         loadAnchorPane.setVisible(false);
         Pane1.setVisible(true);
@@ -119,7 +121,8 @@ public class EmployeeDashboardController implements Initializable {
 
 
     }
-    public void loadSalaryPage(){
+
+    public void loadSalaryPage() {
         hidingThings();
         loadAnchorPane.setVisible(true);
         try {
@@ -132,7 +135,7 @@ public class EmployeeDashboardController implements Initializable {
     }
 
 
-    public void loadAttendancePage(){
+    public void loadAttendancePage() {
         hidingThings();
         loadAnchorPane.setVisible(true);
         try {
@@ -145,19 +148,26 @@ public class EmployeeDashboardController implements Initializable {
 
     }
 
-    public void hidingThings(){
+    public void hidingThings() {
         Pane1.setVisible(false);
         Pane2.setVisible(false);
     }
-private void setPersonalInfo(){
 
+    private void setPersonalInfo() {
+        txtEmployeeCode.setText(employee.getEmployeeNumber() + "");
         txtFirstName.setText(employee.getName());
         txtLastName.setText(employee.getLastName());
         txtJob.setText(employee.getEmployeeType().toString());
-        txtBaseSalary.setText(employee.getBaseSalary()+"");
-        lblOverTime.setText(employee.getSalaryInformation().getOverWorkTime()+"");
-        lblVacation.setText(employee.getSalaryInformation().getVacationHour()+"");
-}
+        txtBaseSalary.setText(employee.getBaseSalary() + "");
+        lblOverTime.setText(employee.getSalaryInformation().getOverWorkTime() + "");
+        lblVacation.setText(employee.getSalaryInformation().getVacationHour() + "");
+        int DBExpertMembers = new DBHelper().numberOfEmployeeType(EmployeeType.DBExpert);
+        int BackEndMembers = new DBHelper().numberOfEmployeeType(EmployeeType.BackEnd);
+        int frontEndMembers = new DBHelper().numberOfEmployeeType(EmployeeType.FrontEnd);
+        int fulStackMembers = new DBHelper().numberOfEmployeeType(EmployeeType.FullStack);
+        int networkMembers = new DBHelper().numberOfEmployeeType(EmployeeType.NetworkSecurityExpert);
+        lblNumbersOfCompany.setText((DBExpertMembers + BackEndMembers + frontEndMembers + fulStackMembers + networkMembers) + "");
+    }
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {

@@ -77,7 +77,7 @@ public class DBHelper {
 
     public void updateEmployee(Employee employee) {
         connection();
-        String Query = "SELECT IDPerson , IDJobInformation from Employee where EmployeeNumber = '" + employee.getEmployeeNumber() + "';";
+        String Query = "SELECT IDPerson , IDSalaryInformation from Employee where EmployeeNumber = '" + employee.getEmployeeNumber() + "';";
         String update = "UPDATE Employee set EmployeeNumber = '" + employee.getEmployeeNumber() + "' , Certificate = '" + employee.getCertificate() + "' , WorkExperience='" + employee.getWorkExperience() + "',EmployeeType ='" + employee.getEmployeeType() + "',EmployeeLevel='" + employee.getEmployeeLevel() + "',BaseSalary='" + employee.getBaseSalary() + "' where EmployeeNumber = '" + employee.getEmployeeNumber() + "';";
         int personId = 0;
         int jobInfoId = 0;
