@@ -167,23 +167,23 @@ public class FullStack implements CalculationSalary {
     public double calculateMoneyForHolidayWorks( double hours , double baseSalary) {
 
 
-        return baseSalary/(192)*1.4*hours;
+        return (baseSalary/192)*1.4*hours;
     }
 
     @Override
     public double calculateMoneyForOverTimeWork(double hours , double baseSalary) {
 
-        return baseSalary/(192)*1.4*hours;
+        return (baseSalary/192)*1.4*hours;
     }
 
     @Override
     public double calculateMoneyForNightWork(double hours , double baseSalary) {
-        return baseSalary/(192)*1.35*hours ;
+        return (baseSalary/192)*1.35*hours ;
     }
 
     @Override
     public double calculateMoneyForVacationHour(double hours , double baseSalary) {
-        return baseSalary/(192)*1.4*hours;
+        return (baseSalary/192)*1.4*hours;
     }
 
     @Override
