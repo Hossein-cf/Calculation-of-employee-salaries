@@ -126,6 +126,7 @@ public class EmployeeDashboardController implements Initializable {
             loadAnchorPane.getChildren().addAll(anchorPane);
         } catch (IOException ex) {
             System.out.println("Problem in loading");
+            ex.printStackTrace();
         }
 
     }

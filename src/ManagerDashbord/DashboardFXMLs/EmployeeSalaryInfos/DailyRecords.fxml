@@ -33,7 +33,7 @@
                   </ImageView>
                </graphic>
             </JFXButton>
-            <TextArea fx:id="txtDescribeEmployee" layoutX="50.0" layoutY="93.0" prefHeight="97.0" prefWidth="563.0" promptText="Employee infomation" />
+            <TextArea fx:id="txtDescribeEmployee" editable="false" layoutX="50.0" layoutY="93.0" prefHeight="97.0" prefWidth="563.0" promptText="Employee infomation" />
             <Label fx:id="lblAlertSearch" alignment="CENTER" layoutX="61.0" layoutY="72.0" prefHeight="17.0" prefWidth="526.0" text=" " />
          </children>
       </AnchorPane>
@@ -60,7 +60,7 @@
             <JFXTimePicker fx:id="TPVacationStart" layoutX="444.0" layoutY="148.0" prefHeight="28.0" prefWidth="81.0" promptText="Start" visible="false" />
             <JFXTimePicker fx:id="TPOverTimeEnd" defaultColor="#f23708" layoutX="234.0" layoutY="188.0" prefHeight="28.0" prefWidth="81.0" promptText="End" visible="false" />
             <JFXTimePicker fx:id="TPVacationEnd" defaultColor="#f23708" layoutX="442.0" layoutY="182.0" prefHeight="28.0" prefWidth="81.0" promptText="End" visible="false" />
-            <JFXDatePicker fx:id="chooseDateForDailyRecords" layoutX="496.0" layoutY="80.0" prefHeight="28.0" prefWidth="139.0" promptText="Choos date" />
+            <JFXDatePicker fx:id="chooseDateForDailyRecords" editable="false" layoutX="496.0" layoutY="80.0" prefHeight="28.0" prefWidth="139.0" promptText="Choos date" />
             <JFXCheckBox fx:id="overTimeCheck" layoutX="139.0" layoutY="179.0" onMouseClicked="#overTimeShow" text="overtime" />
             <JFXCheckBox fx:id="LeaveCheck" layoutX="326.0" layoutY="178.0" onMouseClicked="#leaveShow" text="Request leave" />
             <Label fx:id="lblAlertConfirm" layoutX="403.0" layoutY="235.0" prefHeight="17.0" prefWidth="230.0" />

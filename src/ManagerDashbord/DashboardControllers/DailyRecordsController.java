@@ -6,18 +6,24 @@ import com.jfoenix.controls.JFXDatePicker;
 import com.jfoenix.controls.JFXTimePicker;
 import extras.DBHelper;
 import extras.Employee;
+import javafx.event.EventHandler;
+import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
 
+import javax.naming.spi.InitialContextFactory;
+import java.net.URL;
 import java.time.LocalTime;
 
 import java.time.LocalTime;
+import java.util.ResourceBundle;
 
-public class DailyRecordsController {
+public class DailyRecordsController implements Initializable {
 
 
     public TextField txtEmployeeCode;
@@ -143,6 +149,37 @@ public class DailyRecordsController {
             TPVacationStart.setVisible(false);
             TPVacationEnd.setVisible(false);
         }
+
+
+    }
+
+
+    public EventHandler<KeyEvent> numeric_Validation(final Integer max_Lengh) {
+        return new EventHandler<KeyEvent>() {
+            @Override
+            public void handle(KeyEvent e) {
+                TextField txt_TextField = (TextField) e.getSource();
+                if (txt_TextField.getText().length() >= max_Lengh) {
+                    e.consume();
+                }
+                if (e.getCharacter().matches("[0-9.]")) {
+                    if (txt_TextField.getText().contains(".") && e.getCharacter().matches("[.]")) {
+                        e.consume();
+                    } else if (txt_TextField.getText().length() == 0 && e.getCharacter().matches("[.]")) {
+                        e.consume();
+                    }
+                } else {
+                    e.consume();
+                }
+            }
+        };
+    }
+
+
+    @Override
+    public void initialize(URL location, ResourceBundle resources) {
+        txtEmployeeCode.addEventFilter(KeyEvent.KEY_TYPED, numeric_Validation(11));
+
 
 
     }
