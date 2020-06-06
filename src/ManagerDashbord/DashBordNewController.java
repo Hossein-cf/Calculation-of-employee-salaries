@@ -9,6 +9,7 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.ButtonType;
 import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
@@ -167,6 +168,19 @@ public class DashBordNewController implements Initializable {
         }
 
     }
+    public void loadDeveloperTeam(MouseEvent mouseEvent) {
+        hideThings();
+        loadAnchorPane.setVisible(true);
+        try {
+            AnchorPane anchorPane = FXMLLoader.load(getClass().getResource("DashboardFXMLs/CheckDeveloperTeam.fxml"));
+            loadAnchorPane.getChildren().addAll(anchorPane);
+        } catch (IOException ex) {
+            System.out.println("Problem in loading");
+        }
+
+
+
+    }
 
     public void hideThings(){
         creditPane.setVisible(false);
@@ -181,4 +195,6 @@ public class DashBordNewController implements Initializable {
         managerLoginController =  new ManagerLoginController();
         settingCompanyName(managerLoginController.CName, managerLoginController.CType);
     }
+
+
 }

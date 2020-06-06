@@ -1,8 +1,46 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
 
-<AnchorPane prefHeight="500.0" prefWidth="700.0" style="-fx-background-color: #e6ffff;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ManagerDashbord.DashboardFXMLs.CheckDeveloperTeam">
-
+<AnchorPane prefHeight="532.0" prefWidth="735.0" style="-fx-background-color: #e6ffff; -fx-background-radius: 30;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" >
+   <children>
+      <Label alignment="CENTER" layoutX="284.0" layoutY="44.0" prefHeight="39.0" prefWidth="168.0" style="-fx-border-color: #4504dd; -fx-border-radius: 5; -fx-border-width: 2;" text="Developer Team :" textFill="#4504dd">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </Label>
+      <Label layoutX="165.0" layoutY="307.0" prefHeight="39.0" prefWidth="116.0" text="Ghader Salehi :">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </Label>
+      <Label layoutX="165.0" layoutY="227.0" prefHeight="39.0" prefWidth="107.0" text="Ali esa zadeh :">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </Label>
+      <Label layoutX="165.0" layoutY="146.0" prefHeight="39.0" prefWidth="129.0" text="Hossein Shakeri :">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </Label>
+      <Label layoutX="379.0" layoutY="154.0" prefHeight="24.0" prefWidth="258.0" text="shakryhsyn1@gmail.com" textFill="#007c13">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Label>
+      <Label layoutX="379.0" layoutY="235.0" prefHeight="24.0" prefWidth="258.0" text="isazadhali@gmail.com" textFill="#007c13">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Label>
+      <Label layoutX="379.0" layoutY="315.0" prefHeight="24.0" prefWidth="258.0" text="ghaderSalehi7@yahoo.com" textFill="#007c13">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Label>
+   </children>
 </AnchorPane>

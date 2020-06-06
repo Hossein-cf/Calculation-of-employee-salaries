@@ -12,7 +12,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="544.0" prefWidth="854.0" xmlns="http://javafx.com/javafx/8.0.221" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ManagerDashbord.DashBordNewController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="544.0" prefWidth="854.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ManagerDashbord.DashBordNewController">
    <children>
       <VBox prefHeight="544.0" prefWidth="95.0" style="-fx-background-color: #00cccc;" AnchorPane.bottomAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
@@ -125,7 +125,7 @@
                      </image>
                   </ImageView>
                   <Label layoutX="20.0" layoutY="14.0" prefHeight="41.0" prefWidth="115.0" />
-                  <JFXButton buttonType="RAISED" layoutX="20.0" layoutY="14.0" prefHeight="41.0" prefWidth="204.0" ripplerFill="#081dff" text="Check out Developer Team ?">
+                  <JFXButton buttonType="RAISED" layoutX="20.0" layoutY="14.0" onMouseClicked="#loadDeveloperTeam" prefHeight="41.0" prefWidth="204.0" ripplerFill="#081dff" text="Check out Developer Team ?">
                      <font>
                         <Font name="System Bold" size="13.0" />
                      </font>
