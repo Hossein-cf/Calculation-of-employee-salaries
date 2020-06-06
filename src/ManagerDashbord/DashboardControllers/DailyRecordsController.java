@@ -6,10 +6,14 @@ import com.jfoenix.controls.JFXDatePicker;
 import com.jfoenix.controls.JFXTimePicker;
 import extras.DBHelper;
 import extras.Employee;
+import javafx.scene.control.Label;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
+
+import java.time.LocalTime;
 
 import java.time.LocalTime;
 
@@ -33,7 +37,14 @@ public class DailyRecordsController {
     public JFXDatePicker chooseDateForDailyRecords;
     public JFXCheckBox overTimeCheck;
     public JFXCheckBox LeaveCheck;
+    public Label lblAlertSearch;
+    public Label lblAlertConfirm;
     private Employee employee;
+
+    private void alert(String message, Label lbl, String color) {
+        lbl.setText(message);
+        lbl.setStyle("-fx-text-fill: " + color + ";");
+    }
 
     public void searchEmployee() {
 
@@ -71,6 +82,7 @@ public class DailyRecordsController {
         }
 
 
+        alert("Done",lblAlertConfirm,"green");
     }
 
     public void checkAbsence() {
