@@ -167,23 +167,23 @@ public class FullStack implements CalculationSalary {
     public double calculateMoneyForHolidayWorks( double hours , double baseSalary) {
 
 
-        return baseSalary/(192*1.4*hours);
+        return baseSalary/(192)*1.4*hours;
     }
 
     @Override
     public double calculateMoneyForOverTimeWork(double hours , double baseSalary) {
 
-        return baseSalary/(192*1.4*hours);
+        return baseSalary/(192)*1.4*hours;
     }
 
     @Override
     public double calculateMoneyForNightWork(double hours , double baseSalary) {
-        return baseSalary/(192*1.35*hours) ;
+        return baseSalary/(192)*1.35*hours ;
     }
 
     @Override
     public double calculateMoneyForVacationHour(double hours , double baseSalary) {
-        return baseSalary/(192*1.4*hours);
+        return baseSalary/(192)*1.4*hours;
     }
 
     @Override
@@ -217,7 +217,7 @@ public class FullStack implements CalculationSalary {
 
     @Override
     public double calculateYears(int years, double baseSalary) {
-        double yearSalary =baseSalary ;
+        double yearSalary =baseSalary * 192 ;
         for (int i = 0 ; i <years ; i++){
             yearSalary += yearSalary * 0.2 ;
         }
@@ -234,7 +234,7 @@ public class FullStack implements CalculationSalary {
 
 
     @Override
-    public double calculateFinalSalary(double overTimeWork, double nightWork, double vacationHour , int years , double baseSalary , double holidayHour ) {
+    public double calculateFinalSalary(double overTimeWork, double nightWork, double vacationHour , int years , double baseSalary , double holidayHour ,double morning  , double afterNoon , double fullTime) {
         double primarySalary = calculatePrimarySalary(overTimeWork , nightWork , vacationHour  , years , baseSalary , holidayHour);
 
         return primarySalary + calculateMoneyForTax(primarySalary) + calculateInsurance(primarySalary)  ;
