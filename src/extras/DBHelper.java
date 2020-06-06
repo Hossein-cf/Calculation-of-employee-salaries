@@ -34,33 +34,44 @@ public class DBHelper {
 
     public void insertEmployee(Employee employee) {
 
-        connection();
+
         SalaryInformation salaryInformation = employee.getSalaryInformation();
         int personID = insertPerson(employee.getName(), employee.getLastName(), employee.getFatherName(), employee.getNationalNumber(), employee.getBirthPlace() + "", employee.getBirthTime(), employee.getPhoneNumber() + "", employee.getAddress() + "", employee.getPostalCode() + "", employee.getGender());
-        int jobInfoID = insertJobInformation(salaryInformation.getOverWorkTime(), salaryInformation.getHolidayWorkTime(), salaryInformation.getMorningWorkDays(), salaryInformation.getAfternoonWorkDays(), salaryInformation.getNightWorkDays(), salaryInformation.isMorningWork(), salaryInformation.isAfternoonWork(), salaryInformation.isNightWork(), salaryInformation.getVacationHour(), salaryInformation.isFullTime(), salaryInformation.getFullTimeWorksDays());
-        String Query = "INSERT INTO Employee (IDPrson , IDJobInformation ,EmployeeNumber , Certificate , WorkExperience,EmployeeType,EmployeeLevel,BaseSalary) VALUE ('" + personID + "' , '" + jobInfoID + "' , '" + employee.getEmployeeNumber() + "','" + employee.getCertificate() + "','" + employee.getWorkExperience() + "','" + employee.getEmployeeType() + "','" + employee.getEmployeeLevel() + "','" + employee.getBaseSalary() + "');";
+        int jobInfoID = insertJobInformation(salaryInformation.getOverWorkTime(), salaryInformation.getHolidayWorkTime(), salaryInformation.getMorningWorkDays(), salaryInformation.getAfternoonWorkDays(), salaryInformation.getNightWorkDays(), salaryInformation.isMorningWork(), salaryInformation.isAfternoonWork(), salaryInformation.isNightWork(), salaryInformation.getVacationHour(), salaryInformation.isFullTime(), salaryInformation.getFullTimeWorksDays(), salaryInformation.getAbsenceDays());
+        connection();
+        String Query = "INSERT INTO Employee (IDPerson , IDSalaryInformation ,EmployeeNumber , Certificate , WorkExperience,EmployeeType,EmployeeLevel,BaseSalary) VALUES ('" + personID + "' , '" + jobInfoID + "' , '" + employee.getEmployeeNumber() + "','" + employee.getCertificate() + "','" + employee.getWorkExperience() + "','" + employee.getEmployeeType() + "','" + employee.getEmployeeLevel() + "','" + employee.getBaseSalary() + "');";
         try {
             statement.executeUpdate(Query);
+            System.out.println("insert Employee successful");
         } catch (SQLException e) {
-            System.out.println(e.getMessage());
+            System.out.println(e.getMessage() + " INSERT Employee");
         }
         close();
     }//end
 
-    private int insertJobInformation(double OverWorkTime, double HolidayWorkTime, double MorningWorkDays, double AfternoonWorkDays, double NightWorkDays, boolean MorningWork, boolean AfternoonWork, boolean NightWork, double VacationHour, boolean fullTime, double fullTimeWorks) {
-        String select = "SELECT ID from JobInformation";
-        String Query = "INSERT INTO JobInformation (OverWorkTime , HolidayWorkTime , MorningWorkDays ,AfternoonWorkDays , NightWorkDays , MorningWork , AfternoonWork , NightWork  ,VacationHour,FullTimeWork,FullTimeWorksDays) VALUE ('" + OverWorkTime + "' , '" + HolidayWorkTime + "' , '" + MorningWorkDays + "' ,'" + AfternoonWorkDays + "' , '" + NightWorkDays + "' , '" + MorningWork + "' , '" + AfternoonWork + "' , '" + NightWork + "'  ,'" + VacationHour + "','" + fullTime + "','" + fullTimeWorks + "');";
+    private int insertJobInformation(double OverWorkTime, double HolidayWorkTime, double MorningWorkDays, double AfternoonWorkDays, double NightWorkDays, boolean MorningWork, boolean AfternoonWork, boolean NightWork, double VacationHour, boolean fullTime, double fullTimeWorks, int numberOfAbsence) {
+        connection();
+        String select = "SELECT ID from SalaryInformation";
+        String Query = "INSERT INTO SalaryInformation (OverWorkTime , HolidayWorkTime , MorningWorkDays ,AfternoonWorkDays , NightWorkDays , MorningWork , AfternoonWork , NightWork  ,VacationHour,FullTimeWork,FullTimeWorkDays,NumberOfAbsence) VALUES ('" + OverWorkTime + "' , '" + HolidayWorkTime + "' , '" + MorningWorkDays + "' ,'" + AfternoonWorkDays + "' , '" + NightWorkDays + "' , '" + MorningWork + "' , '" + AfternoonWork + "' , '" + NightWork + "'  ,'" + VacationHour + "','" + fullTime + "','" + fullTimeWorks + "','" + numberOfAbsence + "');";
         try {
             statement.executeUpdate(Query);
+            System.out.println("insert Job successful");
+
         } catch (SQLException e) {
-            System.out.println(e.getMessage());
+            System.out.println(e.getMessage() + " INSERT JOB INFO 1");
         }
         try {
             ResultSet resultSet = statement.executeQuery(select);
-            return resultSet.getInt("ID");
+            int i = resultSet.getInt("ID");
+            System.out.println("insert Job12 successful");
+
+            close();
+            return i;
+
         } catch (SQLException e) {
-            System.out.println(e.getMessage());
+            System.out.println(e.getMessage() + " INSERT JOB INFO 12");
         }
+        close();
         return 0;
     }//end
 
@@ -75,34 +86,46 @@ public class DBHelper {
             statement.executeUpdate(update);
             personId = resultSet.getInt("IDPerson");
             jobInfoId = resultSet.getInt("IDJobInformation");
+            System.out.println("insert  update Employee successful");
+
         } catch (SQLException e) {
-            System.out.println(e.getMessage());
+            System.out.println(e.getMessage() + "UPDATE EMPLOYEE");
         }
+        close();
+
         updatePeron(employee.getName(), employee.getLastName(), employee.getFatherName(), employee.getNationalNumber(), employee.getBirthPlace() + "", employee.getBirthTime(), employee.getPhoneNumber() + "", employee.getAddress() + "", employee.getPostalCode() + "", personId, employee.getGender());
         updateJobInformation(employee.getSalaryInformation(), jobInfoId);
-        close();
     }//end
 
     private void updateJobInformation(SalaryInformation jobInformation, int id) {
-        String Query = "UPDATE JobInformation set OverWorkTime = '" + jobInformation.getOverWorkTime() + "' , HolidayWorkTime = '" + jobInformation.getHolidayWorkTime() + "', MorningWorkDays = '" + jobInformation.getMorningWorkDays() + "' ,AfternoonWorkDays = '" + jobInformation.getAfternoonWorkDays() + "' , NightWorkDays = '" + jobInformation.getNightWorkDays() + "' , MorningWork = '" + jobInformation.isMorningWork() + "' , AfternoonWork = '" + jobInformation.isAfternoonWork() + "', NightWork = '" + jobInformation.isNightWork() + "'  ,VacationHour = '" + jobInformation.getVacationHour() + "' , FullTimeWorkDays = '" + jobInformation.getFullTimeWorksDays() + "' , FullTimeWork = '" + jobInformation.isFullTime() + "' where ID ='" + id + "';";
+        connection();
+        String Query = "UPDATE SalaryInformation set OverWorkTime = '" + jobInformation.getOverWorkTime() + "' , HolidayWorkTime = '" + jobInformation.getHolidayWorkTime() + "', MorningWorkDays = '" + jobInformation.getMorningWorkDays() + "' ,AfternoonWorkDays = '" + jobInformation.getAfternoonWorkDays() + "' , NightWorkDays = '" + jobInformation.getNightWorkDays() + "' , MorningWork = '" + jobInformation.isMorningWork() + "' , AfternoonWork = '" + jobInformation.isAfternoonWork() + "', NightWork = '" + jobInformation.isNightWork() + "'  ,VacationHour = '" + jobInformation.getVacationHour() + "' , FullTimeWorkDays = '" + jobInformation.getFullTimeWorksDays() + "' , FullTimeWork = '" + jobInformation.isFullTime() + "', NumberOfAbsence = '" + jobInformation.getAbsenceDays() + "' where ID ='" + id + "';";
         try {
             statement.executeUpdate(Query);
+            System.out.println("insert update job  successful");
+
         } catch (SQLException e) {
-            System.out.println(e.getMessage());
+            System.out.println(e.getMessage() + "UPDATE JOB INFO");
+
         }
+        close();
     }//end
 
     private void updatePeron(String name, String lastName, String fatherName, long nationalNumber, String bornPlace, LocalDate birthTime, String phoneNumber, String address, String postalCode, int id, String Gender) {
+        connection();
         String Query = "UPDATE Person set Name = '" + name + "' , LastName = '" + lastName + "',FatherName ='" + fatherName + "', NationalNumber = '" + nationalNumber + "',BornPlace = '" + bornPlace + "' , Address = '" + address + "' , PhoneNumber ='" + phoneNumber + "' , BirthTime = '" + birthTime + "' , PostalCode= '" + postalCode + "',Gender='" + Gender + "' where ID = '" + id + "'";
         try {
             statement.executeUpdate(Query);
-        } catch (SQLException e) {
-            System.out.println(e.getMessage());
-        }
+            System.out.println("insert update person successful");
 
+        } catch (SQLException e) {
+            System.out.println(e.getMessage() + "UPDATE PERSON");
+        }
+        close();
     }//end
 
     private Person selectPerson(int id) {
+        connection();
         String Query = "SELECT * from Person where ID = '" + id + "';";
         Person person = new Person();
         try {
@@ -118,17 +141,25 @@ public class DBHelper {
                 person.setAddress(resultSet.getString("Address"));
                 person.setFatherName(resultSet.getString("FatherName"));
                 person.setGender(resultSet.getString("Gender"));
-            } else
+                close();
+                System.out.println("Select person  successful");
+
+                return person;
+            } else {
+                close();
                 return null;
+            }
         } catch (SQLException e) {
-            System.out.println(e.getMessage());
+            System.out.println(e.getMessage()+"SELECT PERSON");
         }
+        close();
         return null;
     }//end
 
     public SalaryInformation selectJobInformation(int Id) {
+        connection();
         SalaryInformation jobInformation = new SalaryInformation();
-        String Query = "SELECT * from JobInformation where ID = '" + Id + "';";
+        String Query = "SELECT * from SalaryInformation where ID = '" + Id + "';";
         try {
             ResultSet resultSet = statement.executeQuery(Query);
             if (resultSet.next()) {
@@ -143,12 +174,20 @@ public class DBHelper {
                 jobInformation.setVacationHour(resultSet.getDouble("VacationHour"));
                 jobInformation.setFullTime(resultSet.getBoolean("FullTimeWork"));
                 jobInformation.setFullTimeWorksDays(resultSet.getInt("FullTimeWorkDays"));
+                jobInformation.setAbsenceDays(resultSet.getInt("NumberOfAbsence"));
+                close();
+                System.out.println("Select job  successful");
+
                 return jobInformation;
-            } else
+            } else {
+                close();
                 return null;
+
+            }
         } catch (SQLException e) {
-            System.out.println(e.getMessage());
+            System.out.println(e.getMessage()+"SELECT JOB INFO");
         }
+        close();
         return null;
     }//end
 
@@ -162,11 +201,11 @@ public class DBHelper {
             ResultSet resultSet = statement.executeQuery(Query);
             if (resultSet.next()) {
                 personID = resultSet.getInt("IDPerson");
-                jobInfoID = resultSet.getInt("IDJobInformation");
+                jobInfoID = resultSet.getInt("IDSalaryInformation");
                 employee.setEmployeeNumber(employeeNumber);
                 employee.setEmployeeType(resultSet.getString("EmployeeType"));
-                employee.setCertificate(resultSet.getNString("Certificate"));
-                employee.setWorkExperience(resultSet.getString("WorkExperience"));
+                employee.setCertificate(resultSet.getString("Certificate"));
+                employee.setWorkExperience(resultSet.getInt("WorkExperience"));
                 employee.setBaseSalary(resultSet.getDouble("BaseSalary"));
                 employee.setEmployeeLevel(resultSet.getString("EmployeeLevel"));
                 employee.setSalaryInformation(selectJobInformation(jobInfoID));
@@ -181,6 +220,8 @@ public class DBHelper {
                 employee.setBirthTime(person.getBirthTime());
                 employee.setPostalCode(person.getPostalCode());
                 close();
+                System.out.println("select Employee successful");
+
                 return employee;
             } else {
                 close();
@@ -188,28 +229,38 @@ public class DBHelper {
             }
 
         } catch (SQLException e) {
-            System.out.println(e.getMessage());
+            System.out.println(e.getMessage()+"SELECT EMPLOYEE");
         }
         close();
         return null;
     }//end
 
     public static int insertPerson(String name, String lastName, String fatherName, long nationalNumber, String bornPlace, LocalDate birthTime, String phoneNumber, String address, String postalCode, String gender) {
+        connection();
         String Query = "INSERT INTO Person (Name , LastName,FatherName , NationalNumber,BornPlace , Address , PhoneNumber , BirthTime , PostalCode , Gender) VALUES ('" + name + "','" + lastName + "','" + fatherName + "','" + nationalNumber + "','" + bornPlace + "','" + address + "','" + phoneNumber + "','" + birthTime + "','" + postalCode + "','" + gender + "'); ";
         try {
             statement.executeUpdate(Query);
+            System.out.println("insert person  successful");
+
         } catch (SQLException e) {
             System.out.println(e.getMessage());
         }
 
 
-        Query = "SELCT ID from Person where NationalNumber = '" + nationalNumber + "';";
+        Query = "SELECT ID from Person where NationalNumber = '" + nationalNumber + "';";
         try {
+
             ResultSet resultSet = statement.executeQuery(Query);
-            return resultSet.getInt("ID");
+            int i =resultSet.getInt("ID");
+            close();
+            System.out.println("insert person 12 successful");
+
+            return i;
+
         } catch (SQLException e) {
-            System.out.println(e.getMessage());
+            System.out.println(e.getMessage()+"      INSERT PERSON");
         }
+        close();
         return 0;
 
     }//end
@@ -223,7 +274,7 @@ public class DBHelper {
             while (resultSet.next()) {
                 Receipt receipt = new Receipt();
                 receipt.setBaseSalary(resultSet.getDouble("BaseSalary"));
-                receipt.setSalaryDate(resultSet.getDate("SalaryDate"));
+                receipt.setSalaryDate(LocalDate.parse(resultSet.getString("SalaryDate")));
                 receipt.setTax(resultSet.getDouble("Tax"));
                 receipt.setOverTimeSalary(resultSet.getDouble("OverTime"));
                 receipt.setHolidayTimeSalary(resultSet.getDouble("HolidayTime"));
@@ -234,10 +285,13 @@ public class DBHelper {
                 receipt.setRightToHousing(resultSet.getDouble("RightToHousing"));
                 receipt.setInsurance(resultSet.getDouble("Insurance"));
                 receipt.setFinalSalary(resultSet.getDouble("FinalSalary"));
+                receipt.setSerial(resultSet.getLong("Serial"));
                 receipts.add(receipt);
+                System.out.println("Select receipt successful");
+
             }
         } catch (SQLException e) {
-            System.out.println(e.getMessage());
+            System.out.println(e.getMessage()+"SELECT RECEIPT");
         }
         close();
         return receipts;
@@ -251,30 +305,35 @@ public class DBHelper {
         try {
             ResultSet resultSet = statement.executeQuery(s);
             ID = resultSet.getInt("ID");
+            System.out.println("insert receipt 1 successful");
+
         } catch (SQLException e) {
             System.out.println(e.getMessage());
         }
-        String Query = "INSERT INTO Receipt (IDEmployee , BaseSalary , SalaryDate , Tax , OverTime, HolidayTime , NightWork , MorningWork,AfternoonWork,FullTimeWork ,RightToHousing,Insurance ,FinalSalary  )value ('" + ID + "','" + receipt.getBaseSalary() + "','" + receipt.getSalaryDate() + "','" + receipt.getTax() + "','" + receipt.getOverTimeSalary() + "','" + receipt.getHolidayTimeSalary() + "','" + receipt.getNightTimeSalary() + "', '" + receipt.getMorningTimeSalary() + "', '" + receipt.getAfternoonTimeSalary() + "', '" + receipt.getFullTimeSalary() + "', '" + receipt.getRightToHousing() + "', '" + receipt.getInsurance() + "', '" + receipt.getFinalSalary() + "');";
+        String Query = "INSERT INTO Receipt (IDEmployee , BaseSalary , SalaryDate , Tax , OverTime, HolidayTime , NightWork , MorningWork,AfternoonWork,FullTimeWork ,RightToHousing,Insurance ,FinalSalary,Serial  )value ('" + ID + "','" + receipt.getBaseSalary() + "','" + receipt.getSalaryDate() + "','" + receipt.getTax() + "','" + receipt.getOverTimeSalary() + "','" + receipt.getHolidayTimeSalary() + "','" + receipt.getNightTimeSalary() + "', '" + receipt.getMorningTimeSalary() + "', '" + receipt.getAfternoonTimeSalary() + "', '" + receipt.getFullTimeSalary() + "', '" + receipt.getRightToHousing() + "', '" + receipt.getInsurance() + "', '" + receipt.getFinalSalary() + "','" + receipt.getSerial() + "');";
 
         try {
             statement.executeUpdate(Query);
+            System.out.println("insert receipt successful");
+
         } catch (SQLException e) {
-            System.out.println(e.getMessage());
+            System.out.println(e.getMessage()+"SELECT RECEIPTS");
         }
         close();
     }//end
 
     public int numberOfEmployeeType(EmployeeType employeeType) {
         connection();
-        String Query = "Select * from Employee where EmployeeType = '"+employeeType+"';";
+        String Query = "Select * from Employee where EmployeeType = '" + employeeType + "';";
         try {
-            int count =0;
+            int count = 0;
             ResultSet resultSet = statement.executeQuery(Query);
             while (resultSet.next())
                 count++;
+            close();
             return count;
         } catch (SQLException e) {
-            System.out.println(e.getMessage());
+            System.out.println(e.getMessage()+"NUMBER OF EMPLOYEE");
         }
 
 

@@ -29,6 +29,7 @@ public class EmployeeLoginController implements Initializable {
     public JFXButton btnClose;
     public JFXButton btnBack;
     public static Employee employee;
+
     public void loadDashBoard() {
         DBHelper dbHelper = new DBHelper();
 
@@ -36,8 +37,10 @@ public class EmployeeLoginController implements Initializable {
 
 
         } else {
-//             employee = dbHelper.selectEmployee(Long.parseLong(txtUserName.getText()));
-//            if (employee != null && txtPassWord.getText().equals(employee.getNationalNumber())) {
+            employee = dbHelper.selectEmployee(Long.parseLong(txtUserName.getText()));
+            System.out.println(employee.getNationalNumber());
+            System.out.println(txtPassWord.getText());
+            if (employee != null && (Long.parseLong(txtPassWord.getText())==employee.getNationalNumber())) {
                 Parent root;
                 try {
                     Stage stage = (Stage) btnCheckProfile.getScene().getWindow();
@@ -53,11 +56,12 @@ public class EmployeeLoginController implements Initializable {
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
-//            }else {
-//                System.out.println("not found ");
-//            }
+            } else {
+                System.out.println("not found ");
+            }
         }
     }
+
     public void exit() {
 
         Alert alert = new Alert(Alert.AlertType.WARNING, "Do you want to go out ", ButtonType.YES, ButtonType.NO);
@@ -65,7 +69,7 @@ public class EmployeeLoginController implements Initializable {
         alert.setHeaderText(null);
         ButtonType yes = new ButtonType("YES");
         ButtonType no = new ButtonType("NO");
-        alert.getButtonTypes().setAll(yes,no);
+        alert.getButtonTypes().setAll(yes, no);
         Optional<ButtonType> result = alert.showAndWait();
 
         if (result.isPresent())
@@ -79,7 +83,7 @@ public class EmployeeLoginController implements Initializable {
         alert.setHeaderText(null);
         ButtonType yes = new ButtonType("YES");
         ButtonType no = new ButtonType("NO");
-        alert.getButtonTypes().setAll(yes,no);
+        alert.getButtonTypes().setAll(yes, no);
         Optional<ButtonType> result = alert.showAndWait();
 
         if (result.isPresent()) {
@@ -133,8 +137,8 @@ public class EmployeeLoginController implements Initializable {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
 
-        txtUserName.addEventFilter(KeyEvent.KEY_TYPED, numeric_Validation(10));
-        txtPassWord.addEventFilter(KeyEvent.KEY_TYPED, numeric_Validation(10));
+        txtUserName.addEventFilter(KeyEvent.KEY_TYPED, numeric_Validation(14));
+        txtPassWord.addEventFilter(KeyEvent.KEY_TYPED, numeric_Validation(14));
 
 
     }

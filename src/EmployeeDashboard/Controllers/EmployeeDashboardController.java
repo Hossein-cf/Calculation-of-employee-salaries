@@ -44,7 +44,7 @@ public class EmployeeDashboardController implements Initializable {
     public Label lblRecievedSalary;
     public JFXButton btnAttendance;
     private ManagerLoginController managerLoginController;
-    private boolean flag ;
+    private boolean flag;
     private Employee employee;
 
     public void exit() {
@@ -54,20 +54,21 @@ public class EmployeeDashboardController implements Initializable {
         alert.setHeaderText(null);
         ButtonType yes = new ButtonType("YES");
         ButtonType no = new ButtonType("NO");
-        alert.getButtonTypes().setAll(yes,no);
+        alert.getButtonTypes().setAll(yes, no);
         Optional<ButtonType> result = alert.showAndWait();
 
         if (result.isPresent())
             if (result.get() == yes)
                 System.exit(0);
     }
+
     public void back() {
         Alert alert = new Alert(Alert.AlertType.WARNING, "Do you want to go back to the home screen? ", ButtonType.YES, ButtonType.NO);
         alert.setTitle("WARNING");
         alert.setHeaderText(null);
         ButtonType yes = new ButtonType("YES");
         ButtonType no = new ButtonType("NO");
-        alert.getButtonTypes().setAll(yes,no);
+        alert.getButtonTypes().setAll(yes, no);
         Optional<ButtonType> result = alert.showAndWait();
 
         if (result.isPresent()) {
@@ -101,7 +102,7 @@ public class EmployeeDashboardController implements Initializable {
 
     }
 
-    public void loadHomePage(){
+    public void loadHomePage() {
 //        hidingThings();
         loadAnchorPane.setVisible(false);
         Pane1.setVisible(true);
@@ -118,7 +119,8 @@ public class EmployeeDashboardController implements Initializable {
 
 
     }
-    public void loadSalaryPage(){
+
+    public void loadSalaryPage() {
         hidingThings();
         loadAnchorPane.setVisible(true);
         try {
@@ -131,7 +133,7 @@ public class EmployeeDashboardController implements Initializable {
     }
 
 
-    public void loadAttendancePage(){
+    public void loadAttendancePage() {
         hidingThings();
         loadAnchorPane.setVisible(true);
         try {
@@ -144,25 +146,26 @@ public class EmployeeDashboardController implements Initializable {
 
     }
 
-    public void hidingThings(){
+    public void hidingThings() {
         Pane1.setVisible(false);
         Pane2.setVisible(false);
     }
-private void setPersonalInfo(){
+
+    private void setPersonalInfo() {
 
         txtFirstName.setText(employee.getName());
         txtLastName.setText(employee.getLastName());
         txtJob.setText(employee.getEmployeeType().toString());
-        txtBaseSalary.setText(employee.getBaseSalary()+"");
-        lblOverTime.setText(employee.getSalaryInformation().getOverWorkTime()+"");
-        lblVacation.setText(employee.getSalaryInformation().getVacationHour()+"");
-}
+        txtBaseSalary.setText(employee.getBaseSalary() + "");
+        lblOverTime.setText(employee.getSalaryInformation().getOverWorkTime() + "");
+        lblVacation.setText(employee.getSalaryInformation().getVacationHour() + "");
+    }
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-//        employee=EmployeeLoginController.employee;
-//        setPersonalInfo();
-        managerLoginController =  new ManagerLoginController();
+        employee = EmployeeLoginController.employee;
+        setPersonalInfo();
+        managerLoginController = new ManagerLoginController();
         settingCompanyName(managerLoginController.CName, managerLoginController.CType);
 
     }
