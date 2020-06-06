@@ -113,10 +113,10 @@ public class BackEnd implements CalculationSalary {
     ManagerEmploymentController employ = new ManagerEmploymentController();
 
     @Override
-    public double calculateMoneyForHolidayWorks( double baseSalary) {
+    public double calculateMoneyForHolidayWorks( double hours , double baseSalary) {
 
 
-        return baseSalary*2;
+        return baseSalary/(192*1.4*hours) ;
     }
 
     @Override
@@ -132,7 +132,7 @@ public class BackEnd implements CalculationSalary {
 
     @Override
     public double calculateMoneyForVacationHour(double hours , double baseSalary) {
-        return baseSalary/(192*1.4*hours);
+        return -baseSalary/(192*hours);
     }
 
     @Override
@@ -174,17 +174,17 @@ public class BackEnd implements CalculationSalary {
     }
 
     @Override
-    public double calculatePrimarySalary( double overTimeWork, double nightWork, double vacationHour, double yearsSalary , int years , double baseSalary ) {
-        yearsSalary = calculateYears(years , baseSalary );
-        return  calculateMoneyForNightWork(nightWork , yearsSalary) + calculateMoneyForOverTimeWork(overTimeWork, yearsSalary) + calculateMoneyForVacationHour(vacationHour , yearsSalary) + yearsSalary;
+    public double calculatePrimarySalary( double overTimeWork, double nightWork, double vacationHour , int years , double baseSalary , double holidayHour ) {
+        double yearsSalary = calculateYears(years , baseSalary );
+        return  calculateMoneyForNightWork(nightWork , yearsSalary) + calculateMoneyForOverTimeWork(overTimeWork, yearsSalary) + calculateMoneyForVacationHour(vacationHour , yearsSalary) + yearsSalary +calculateMoneyForHolidayWorks(holidayHour , baseSalary);
     }
 
 
 
 
     @Override
-    public double calculateFinalSalary(double overTimeWork, double nightWork, double vacationHour, double yearsSalary , int years , double baseSalary , double primarySalary ) {
-        primarySalary = calculatePrimarySalary(overTimeWork , nightWork , vacationHour , yearsSalary , years , baseSalary);
+    public double calculateFinalSalary(double overTimeWork, double nightWork, double vacationHour , int years , double baseSalary , double holidayHour  ) {
+        double primarySalary = calculatePrimarySalary(overTimeWork , nightWork , vacationHour  , years , baseSalary , holidayHour );
 
         return primarySalary + calculateMoneyForTax(primarySalary) + calculateInsurance(primarySalary)  ;
     }
