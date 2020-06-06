@@ -54,7 +54,7 @@ public class SubmitFormController implements Initializable {
     public Label alert2;
     public Label alert1;
     private int Score = 0;
-    private Employee employee;
+    public static Employee employee;
 
 
     public Label lblAlert1;
@@ -82,6 +82,12 @@ public class SubmitFormController implements Initializable {
             employee.setPhoneNumber(Long.parseLong(txtPhoneNumber.getText()));
             employee.setAddress(txtAddress.getText());
             employee.setCertificate(comboLevelOfEduction.getValue().toString());
+
+            //
+            employee.setEmployeeLevel(ManagerEmploymentController.employeeLevel);
+            
+
+            //
 
             alert("Information recorded Successfully", alert1, "green");
             btnDonePersonalInfo.setDisable(true);
@@ -163,11 +169,9 @@ public class SubmitFormController implements Initializable {
             String employeeCode = createEmployeeNumber.generateNumber();
 
             //TODO setting Employee code in employee object
-            alert("The hiring process was successful and the employee's code id" + employeeCode, alert3, "green");
+            alert("The hiring process was successful and the employee's code is :" +" "+ "(" + employeeCode+")", alert3, "green");
             btnCheckTheStatus.setDisable(true);
-            //create employee Number
-            //TODO setting Employee code in employee object
-                employee.setEmployeeNumber(Long.parseLong(employeeCode));
+            employee.setEmployeeNumber(Long.parseLong(employeeCode));
 
             employee.setBaseSalary(new NetworkSecurityExpert().calculateBaseSalary(Score, ManagerEmploymentController.getEmployeeLevel(), ManagerEmploymentController.getWorkTime()));
             SalaryInformation salaryInformation = new SalaryInformation();

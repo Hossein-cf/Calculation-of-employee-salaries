@@ -7,6 +7,13 @@ import com.jfoenix.controls.JFXDatePicker;
 import extras.*;
 import extras.employeeTypes.*;
 import javafx.event.EventHandler;
+import extras.CreateSerialForReceipt;
+import extras.DBHelper;
+import extras.Employee;
+import extras.Receipt;
+import extras.employeeTypes.BackEnd;
+import extras.employeeTypes.EmployeeType;
+import javafx.event.EventHandler;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
@@ -51,15 +58,24 @@ public class ManagerSalaryPaneController implements Initializable {
             alert("Enter employee code", lblAlertSearch, "red");
 
         else {
+
             employee = new DBHelper().selectEmployee(Long.parseLong(txtEmployeeCode.getText()));
-            //TODO search and set information of employee
-            //TODO check that employee is null or not
-            txtAbsenceDays.setText(employee.getSalaryInformation().getAbsenceDays() + "");
-            txtOverTimeHour.setText(employee.getSalaryInformation().getOverWorkTime() + "");
-            txtVacationHour.setText(employee.getSalaryInformation().getVacationHour() + "");
+            if(employee!=null) {
 
-            finalSalaryPane.setVisible(true);
 
+                txtAbsenceDays.setText(employee.getSalaryInformation().getAbsenceDays() + "");
+                txtOverTimeHour.setText(employee.getSalaryInformation().getOverWorkTime() + "");
+                txtVacationHour.setText(employee.getSalaryInformation().getVacationHour() + "");
+
+
+                String describe = employee.getName() + " " + employee.getLastName() + " Gender: "+ employee.getGender() + " \n" + " employee code :"+ employee.getEmployeeNumber() + " employee type :" + employee.getEmployeeType() +" employee national number :"+employee.getNationalNumber()
+                        +" base salary : "+ employee.getBaseSalary()     ;
+                txtDescribeEmployee.setText(describe);
+          // TODO hossein toye txtdescribe bayad final salary set besehe ono natonestam peyda konam be jash base salary gozashtam
+                finalSalaryPane.setVisible(true);
+            }
+            else
+                alert("not found" , lblAlertSearch , "red");
         }
     }
 
@@ -124,6 +140,10 @@ public class ManagerSalaryPaneController implements Initializable {
 
         //TODO write Receipt to data base
     }
+
+
+
+
 
 
     public EventHandler<KeyEvent> numeric_Validation(final Integer max_Lengh) {

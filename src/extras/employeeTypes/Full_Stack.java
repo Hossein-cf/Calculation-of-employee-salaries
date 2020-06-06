@@ -6,7 +6,7 @@ public enum Full_Stack {
     reactJs((byte) 10),
     jQuery((byte) 7),
     mobilePrograming((byte) 5),
-    python((byte) 1),
+    python((byte) 10),
     ruby((byte) 10),
     nodeJs((byte) 10),
     PHP7((byte) 10),

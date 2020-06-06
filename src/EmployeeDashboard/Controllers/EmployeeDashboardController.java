@@ -130,6 +130,7 @@ public class EmployeeDashboardController implements Initializable {
             loadAnchorPane.getChildren().addAll(anchorPane);
         } catch (IOException ex) {
             System.out.println("Problem in loading");
+            ex.printStackTrace();
         }
 
     }
@@ -167,7 +168,9 @@ public class EmployeeDashboardController implements Initializable {
         int fulStackMembers = new DBHelper().numberOfEmployeeType(EmployeeType.FullStack);
         int networkMembers = new DBHelper().numberOfEmployeeType(EmployeeType.NetworkSecurityExpert);
         lblNumbersOfCompany.setText((DBExpertMembers + BackEndMembers + frontEndMembers + fulStackMembers + networkMembers) + "");
+
     }
+
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -175,6 +178,7 @@ public class EmployeeDashboardController implements Initializable {
         setPersonalInfo();
         managerLoginController = new ManagerLoginController();
         settingCompanyName(managerLoginController.CName, managerLoginController.CType);
+        // TODO setting number of company  in lblNumbersOfCompany
 
     }
 }

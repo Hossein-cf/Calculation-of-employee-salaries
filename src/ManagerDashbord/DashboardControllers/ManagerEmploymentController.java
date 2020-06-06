@@ -20,8 +20,8 @@ public class ManagerEmploymentController implements Initializable {
     public JFXButton btnLoadForm;
     public ComboBox comboEmployeeLevel;
     private static EmployeeType employeeType;
-    private static String employeeLevel;
-    private static String workTime;
+    public static String employeeLevel;
+    public static String workTime;
 
     public static void setEmployeeLevel(String employeeLevel) {
         ManagerEmploymentController.employeeLevel = employeeLevel;

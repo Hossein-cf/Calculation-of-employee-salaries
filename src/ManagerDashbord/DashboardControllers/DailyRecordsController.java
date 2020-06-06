@@ -54,27 +54,33 @@ public class DailyRecordsController implements Initializable {
     }
 
     public void searchEmployee() {
-        if(txtEmployeeCode.getText().equals(""))
-            alert("enter employee code" , lblAlertSearch , "red");
+        if (txtEmployeeCode.getText().equals(""))
+            alert("enter employee code", lblAlertSearch, "red");
         else {
 
+
             employee = new DBHelper().selectEmployee(Long.parseLong(txtEmployeeCode.getText()));
+            if (employee != null) {
+                RecordSalaryPane.setVisible(true);
+                String describe = employee.getName() + " " + employee.getLastName() + " Gender: "+ employee.getGender() + " \n" + " employee code :"+ employee.getEmployeeNumber() + " employee type :" + employee.getEmployeeType().toString() +" employee national number :"+employee.getNationalNumber()
+                 +" base salary : "+ employee.getBaseSalary()     ;
+                txtDescribeEmployee.setText(describe);
+        // TODO hossein toye txtdescribe bayad final salary set besehe ono natonestam peyda konam be jash base salary gozashtam
+
+            } else
+                alert("not found", lblAlertSearch, "red");
 
 
 
-            //TODO set personal info to txtDescribeEmployee
-            //TODO check null or not employee object
 
-
-            RecordSalaryPane.setVisible(true);
 
         }
 
     }
 
     public void Confirm() {
-        if(chooseDateForDailyRecords.getValue() == null)
-            alert("choose a date" , lblAlert2 , "red");
+        if (chooseDateForDailyRecords.getValue() == null)
+            alert("choose a date", lblAlert2, "red");
 
         else {
 
@@ -197,7 +203,6 @@ public class DailyRecordsController implements Initializable {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         txtEmployeeCode.addEventFilter(KeyEvent.KEY_TYPED, numeric_Validation(12));
-
 
 
     }

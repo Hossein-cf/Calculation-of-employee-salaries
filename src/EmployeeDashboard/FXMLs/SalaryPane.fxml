@@ -13,16 +13,16 @@
    <children>
       <Pane layoutX="24.0" layoutY="21.0" prefHeight="521.0" prefWidth="687.0" style="-fx-background-color: #e6ffff; -fx-background-radius: 5;">
          <children>
-            <TableView fx:id="ReceiptTableView" layoutX="52.0" layoutY="8.0" prefHeight="128.0" prefWidth="570.0">
+            <TableView fx:id="ReceiptTableView" layoutX="32.0" layoutY="8.0" prefHeight="128.0" prefWidth="627.0">
               <columns>
-                <TableColumn fx:id="clmDate" prefWidth="179.0" text="Receipt registration date" />
-                <TableColumn fx:id="clmSerial" minWidth="0.0" prefWidth="205.0" text="Receipt serial number" />
-                  <TableColumn fx:id="clmShowBtn" prefWidth="185.0" text="Show Receipt" />
+                <TableColumn fx:id="clmDate" prefWidth="253.0" text="Receipt registration date" />
+                <TableColumn fx:id="clmSerial" minWidth="0.0" prefWidth="186.0" text="Receipt serial number" />
+                  <TableColumn fx:id="clmShowBtn" prefWidth="187.0" text="Show Receipt" />
               </columns>
             </TableView>
             <AnchorPane fx:id="showReceiptAnchorPane" layoutX="18.0" layoutY="151.0" prefHeight="358.0" prefWidth="659.0" style="-fx-border-color: #000000; -fx-border-radius: 10;">
                <children>
-                  <Pane layoutX="6.0" layoutY="6.0" prefHeight="342.0" prefWidth="646.0" style="-fx-background-color: #e6ffff; -fx-background-radius: 5;">
+                  <Pane fx:id="ReceiptPane" layoutX="6.0" layoutY="6.0" prefHeight="342.0" prefWidth="646.0" style="-fx-background-color: #e6ffff; -fx-background-radius: 5;">
                      <children>
                         <JFXTextField fx:id="txtFirstName" editable="false" labelFloat="true" layoutX="28.0" layoutY="111.0" prefHeight="25.0" prefWidth="97.0" promptText="First Name" text=" " />
                         <JFXTextField fx:id="txtLastName" editable="false" labelFloat="true" layoutX="157.0" layoutY="111.0" prefHeight="25.0" prefWidth="97.0" promptText="Last Name" text=" " />

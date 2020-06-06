@@ -38,7 +38,6 @@ public class EmployeeLoginController implements Initializable {
         lbl.setStyle("-fx-text-fill: " + color + ";");
     }
 
-
     public void loadDashBoard() {
         DBHelper dbHelper = new DBHelper();
 
@@ -66,8 +65,9 @@ public class EmployeeLoginController implements Initializable {
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
-            } else {
+            }else {
                 System.out.println("not found ");
+                alert("not found" , lblAlert ,"red");
             }
         }
     }

@@ -194,6 +194,9 @@ public class DashBordNewController implements Initializable {
     public void initialize(URL location, ResourceBundle resources) {
         managerLoginController =  new ManagerLoginController();
         settingCompanyName(managerLoginController.CName, managerLoginController.CType);
+
+        // TODO setting number of employees in company
+        // TODO setting amount of payed salaries
     }
 
 
