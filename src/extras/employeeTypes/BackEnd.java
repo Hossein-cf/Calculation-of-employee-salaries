@@ -122,17 +122,17 @@ public class BackEnd implements CalculationSalary {
     @Override
     public double calculateMoneyForOverTimeWork(double hours , double baseSalary) {
 
-        return baseSalary/(192*1.4*hours);
+        return (baseSalary/192)*1.4*hours;
     }
 
     @Override
     public double calculateMoneyForNightWork(double hours , double baseSalary) {
-        return baseSalary/(192*1.35*hours) ;
+        return (baseSalary/192)*1.35*hours ;
     }
 
     @Override
     public double calculateMoneyForVacationHour(double hours , double baseSalary) {
-        return -baseSalary/(192*hours);
+        return -(baseSalary/192)*hours;
     }
 
     @Override
@@ -183,7 +183,7 @@ public class BackEnd implements CalculationSalary {
 
 
     @Override
-    public double calculateFinalSalary(double overTimeWork, double nightWork, double vacationHour , int years , double baseSalary , double holidayHour  ) {
+    public double calculateFinalSalary(double overTimeWork, double nightWork, double vacationHour , int years , double baseSalary , double holidayHour ,double morning  , double afterNoon , double fullTime ) {
         double primarySalary = calculatePrimarySalary(overTimeWork , nightWork , vacationHour  , years , baseSalary , holidayHour );
 
         return primarySalary + calculateMoneyForTax(primarySalary) + calculateInsurance(primarySalary)  ;
