@@ -104,7 +104,7 @@ public class DBExpert implements CalculationSalary {
 
     @Override
     public double calculateMoneyForVacationHour(double hours , double baseSalary) {
-        return (baseSalary/192)*1.4*hours;
+        return -(baseSalary/192)*1.4*hours;
     }
 
     @Override
