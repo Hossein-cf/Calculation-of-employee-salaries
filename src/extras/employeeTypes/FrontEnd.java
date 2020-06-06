@@ -188,7 +188,7 @@ public class FrontEnd  implements CalculationSalary {
     public double calculateMoneyForHolidayWorks( double hours , double baseSalary) {
 
 
-        return baseSalary*2;
+        return baseSalary/(192*1.4*hours);
     }
 
     @Override
