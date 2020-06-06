@@ -23,8 +23,8 @@
             </ImageView>
             <Pane layoutX="492.0" layoutY="12.0" prefHeight="405.0" prefWidth="271.0" style="-fx-border-radius: 5; -fx-background-color: #ffffff;">
                <children>
-                  <TextField fx:id="txtUserName" layoutX="66.0" layoutY="154.0" prefHeight="25.0" prefWidth="187.0" promptText="UserName(national Code)" />
-                  <TextField fx:id="txtPassWord" layoutX="66.0" layoutY="223.0" prefHeight="25.0" prefWidth="187.0" promptText="PassWord(employee code)" />
+                  <TextField fx:id="txtUserName" layoutX="66.0" layoutY="154.0" prefHeight="25.0" prefWidth="187.0" promptText="User name(employee code)" />
+                  <TextField fx:id="txtPassWord" layoutX="66.0" layoutY="223.0" prefHeight="25.0" prefWidth="187.0" promptText="Pass word(national Code)" />
                   <JFXButton fx:id="btnCheckProfile" layoutX="81.0" layoutY="288.0" onMouseClicked="#loadDashBoard" prefHeight="37.0" prefWidth="155.0" ripplerFill="#3680c6" style="-fx-border-color: B2EBF2; -fx-border-radius: 5;" text="Check out Profile">
                      <font>
                         <Font name="System Bold" size="14.0" />
@@ -50,12 +50,13 @@
                         <Font name="System Bold Italic" size="12.0" />
                      </font>
                   </Label>
+                  <Label fx:id="lblAlert" alignment="CENTER" layoutX="33.0" layoutY="374.0" prefHeight="17.0" prefWidth="226.0" />
                </children>
             </Pane>
             <Separator layoutX="478.0" layoutY="28.0" orientation="VERTICAL" prefHeight="374.0" prefWidth="6.0" />
             <HBox layoutX="5.0" layoutY="5.0" prefHeight="46.0" prefWidth="155.0">
                <children>
-                  <JFXButton fx:id="btnClose" contentDisplay="CENTER" prefHeight="50.0" prefWidth="29.0" text=" " onMouseClicked="#exit">
+                  <JFXButton fx:id="btnClose" contentDisplay="CENTER" onMouseClicked="#exit" prefHeight="50.0" prefWidth="29.0" text=" ">
                      <graphic>
                         <ImageView fitHeight="34.0" fitWidth="23.0" pickOnBounds="true" preserveRatio="true">
                            <image>
@@ -64,7 +65,7 @@
                         </ImageView>
                      </graphic>
                   </JFXButton>
-                  <JFXButton fx:id="btnBack" contentDisplay="CENTER" prefHeight="50.0" prefWidth="27.0" text=" " onMouseClicked="#back">
+                  <JFXButton fx:id="btnBack" contentDisplay="CENTER" onMouseClicked="#back" prefHeight="50.0" prefWidth="27.0" text=" ">
                      <graphic>
                         <ImageView fitHeight="32.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
                            <image>

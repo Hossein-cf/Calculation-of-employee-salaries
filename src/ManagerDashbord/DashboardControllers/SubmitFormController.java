@@ -166,7 +166,8 @@ public class SubmitFormController implements Initializable {
             alert("The hiring process was successful and the employee's code id" + employeeCode, alert3, "green");
             btnCheckTheStatus.setDisable(true);
             //create employee Number
-
+            //TODO setting Employee code in employee object
+                employee.setEmployeeNumber(Long.parseLong(employeeCode));
 
             employee.setBaseSalary(new NetworkSecurityExpert().calculateBaseSalary(Score, ManagerEmploymentController.getEmployeeLevel(), ManagerEmploymentController.getWorkTime()));
             SalaryInformation salaryInformation = new SalaryInformation();

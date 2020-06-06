@@ -45,7 +45,7 @@ public class MainLoginController implements Initializable {
     public void exit() {
 
         Alert alert = new Alert(Alert.AlertType.WARNING, "Do you want to go out ", ButtonType.YES, ButtonType.NO);
-        alert.setTitle("اخطار");
+        alert.setTitle("WARNING");
         alert.setHeaderText(null);
         ButtonType yes = new ButtonType("YES");
         ButtonType no = new ButtonType("NO");
