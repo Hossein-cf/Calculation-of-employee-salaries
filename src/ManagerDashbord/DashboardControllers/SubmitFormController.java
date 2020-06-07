@@ -57,8 +57,6 @@ public class SubmitFormController implements Initializable {
     private Employee employee;
 
 
-
-
     public Label lblAlert1;
     public Label lblAlert2;
 
@@ -85,7 +83,7 @@ public class SubmitFormController implements Initializable {
             employee.setAddress(txtAddress.getText());
             employee.setCertificate(comboLevelOfEduction.getValue().toString());
 
-            alert("Information recorded Successfully",alert1,"green");
+            alert("Information recorded Successfully", alert1, "green");
             btnDonePersonalInfo.setDisable(true);
         }
 
@@ -103,23 +101,24 @@ public class SubmitFormController implements Initializable {
         if (teleWorkingCheck.isSelected()) {
             Score += TELEWORKING;
         }
-        String experience = comboExperience.getValue().toString();
+        int experience = Integer.parseInt(comboExperience.getValue().toString());
         employee.setWorkExperience(experience);
-        switch (experience) {
-            case "does not have":
-                Score += NOT_HAVE;
-                break;
-            case "Under one year":
-                Score += UNDER_ONE_YEAR;
-                break;
-            case "Over a year":
-                Score += OVER_A_YEAR;
-                break;
-            case "More than four years":
-                Score += MORE_THAN_FOUR_YEAR;
-                break;
-        }
-        alert("Information recorded Successfully",alert2,"green");
+        Score += experience;
+//        switch (experience) {
+//            case "does not have":
+//                Score += NOT_HAVE;
+//                break;
+//            case "Under one year":
+//                Score += UNDER_ONE_YEAR;
+//                break;
+//            case "Over a year":
+//                Score += OVER_A_YEAR;
+//                break;
+//            case "More than four years":
+//                Score += MORE_THAN_FOUR_YEAR;
+//                break;
+//        }
+        alert("Information recorded Successfully", alert2, "green");
         btnDoneExperience.setDisable(true);
     }
 
@@ -128,7 +127,19 @@ public class SubmitFormController implements Initializable {
         for (int i = 0; i < tblSpecialties.getItems().size(); i++) {
             TableFormat tableFormat = tblSpecialties.getItems().get(i);
             if (tableFormat.getJfxCheckBox().isSelected()) {
-                Score += EmployeeType.valueOf(tableFormat.getExpertise()).getValue();
+                EmployeeType employeeType = ManagerEmploymentController.getEmployeeType();
+                System.out.println(tableFormat.getExpertise().toString());
+                if (employeeType == EmployeeType.FullStack)
+                    Score += Full_Stack.valueOf(tableFormat.getExpertise().toString()).getValue();
+                else if (employeeType == EmployeeType.FrontEnd)
+                    Score += Front_End.valueOf(tableFormat.getExpertise().toString()).getValue();
+                else if (employeeType == EmployeeType.BackEnd)
+                    Score += Back_End.valueOf(tableFormat.getExpertise().toString()).getValue();
+                else if (employeeType == EmployeeType.DBExpert)
+                    Score += DB_Expert.valueOf(tableFormat.getExpertise().toString()).getValue();
+                else if (employeeType == EmployeeType.NetworkSecurityExpert)
+                    Score += Network_Security.valueOf(tableFormat.getExpertise().toString()).getValue();
+
             }
         }
         if (checkScore(Score)) {
@@ -137,29 +148,28 @@ public class SubmitFormController implements Initializable {
             employee.setEmployeeNumber(Long.parseLong(employeeNumber));
             EmployeeType employeeType = ManagerEmploymentController.getEmployeeType();
             if (employeeType == EmployeeType.FullStack)
-                employee.setBaseSalary(new FullStack().calculateBaseSalary(Score , ManagerEmploymentController.getEmployeeLevel(),ManagerEmploymentController.getWorkTime()));
+                employee.setBaseSalary(new FullStack().calculateBaseSalary(Score, ManagerEmploymentController.getEmployeeLevel(), ManagerEmploymentController.getWorkTime()));
             else if (employeeType == EmployeeType.FrontEnd)
-                employee.setBaseSalary(new FrontEnd().calculateBaseSalary(Score, ManagerEmploymentController.getEmployeeLevel(),ManagerEmploymentController.getWorkTime()));
+                employee.setBaseSalary(new FrontEnd().calculateBaseSalary(Score, ManagerEmploymentController.getEmployeeLevel(), ManagerEmploymentController.getWorkTime()));
             else if (employeeType == EmployeeType.BackEnd)
-                employee.setBaseSalary(new BackEnd().calculateBaseSalary(Score, ManagerEmploymentController.getEmployeeLevel(),ManagerEmploymentController.getWorkTime()));
+                employee.setBaseSalary(new BackEnd().calculateBaseSalary(Score, ManagerEmploymentController.getEmployeeLevel(), ManagerEmploymentController.getWorkTime()));
             else if (employeeType == EmployeeType.DBExpert)
-                employee.setBaseSalary(new DBExpert().calculateBaseSalary(Score, ManagerEmploymentController.getEmployeeLevel(),ManagerEmploymentController.getWorkTime()));
+                employee.setBaseSalary(new DBExpert().calculateBaseSalary(Score, ManagerEmploymentController.getEmployeeLevel(), ManagerEmploymentController.getWorkTime()));
             else if (employeeType == EmployeeType.NetworkSecurityExpert)
-                employee.setBaseSalary(new NetworkSecurityExpert().calculateBaseSalary(Score, ManagerEmploymentController.getEmployeeLevel(),ManagerEmploymentController.getWorkTime()));
+                employee.setBaseSalary(new NetworkSecurityExpert().calculateBaseSalary(Score, ManagerEmploymentController.getEmployeeLevel(), ManagerEmploymentController.getWorkTime()));
 
 
             GenerateEmployeeNumber createEmployeeNumber = new GenerateEmployeeNumber();
             String employeeCode = createEmployeeNumber.generateNumber();
 
-
-            alert("The hiring process was successful and the employee's code is" + employeeCode ,alert3,"green");
+            //TODO setting Employee code in employee object
+            alert("The hiring process was successful and the employee's code id" + employeeCode, alert3, "green");
             btnCheckTheStatus.setDisable(true);
             //create employee Number
 
                 employee.setEmployeeNumber(Long.parseLong(employeeCode));
 
-
-                employee.setBaseSalary(new NetworkSecurityExpert().calculateBaseSalary(Score,ManagerEmploymentController.getEmployeeLevel(),ManagerEmploymentController.getWorkTime()));
+            employee.setBaseSalary(new NetworkSecurityExpert().calculateBaseSalary(Score, ManagerEmploymentController.getEmployeeLevel(), ManagerEmploymentController.getWorkTime()));
             SalaryInformation salaryInformation = new SalaryInformation();
             String workTime = ManagerEmploymentController.getWorkTime();
             if (workTime.equals("full time")) {
@@ -174,7 +184,7 @@ public class SubmitFormController implements Initializable {
             employee.setSalaryInformation(salaryInformation);
             new DBHelper().insertEmployee(employee);
         } else {
-            alert("Employees are not allowed to be employed",alert3,"red");
+            alert("Employees are not allowed to be employed", alert3, "red");
             btnCheckTheStatus.setDisable(true);
 // karmand mojaz be estexdam nist
         }
@@ -318,7 +328,7 @@ public class SubmitFormController implements Initializable {
         setTableEmployeeSpecialties();
         String[] LevelOfEduction = {"Diploma", "Bachelor", "MA"};
         String[] Gender = {"Male", "FeMale"};
-        String[] WorkExperience = {"does not have", "Under one year", "Over a year", "More than four years"};
+        String[] WorkExperience = {"1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15"};
         comboLevelOfEduction.getItems().addAll(LevelOfEduction);
         comboGender.getItems().addAll(Gender);
         comboExperience.getItems().addAll(WorkExperience);

@@ -8,7 +8,7 @@ public class Employee extends Person {
     private long employeeNumber;
     private EmployeeType employeeType;
     private String certificate;
-    private String workExperience;
+    private int workExperience;
     private String employeeLevel;
     private double baseSalary;
 
@@ -49,14 +49,14 @@ public class Employee extends Person {
         this.certificate = certificate;
     }
 
-    public String  getWorkExperience() {
+
+    public int getWorkExperience() {
         return workExperience;
     }
 
-    public void setWorkExperience(String  workExperience) {
+    public void setWorkExperience(int workExperience) {
         this.workExperience = workExperience;
     }
-
 
     public EmployeeType getEmployeeType() {
         return employeeType;

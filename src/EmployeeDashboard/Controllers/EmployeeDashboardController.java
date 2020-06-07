@@ -61,6 +61,7 @@ public class EmployeeDashboardController implements Initializable {
             if (result.get() == yes)
                 System.exit(0);
     }
+
     public void back() {
         Alert alert = new Alert(Alert.AlertType.WARNING, "Do you want to go back to the home screen? ", ButtonType.YES, ButtonType.NO);
         alert.setTitle("WARNING");
@@ -161,9 +162,9 @@ private void setPersonalInfo(){
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        employee=EmployeeLoginController.employee;
-      //  setPersonalInfo();
-        managerLoginController =  new ManagerLoginController();
+        employee = EmployeeLoginController.employee;
+        setPersonalInfo();
+        managerLoginController = new ManagerLoginController();
         settingCompanyName(managerLoginController.CName, managerLoginController.CType);
 
     }

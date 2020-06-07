@@ -1,11 +1,12 @@
 package extras;
 
+import java.time.LocalDate;
 import java.util.Date;
 
 public class Receipt extends SalaryInformation{
     private double finalSalary;
     private double baseSalary;
-    private Date salaryDate;
+    private LocalDate salaryDate;
     private double tax ;
     private double overTimeSalary;
     private double holidayTimeSalary;
@@ -113,12 +114,11 @@ public class Receipt extends SalaryInformation{
         this.baseSalary = baseSalary;
     }
 
-    public Date getSalaryDate() {
+    public LocalDate getSalaryDate() {
         return salaryDate;
     }
 
-    public void setSalaryDate(Date salaryDate) {
+    public void setSalaryDate(LocalDate salaryDate) {
         this.salaryDate = salaryDate;
     }
-
 }

@@ -4,6 +4,8 @@ import ManagerDashbord.DashBordNewController;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXCheckBox;
 import com.jfoenix.controls.JFXDatePicker;
+import extras.*;
+import extras.employeeTypes.*;
 import extras.CreateSerialForReceipt;
 import extras.DBHelper;
 import extras.Employee;
@@ -42,7 +44,6 @@ public class ManagerSalaryPaneController implements Initializable {
     public Label lblAlert2;
     private DashBordNewController dashBordNewController;
     private Employee employee;
-    private Receipt receipt ;
 
     private void alert(String message, Label lbl, String color) {
         lbl.setText(message);
@@ -78,27 +79,53 @@ public class ManagerSalaryPaneController implements Initializable {
     }
 
     public void loadSalaryReceipt() {
+        Receipt receipt = new Receipt();
         EmployeeType employeeType = employee.getEmployeeType();
-        receipt = new Receipt();
+        if (employeeType == EmployeeType.BackEnd) {
+            double finalSalary = new BackEnd().calculateFinalSalary(employee.getSalaryInformation().getOverWorkTime(), employee.getSalaryInformation().getNightWorkDays(), employee.getSalaryInformation().getVacationHour(), employee.getWorkExperience(), employee.getBaseSalary(), employee.getSalaryInformation().getHolidayWorkTime(), employee.getSalaryInformation().getMorningWorkDays(), employee.getSalaryInformation().getAfternoonWorkDays(), employee.getSalaryInformation().getFullTimeWorksDays());
+            receipt.setFinalSalary(finalSalary);
+            receipt.setOverTimeSalary(new BackEnd().calculateMoneyForOverTimeWork(employee.getSalaryInformation().getOverWorkTime(),employee.getBaseSalary()));
+            receipt.setSerial(Long.parseLong(new CreateSerialForReceipt().generateSerial()));
+            receipt.setSalaryDate(dateOfIssuance.getValue());
+            receipt.setBaseSalary(employee.getBaseSalary());
 
-        if(dateOfIssuance.getValue()==null)
-            alert("choose a date" , lblAlert2 , "red");
 
-// TODO calculate final salary for each employee
-        else {
-            if (employeeType == EmployeeType.BackEnd) {
-                //  double overTimeWork, double nightWork, double vacationHour, double yearsSalary , int years , double baseSalary ) {
-//            new BackEnd().calculateFinalSalary(employee.getSalaryInformation().getOverWorkTime(),employee.getSalaryInformation().getNightWorkDays(),employee.getSalaryInformation())
-            } else if (employeeType == EmployeeType.FrontEnd) {
+        } else if (employeeType == EmployeeType.FrontEnd) {
+            double finalSalary = new FrontEnd().calculateFinalSalary(employee.getSalaryInformation().getOverWorkTime(), employee.getSalaryInformation().getNightWorkDays(), employee.getSalaryInformation().getVacationHour(), employee.getWorkExperience(), employee.getBaseSalary(), employee.getSalaryInformation().getHolidayWorkTime(), employee.getSalaryInformation().getMorningWorkDays(), employee.getSalaryInformation().getAfternoonWorkDays(), employee.getSalaryInformation().getFullTimeWorksDays());
+            receipt.setFinalSalary(finalSalary);
+            receipt.setOverTimeSalary(new BackEnd().calculateMoneyForOverTimeWork(employee.getSalaryInformation().getOverWorkTime(),employee.getBaseSalary()));
+            receipt.setSerial(Long.parseLong(new CreateSerialForReceipt().generateSerial()));
+            receipt.setSalaryDate(dateOfIssuance.getValue());
+            receipt.setBaseSalary(employee.getBaseSalary());
+        } else if (employeeType == EmployeeType.DBExpert) {
+            double finalSalary = new DBExpert().calculateFinalSalary(employee.getSalaryInformation().getOverWorkTime(), employee.getSalaryInformation().getNightWorkDays(), employee.getSalaryInformation().getVacationHour(), employee.getWorkExperience(), employee.getBaseSalary(), employee.getSalaryInformation().getHolidayWorkTime(), employee.getSalaryInformation().getMorningWorkDays(), employee.getSalaryInformation().getAfternoonWorkDays(), employee.getSalaryInformation().getFullTimeWorksDays());
+            receipt.setFinalSalary(finalSalary);
+            receipt.setOverTimeSalary(new DBExpert().calculateMoneyForOverTimeWork(employee.getSalaryInformation().getOverWorkTime(),employee.getBaseSalary()));
+            receipt.setSerial(Long.parseLong(new CreateSerialForReceipt().generateSerial()));
+            receipt.setSalaryDate(dateOfIssuance.getValue());
+            receipt.setBaseSalary(employee.getBaseSalary());
+        } else if (employeeType == EmployeeType.FullStack) {
+            double finalSalary = new FullStack().calculateFinalSalary(employee.getSalaryInformation().getOverWorkTime(), employee.getSalaryInformation().getNightWorkDays(), employee.getSalaryInformation().getVacationHour(), employee.getWorkExperience(), employee.getBaseSalary(), employee.getSalaryInformation().getHolidayWorkTime(), employee.getSalaryInformation().getMorningWorkDays(), employee.getSalaryInformation().getAfternoonWorkDays(), employee.getSalaryInformation().getFullTimeWorksDays());
+            receipt.setFinalSalary(finalSalary);
+            receipt.setOverTimeSalary(new FullStack().calculateMoneyForOverTimeWork(employee.getSalaryInformation().getOverWorkTime(),employee.getBaseSalary()));
+            receipt.setSerial(Long.parseLong(new CreateSerialForReceipt().generateSerial()));
+            receipt.setSalaryDate(dateOfIssuance.getValue());
+            receipt.setBaseSalary(employee.getBaseSalary());
+        } else if (employeeType == EmployeeType.NetworkSecurityExpert) {
+            double finalSalary = new NetworkSecurityExpert().calculateFinalSalary(employee.getSalaryInformation().getOverWorkTime(), employee.getSalaryInformation().getNightWorkDays(), employee.getSalaryInformation().getVacationHour(), employee.getWorkExperience(), employee.getBaseSalary(), employee.getSalaryInformation().getHolidayWorkTime(), employee.getSalaryInformation().getMorningWorkDays(), employee.getSalaryInformation().getAfternoonWorkDays(), employee.getSalaryInformation().getFullTimeWorksDays());
+            receipt.setFinalSalary(finalSalary);
+            receipt.setOverTimeSalary(new NetworkSecurityExpert().calculateMoneyForOverTimeWork(employee.getSalaryInformation().getOverWorkTime(),employee.getBaseSalary()));
+            receipt.setSerial(Long.parseLong(new CreateSerialForReceipt().generateSerial()));
+            receipt.setSalaryDate(dateOfIssuance.getValue());
+            receipt.setBaseSalary(employee.getBaseSalary());
+        }
 
-            } else if (employeeType == EmployeeType.DBExpert) {
-
-            } else if (employeeType == EmployeeType.FullStack) {
-
-            } else if (employeeType == EmployeeType.NetworkSecurityExpert) {
-
-            }
-            try {
+        new DBHelper().insertReceipt(receipt,employee.getEmployeeNumber());
+//        SalaryInformation salaryInformation = employee.getSalaryInformation();
+//        salaryInformation.set
+        employee.setSalaryInformation(new SalaryInformation());
+        new DBHelper().updateEmployee(employee);
+        try {
 
                 AnchorPane anchorPane = FXMLLoader.load(getClass().getResource("../DashboardFXMLs/Salary/SalariesReceipt.fxml"));
                 loadAnchorPane.getChildren().addAll(anchorPane);

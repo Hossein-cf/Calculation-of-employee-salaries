@@ -50,30 +50,32 @@ public class SalaryPaneController implements Initializable {
 
 
         ObservableList<TableFormat> list = FXCollections.observableArrayList();
-        for (Receipt receipt : receipts) {
-            JFXButton jfxButton = new JFXButton("Show Receipt");
-            list.add(new TableFormat(receipt.getSerial() + "", receipt.getSalaryDate() + "", jfxButton));
-            jfxButton.setOnAction(new EventHandler<ActionEvent>() {
-                @Override
-                public void handle(ActionEvent event) {
-                    txtBaseSalary.setText(employee.getBaseSalary() + "");
-                    txtEmployeeCode.setText(employee.getEmployeeNumber() + "");
-                    txtEmployeeLevel.setText(employee.getEmployeeLevel());
-                    txtFinalSalary.setText(receipt.getFinalSalary() + "");
-                    txtFirstName.setText(employee.getName());
-                    txtJob.setText(employee.getEmployeeType().toString());
-                    txtLastName.setText(employee.getLastName());
-                    txtNationalCode.setText(employee.getNationalNumber() + "");
-                    txtOvertime.setText(receipt.getOverTimeSalary() + "");
+        if (list.size() > 0) {
+            for (Receipt receipt : receipts) {
+                JFXButton jfxButton = new JFXButton("Show Receipt");
+                list.add(new TableFormat(receipt.getSerial() + "", receipt.getSalaryDate() + "", jfxButton));
+                jfxButton.setOnAction(new EventHandler<ActionEvent>() {
+                    @Override
+                    public void handle(ActionEvent event) {
+                        txtBaseSalary.setText(employee.getBaseSalary() + "");
+                        txtEmployeeCode.setText(employee.getEmployeeNumber() + "");
+                        txtEmployeeLevel.setText(employee.getEmployeeLevel());
+                        txtFinalSalary.setText(receipt.getFinalSalary() + "");
+                        txtFirstName.setText(employee.getName());
+                        txtJob.setText(employee.getEmployeeType().toString());
+                        txtLastName.setText(employee.getLastName());
+                        txtNationalCode.setText(employee.getNationalNumber() + "");
+                        txtOvertime.setText(receipt.getOverTimeSalary() + "");
 //                   TODO set information
-                }
-            });
+                    }
+                });
 
+            }
+            clmDate.setCellValueFactory(new PropertyValueFactory<TableFormat, String>("date"));
+            clmSerial.setCellValueFactory(new PropertyValueFactory<TableFormat, String>("serial"));
+            clmShowBtn.setCellValueFactory(new PropertyValueFactory<TableFormat, JFXButton>("jfxButton"));
+            ReceiptTableView.setItems(list);
         }
-        clmDate.setCellValueFactory(new PropertyValueFactory<TableFormat, String>("date"));
-        clmSerial.setCellValueFactory(new PropertyValueFactory<TableFormat, String>("serial"));
-        clmShowBtn.setCellValueFactory(new PropertyValueFactory<TableFormat, JFXButton>("jfxButton"));
-        ReceiptTableView.setItems(list);
 
     }
 
@@ -83,6 +85,6 @@ public class SalaryPaneController implements Initializable {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         setReceiptInfoToTable();
-//        employee = EmployeeLoginController.employee;
+        employee = EmployeeLoginController.employee;
     }
 }

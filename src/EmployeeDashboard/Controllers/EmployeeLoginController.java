@@ -46,9 +46,10 @@ public class EmployeeLoginController implements Initializable {
             alert("fill the blanks" , lblAlert , "red");
 
         } else {
-
-          //   employee = dbHelper.selectEmployee(Long.parseLong(txtUserName.getText()));
-        //    if (employee != null && txtPassWord.getText().equals(employee.getNationalNumber())) {
+            employee = dbHelper.selectEmployee(Long.parseLong(txtUserName.getText()));
+            System.out.println(employee.getNationalNumber());
+            System.out.println(txtPassWord.getText());
+            if (employee != null && (Long.parseLong(txtPassWord.getText())==employee.getNationalNumber())) {
                 Parent root;
                 try {
                     Stage stage = (Stage) btnCheckProfile.getScene().getWindow();
@@ -64,12 +65,13 @@ public class EmployeeLoginController implements Initializable {
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
-//            }else {
-//                System.out.println("not found ");
-//                alert("not found" , lblAlert ,"red");
-//            }
+            }else {
+                System.out.println("not found ");
+                alert("not found" , lblAlert ,"red");
+            }
         }
     }
+
     public void exit() {
 
         Alert alert = new Alert(Alert.AlertType.WARNING, "Do you want to go out ", ButtonType.YES, ButtonType.NO);
