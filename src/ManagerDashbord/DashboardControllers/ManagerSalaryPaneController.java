@@ -43,7 +43,7 @@ public class ManagerSalaryPaneController implements Initializable {
     public Label lblAlertSearch;
     public Label lblAlert2;
     private DashBordNewController dashBordNewController;
-    private Employee employee;
+    public static Employee employee;
 
     private void alert(String message, Label lbl, String color) {
         lbl.setText(message);
