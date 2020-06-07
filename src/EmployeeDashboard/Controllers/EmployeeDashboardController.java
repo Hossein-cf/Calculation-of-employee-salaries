@@ -162,7 +162,7 @@ private void setPersonalInfo(){
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         employee=EmployeeLoginController.employee;
-        setPersonalInfo();
+      //  setPersonalInfo();
         managerLoginController =  new ManagerLoginController();
         settingCompanyName(managerLoginController.CName, managerLoginController.CType);
 

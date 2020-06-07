@@ -155,7 +155,7 @@ public class SubmitFormController implements Initializable {
             alert("The hiring process was successful and the employee's code is" + employeeCode ,alert3,"green");
             btnCheckTheStatus.setDisable(true);
             //create employee Number
-            //TODO setting Employee code in employee object
+
                 employee.setEmployeeNumber(Long.parseLong(employeeCode));
 
 

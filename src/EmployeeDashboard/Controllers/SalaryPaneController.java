@@ -14,6 +14,7 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.Pane;
 
 import java.net.URL;
 import java.util.ArrayList;
@@ -38,10 +39,15 @@ public class SalaryPaneController implements Initializable {
     public JFXTextField txtBaseSalary;
     public JFXTextField txtMoneyOfExperience;
     public JFXTextField txtFinalSalary;
+    public Pane ReceiptPane;
     private Employee employee;
 
     private void setReceiptInfoToTable() {
-        ArrayList<Receipt> receipts = new DBHelper().selectReceipts(employee.getEmployeeNumber());
+
+
+        // TODO hossein inja error hast chon null mide
+            ArrayList<Receipt> receipts = new DBHelper().selectReceipts(employee.getEmployeeNumber());
+
 
         ObservableList<TableFormat> list = FXCollections.observableArrayList();
         for (Receipt receipt : receipts) {
@@ -64,12 +70,14 @@ public class SalaryPaneController implements Initializable {
             });
 
         }
-        clmDate.setCellValueFactory(new PropertyValueFactory<TableFormat,String >("date"));
-        clmSerial.setCellValueFactory(new PropertyValueFactory<TableFormat,String >("serial"));
-        clmShowBtn.setCellValueFactory(new  PropertyValueFactory<TableFormat,JFXButton>("jfxButton"));
+        clmDate.setCellValueFactory(new PropertyValueFactory<TableFormat, String>("date"));
+        clmSerial.setCellValueFactory(new PropertyValueFactory<TableFormat, String>("serial"));
+        clmShowBtn.setCellValueFactory(new PropertyValueFactory<TableFormat, JFXButton>("jfxButton"));
         ReceiptTableView.setItems(list);
 
     }
+
+
 
 
     @Override
