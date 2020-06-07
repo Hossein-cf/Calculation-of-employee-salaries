@@ -10,6 +10,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.ButtonType;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.input.KeyEvent;
 import javafx.stage.Stage;
@@ -29,15 +30,24 @@ public class EmployeeLoginController implements Initializable {
     public JFXButton btnClose;
     public JFXButton btnBack;
     public static Employee employee;
+    public Label lblAlert;
+
+
+    private void alert(String message, Label lbl, String color) {
+        lbl.setText(message);
+        lbl.setStyle("-fx-text-fill: " + color + ";");
+    }
+
     public void loadDashBoard() {
         DBHelper dbHelper = new DBHelper();
 
         if (txtUserName.getText().equals("") || txtPassWord.getText().equals("")) {
 
+            alert("fill the blanks" , lblAlert , "red");
 
         } else {
-//             employee = dbHelper.selectEmployee(Long.parseLong(txtUserName.getText()));
-//            if (employee != null && txtPassWord.getText().equals(employee.getNationalNumber())) {
+             employee = dbHelper.selectEmployee(Long.parseLong(txtUserName.getText()));
+            if (employee != null && txtPassWord.getText().equals(employee.getNationalNumber())) {
                 Parent root;
                 try {
                     Stage stage = (Stage) btnCheckProfile.getScene().getWindow();
@@ -53,15 +63,16 @@ public class EmployeeLoginController implements Initializable {
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
-//            }else {
-//                System.out.println("not found ");
-//            }
+            }else {
+                System.out.println("not found ");
+                alert("not found" , lblAlert ,"red");
+            }
         }
     }
     public void exit() {
 
         Alert alert = new Alert(Alert.AlertType.WARNING, "Do you want to go out ", ButtonType.YES, ButtonType.NO);
-        alert.setTitle("اخطار");
+        alert.setTitle("WARNING");
         alert.setHeaderText(null);
         ButtonType yes = new ButtonType("YES");
         ButtonType no = new ButtonType("NO");
@@ -133,8 +144,8 @@ public class EmployeeLoginController implements Initializable {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
 
-        txtUserName.addEventFilter(KeyEvent.KEY_TYPED, numeric_Validation(10));
-        txtPassWord.addEventFilter(KeyEvent.KEY_TYPED, numeric_Validation(10));
+        txtUserName.addEventFilter(KeyEvent.KEY_TYPED, numeric_Validation(12));
+        txtPassWord.addEventFilter(KeyEvent.KEY_TYPED, numeric_Validation(12));
 
 
     }

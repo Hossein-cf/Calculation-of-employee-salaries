@@ -151,11 +151,12 @@ public class SubmitFormController implements Initializable {
             GenerateEmployeeNumber createEmployeeNumber = new GenerateEmployeeNumber();
             String employeeCode = createEmployeeNumber.generateNumber();
 
-            //TODO setting Employee code in employee object
-            alert("The hiring process was successful and the employee's code id" + employeeCode ,alert3,"green");
+
+            alert("The hiring process was successful and the employee's code is" + employeeCode ,alert3,"green");
             btnCheckTheStatus.setDisable(true);
             //create employee Number
-
+            //TODO setting Employee code in employee object
+                employee.setEmployeeNumber(Long.parseLong(employeeCode));
 
 
                 employee.setBaseSalary(new NetworkSecurityExpert().calculateBaseSalary(Score,ManagerEmploymentController.getEmployeeLevel(),ManagerEmploymentController.getWorkTime()));

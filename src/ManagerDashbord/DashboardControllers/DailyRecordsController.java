@@ -45,6 +45,7 @@ public class DailyRecordsController implements Initializable {
     public JFXCheckBox LeaveCheck;
     public Label lblAlertSearch;
     public Label lblAlertConfirm;
+    public Label lblAlert2;
     private Employee employee;
 
     private void alert(String message, Label lbl, String color) {
@@ -53,42 +54,59 @@ public class DailyRecordsController implements Initializable {
     }
 
     public void searchEmployee() {
+        if(txtEmployeeCode.getText().equals(""))
+            alert("enter employee code" , lblAlertSearch , "red");
+        else {
 
-        employee = new DBHelper().selectEmployee(Long.parseLong(txtEmployeeCode.getText()));
-        //TODO set personal info to txtDescribeEmployee
-        //TODO check null or not employee object
+            employee = new DBHelper().selectEmployee(Long.parseLong(txtEmployeeCode.getText()));
+
+
+
+            //TODO set personal info to txtDescribeEmployee
+            //TODO check null or not employee object
+
+
+            RecordSalaryPane.setVisible(true);
+
+        }
+
     }
 
     public void Confirm() {
+        if(chooseDateForDailyRecords.getValue() == null)
+            alert("choose a date" , lblAlert2 , "red");
 
-        if (checkAbsent.isSelected()) {
-            int absence = employee.getSalaryInformation().getAbsenceDays();
-            ++absence;
-            employee.getSalaryInformation().setAbsenceDays(absence);
-            new DBHelper().updateEmployee(employee);
+        else {
 
-        } else {
-            if (overTimeCheck.isSelected()) {
-                LocalTime start = TPOverTimeStart.getValue();
-                LocalTime end = TPOverTimeEnd.getValue();
-                double last = employee.getSalaryInformation().getOverWorkTime();
-                last += sumHour(start, end, last);
-                employee.getSalaryInformation().setOverWorkTime(last);
+            if (checkAbsent.isSelected()) {
+                int absence = employee.getSalaryInformation().getAbsenceDays();
+                ++absence;
+                employee.getSalaryInformation().setAbsenceDays(absence);
                 new DBHelper().updateEmployee(employee);
 
+            } else {
+                if (overTimeCheck.isSelected()) {
+                    LocalTime start = TPOverTimeStart.getValue();
+                    LocalTime end = TPOverTimeEnd.getValue();
+                    double last = employee.getSalaryInformation().getOverWorkTime();
+                    last += sumHour(start, end, last);
+                    employee.getSalaryInformation().setOverWorkTime(last);
+                    new DBHelper().updateEmployee(employee);
+
+                }
+                if (LeaveCheck.isSelected()) {
+                    LocalTime start = TPVacationStart.getValue();
+                    LocalTime end = TPVacationEnd.getValue();
+                    double last = employee.getSalaryInformation().getOverWorkTime();
+                    last += sumHour(start, end, last);
+                    employee.getSalaryInformation().setOverWorkTime(last);
+                    new DBHelper().updateEmployee(employee);
+                }
             }
-            if (LeaveCheck.isSelected()) {
-                LocalTime start = TPVacationStart.getValue();
-                LocalTime end = TPVacationEnd.getValue();
-                double last = employee.getSalaryInformation().getOverWorkTime();
-                last += sumHour(start, end, last);
-                employee.getSalaryInformation().setOverWorkTime(last);
-                new DBHelper().updateEmployee(employee);
-            }
+
+
+            alert("Done", lblAlertConfirm, "green");
         }
-
-
-        alert("Done",lblAlertConfirm,"green");
     }
 
     public void checkAbsence() {
@@ -178,7 +196,7 @@ public class DailyRecordsController implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        txtEmployeeCode.addEventFilter(KeyEvent.KEY_TYPED, numeric_Validation(11));
+        txtEmployeeCode.addEventFilter(KeyEvent.KEY_TYPED, numeric_Validation(12));
 
 
 
