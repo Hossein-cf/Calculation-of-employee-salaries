@@ -163,7 +163,7 @@ public class SubmitFormController implements Initializable {
             String employeeCode = createEmployeeNumber.generateNumber();
 
             //TODO setting Employee code in employee object
-            alert("The hiring process was successful and the employee's code id" + employeeCode, alert3, "green");
+            alert("The hiring process was successful and the employee's code is :" +" "+ "(" + employeeCode+")", alert3, "green");
             btnCheckTheStatus.setDisable(true);
             //create employee Number
 

@@ -156,6 +156,7 @@ private void setPersonalInfo(){
         txtLastName.setText(employee.getLastName());
         txtJob.setText(employee.getEmployeeType().toString());
         txtBaseSalary.setText(employee.getBaseSalary()+"");
+        txtEmployeeCode.setText(employee.getEmployeeNumber()+"");
         lblOverTime.setText(employee.getSalaryInformation().getOverWorkTime()+"");
         lblVacation.setText(employee.getSalaryInformation().getVacationHour()+"");
 }
@@ -166,6 +167,7 @@ private void setPersonalInfo(){
         setPersonalInfo();
         managerLoginController = new ManagerLoginController();
         settingCompanyName(managerLoginController.CName, managerLoginController.CType);
+        // TODO setting number of company  in lblNumbersOfCompany
 
     }
 }

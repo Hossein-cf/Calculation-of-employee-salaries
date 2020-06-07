@@ -137,10 +137,11 @@ public class ManagerSalaryPaneController implements Initializable {
             CreateSerialForReceipt cs = new CreateSerialForReceipt();
             String ReceiptSerial = cs.generateSerial();
 
-            //TODO write Receipt to data base
+
         }
 
-    }
+
+
     public EventHandler<KeyEvent> numeric_Validation(final Integer max_Lengh) {
         return new EventHandler<KeyEvent>() {
             @Override
