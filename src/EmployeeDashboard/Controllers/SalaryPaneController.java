@@ -49,6 +49,7 @@ public class SalaryPaneController implements Initializable {
 //        if (new DBHelper().selectReceipts(employee.getEmployeeNumber()) != null)
         System.out.println(employee == null);
         System.out.println(employee.getNationalNumber() + "llklko");
+//        DBHelper dbHelper = new DBHelper();
         receipts = new DBHelper().selectReceipts(employee.getEmployeeNumber());
 
 
