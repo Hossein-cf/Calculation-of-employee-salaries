@@ -76,25 +76,29 @@ public class DBHelper {
     }//end
 
     public void updateEmployee(Employee employee) {
-        connection();
+//        connection();
         String Query = "SELECT IDPerson , IDSalaryInformation from Employee where EmployeeNumber = '" + employee.getEmployeeNumber() + "';";
-        String update = "UPDATE Employee set EmployeeNumber = '" + employee.getEmployeeNumber() + "' , Certificate = '" + employee.getCertificate() + "' , WorkExperience='" + employee.getWorkExperience() + "',EmployeeType ='" + employee.getEmployeeType() + "',EmployeeLevel='" + employee.getEmployeeLevel() + "',BaseSalary='" + employee.getBaseSalary() + "' where EmployeeNumber = '" + employee.getEmployeeNumber() + "';";
+        String update = "UPDATE Employee set EmployeeNumber = '" + employee.getEmployeeNumber() + "'  , Certificate = '" + employee.getCertificate() + "' , WorkExperience='" + employee.getWorkExperience() + "' , EmployeeType ='" + employee.getEmployeeType() + "' ,  EmployeeLevel='" + employee.getEmployeeLevel() + "' ,  BaseSalary='" + employee.getBaseSalary() + "' where EmployeeNumber = '" + employee.getEmployeeNumber() + "';";
         int personId = 0;
         int jobInfoId = 0;
         try {
-            ResultSet resultSet = statement.executeQuery(Query);
-            statement.executeUpdate(update);
-            personId = resultSet.getInt("IDPerson");
-            jobInfoId = resultSet.getInt("IDJobInformation");
+            connection();
+            System.out.println(statement.executeUpdate(update));
+            close();
+//            connection();
+//            ResultSet resultSet = statement.executeQuery(Query);
+
+//            personId = resultSet.getInt("IDPerson");
+//            jobInfoId = resultSet.getInt("IDJobInformation");
             System.out.println("insert  update Employee successful");
 
         } catch (SQLException e) {
             System.out.println(e.getMessage() + "UPDATE EMPLOYEE");
         }
-        close();
+//        close();
 
-        updatePeron(employee.getName(), employee.getLastName(), employee.getFatherName(), employee.getNationalNumber(), employee.getBirthPlace() + "", employee.getBirthTime(), employee.getPhoneNumber() + "", employee.getAddress() + "", employee.getPostalCode() + "", personId, employee.getGender());
-        updateJobInformation(employee.getSalaryInformation(), jobInfoId);
+//        updatePeron(employee.getName(), employee.getLastName(), employee.getFatherName(), employee.getNationalNumber(), employee.getBirthPlace() + "", employee.getBirthTime(), employee.getPhoneNumber() + "", employee.getAddress() + "", employee.getPostalCode() + "", personId, employee.getGender());
+//        updateJobInformation(employee.getSalaryInformation(), jobInfoId);
     }//end
 
     private void updateJobInformation(SalaryInformation jobInformation, int id) {
@@ -150,7 +154,7 @@ public class DBHelper {
                 return null;
             }
         } catch (SQLException e) {
-            System.out.println(e.getMessage()+"SELECT PERSON");
+            System.out.println(e.getMessage() + "SELECT PERSON");
         }
         close();
         return null;
@@ -185,7 +189,7 @@ public class DBHelper {
 
             }
         } catch (SQLException e) {
-            System.out.println(e.getMessage()+"SELECT JOB INFO");
+            System.out.println(e.getMessage() + "SELECT JOB INFO");
         }
         close();
         return null;
@@ -229,11 +233,39 @@ public class DBHelper {
             }
 
         } catch (SQLException e) {
-            System.out.println(e.getMessage()+"SELECT EMPLOYEE");
+            System.out.println(e.getMessage() + "SELECT EMPLOYEE");
         }
         close();
         return null;
     }//end
+
+    private void CreateTableFoeReceipt() {
+        connection();
+        String sql = "CREATE TABLE IF NOT EXISTS Receipt1 (\n"
+                + "	id integer PRIMARY KEY, \n"
+                + "IDEmployee TEXT,\n" +
+                " BaseSalary TEXT, \n" +
+                "SalaryDate TEXT, \n" +
+                "Tax TEXT, \n" +
+                "OverTime TEXT,\n " +
+                "HolidayTime TEXT,\n" +
+                " NightWork TEXT, \n" +
+                "MorningWork TEXT,\n" +
+                "AfternoonWork TEXT,\n" +
+                "FullTimeWork TEXT ,\n" +
+                "RightToHousing TEXT,\n" +
+                "Insurance TEXT,\n" +
+                "FinalSalary TEXT,\n" +
+                "Serial TEXT\n "
+                + ");";
+
+        try {
+            statement.execute(sql);
+            close();
+        } catch (SQLException e) {
+            System.err.println(e.getMessage());
+        }
+    }
 
     public static int insertPerson(String name, String lastName, String fatherName, long nationalNumber, String bornPlace, LocalDate birthTime, String phoneNumber, String address, String postalCode, String gender) {
         connection();
@@ -251,14 +283,14 @@ public class DBHelper {
         try {
 
             ResultSet resultSet = statement.executeQuery(Query);
-            int i =resultSet.getInt("ID");
+            int i = resultSet.getInt("ID");
             close();
             System.out.println("insert person 12 successful");
 
             return i;
 
         } catch (SQLException e) {
-            System.out.println(e.getMessage()+"      INSERT PERSON");
+            System.out.println(e.getMessage() + "      INSERT PERSON");
         }
         close();
         return 0;
@@ -268,7 +300,7 @@ public class DBHelper {
     public ArrayList<Receipt> selectReceipts(long employeeNumber) {
         connection();
         ArrayList<Receipt> receipts = new ArrayList<>();
-        String Query = "SELECT * FROM Reciept where IDEmployee = '" + employeeNumber + "'";
+        String Query = "SELECT * FROM Receipt where IDEmployee = '" + employeeNumber + "'";
         try {
             ResultSet resultSet = statement.executeQuery(Query);
             while (resultSet.next()) {
@@ -294,7 +326,7 @@ public class DBHelper {
 
             }
         } catch (SQLException e) {
-            System.out.println(e.getMessage()+"SELECT RECEIPT");
+            System.out.println(e.getMessage() + "SELECT RECEIPT");
         }
         close();
         receipts.add(new Receipt());
@@ -313,14 +345,14 @@ public class DBHelper {
         } catch (SQLException e) {
             System.out.println(e.getMessage());
         }
-        String Query = "INSERT INTO Receipt (IDEmployee , BaseSalary , SalaryDate , Tax , OverTime, HolidayTime , NightWork , MorningWork,AfternoonWork,FullTimeWork ,RightToHousing,Insurance ,FinalSalary,Serial  )value ('" + ID + "','" + receipt.getBaseSalary() + "','" + receipt.getSalaryDate() + "','" + receipt.getTax() + "','" + receipt.getOverTimeSalary() + "','" + receipt.getHolidayTimeSalary() + "','" + receipt.getNightTimeSalary() + "', '" + receipt.getMorningTimeSalary() + "', '" + receipt.getAfternoonTimeSalary() + "', '" + receipt.getFullTimeSalary() + "', '" + receipt.getRightToHousing() + "', '" + receipt.getInsurance() + "', '" + receipt.getFinalSalary() + "','" + receipt.getSerial() + "');";
+        String Query = "INSERT INTO Receipt1 (IDEmployee , BaseSalary , SalaryDate , Tax , OverTime, HolidayTime , NightWork , MorningWork,AfternoonWork,FullTimeWork ,RightToHousing,Insurance ,FinalSalary,Serial  )value ('" + ID + "','" + receipt.getBaseSalary() + "','" + receipt.getSalaryDate() + "','" + receipt.getTax() + "','" + receipt.getOverTimeSalary() + "','" + receipt.getHolidayTimeSalary() + "','" + receipt.getNightTimeSalary() + "', '" + receipt.getMorningTimeSalary() + "', '" + receipt.getAfternoonTimeSalary() + "', '" + receipt.getFullTimeSalary() + "', '" + receipt.getRightToHousing() + "', '" + receipt.getInsurance() + "', '" + receipt.getFinalSalary() + "','" + receipt.getSerial() + "');";
 
         try {
             statement.executeUpdate(Query);
             System.out.println("insert receipt successful");
 
         } catch (SQLException e) {
-            System.out.println(e.getMessage()+"SELECT RECEIPTS");
+            System.out.println(e.getMessage() + "SELECT RECEIPTS");
         }
         close();
     }//end
@@ -336,11 +368,15 @@ public class DBHelper {
             close();
             return count;
         } catch (SQLException e) {
-            System.out.println(e.getMessage()+"NUMBER OF EMPLOYEE");
+            System.out.println(e.getMessage() + "NUMBER OF EMPLOYEE");
         }
 
 
         close();
         return 0;
     }
+//    public DBHelper(){
+//        CreateTableFoeReceipt();
+//    }
+
 }

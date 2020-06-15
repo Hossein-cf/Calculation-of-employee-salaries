@@ -28,30 +28,37 @@ public class AttendanceController implements Initializable {
             double hours = salaryInformation.getAfternoonWorkDays();
             LocalTime enter = EnterTime.getValue();
             LocalTime exit = ExitTime.getValue();
-            hours += sumHour(enter, exit, hours);
+            hours = sumHour(enter, exit, hours);
             salaryInformation.setAfternoonWorkDays(hours);
+            employee.setSalaryInformation(salaryInformation);
         }
         if (salaryInformation.isFullTime()) {
             double hours = salaryInformation.getFullTimeWorksDays();
             LocalTime enter = EnterTime.getValue();
             LocalTime exit = ExitTime.getValue();
-            hours += sumHour(enter, exit, hours);
+            hours = sumHour(enter, exit, hours);
             salaryInformation.setFullTimeWorksDays(hours);
+            employee.setSalaryInformation(salaryInformation);
+
         }
 
         if (salaryInformation.isMorningWork()) {
             double hours = salaryInformation.getMorningWorkDays();
             LocalTime enter = EnterTime.getValue();
             LocalTime exit = ExitTime.getValue();
-            hours += sumHour(enter, exit, hours);
+            hours = sumHour(enter, exit, hours);
             salaryInformation.setMorningWorkDays(hours);
+            employee.setSalaryInformation(salaryInformation);
+
         }
         if (salaryInformation.isNightWork()) {
             double hours = salaryInformation.getMorningWorkDays();
             LocalTime enter = EnterTime.getValue();
             LocalTime exit = ExitTime.getValue();
-            hours += sumHour(enter, exit, hours);
+            hours = sumHour(enter, exit, hours);
             salaryInformation.setMorningWorkDays(hours);
+            employee.setSalaryInformation(salaryInformation);
+
         }
 
         new DBHelper().updateEmployee(employee);
