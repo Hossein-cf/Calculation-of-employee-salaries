@@ -2,7 +2,6 @@
 
 <?import com.jfoenix.controls.JFXButton?>
 <?import com.jfoenix.controls.JFXCheckBox?>
-<?import com.jfoenix.controls.JFXDatePicker?>
 <?import com.jfoenix.controls.JFXTimePicker?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.Separator?>
@@ -14,7 +13,7 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="532.0" prefWidth="735.0" style="-fx-background-color: #e6ffff; -fx-background-radius: 30;" xmlns="http://javafx.com/javafx/8.0.221" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ManagerDashbord.DashboardControllers.DailyRecordsController">
+<AnchorPane prefHeight="532.0" prefWidth="735.0" style="-fx-background-color: #e6ffff; -fx-background-radius: 30;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ManagerDashbord.DashboardControllers.DailyRecordsController">
    <children>
       <AnchorPane layoutX="36.0" layoutY="14.0" prefHeight="207.0" prefWidth="663.0" style="-fx-background-color: #e6ffff; -fx-background-radius: 10;">
          <children>
@@ -37,7 +36,7 @@
             <Label fx:id="lblAlertSearch" alignment="CENTER" layoutX="61.0" layoutY="72.0" prefHeight="17.0" prefWidth="526.0" text=" " />
          </children>
       </AnchorPane>
-      <Pane fx:id="RecordSalaryPane" layoutX="36.0" layoutY="245.0" prefHeight="266.0" prefWidth="663.0" style="-fx-background-color: #e6ffff; -fx-background-radius: 10;" visible="false">
+      <Pane fx:id="RecordSalaryPane" layoutX="36.0" layoutY="212.0" prefHeight="299.0" prefWidth="663.0" style="-fx-background-color: #e6ffff; -fx-background-radius: 10;">
          <children>
             <Label alignment="CENTER" layoutX="182.0" layoutY="14.0" prefHeight="19.0" prefWidth="284.0" text="Daily records of this employee" textFill="#2907ae">
                <font>
@@ -49,22 +48,26 @@
                   <Font name="System Bold" size="13.0" />
                </font>
             </Label>
-            <JFXButton fx:id="btnConfirm" buttonType="RAISED" layoutX="278.0" layoutY="226.0" onMouseClicked="#Confirm" prefHeight="34.0" prefWidth="81.0" text="Confirm" underline="true">
+            <JFXButton fx:id="btnConfirm" buttonType="RAISED" layoutX="280.0" layoutY="252.0" onMouseClicked="#Confirm" prefHeight="34.0" prefWidth="81.0" text="Confirm" underline="true">
                <font>
                   <Font name="System Bold" size="13.0" />
                </font>
             </JFXButton>
             <JFXCheckBox fx:id="checkAbsent" layoutX="259.0" layoutY="94.0" onMouseClicked="#checkAbsence" prefHeight="18.0" prefWidth="130.0" text="Was Absent today?" />
-            <Separator layoutX="120.0" layoutY="138.0" prefHeight="3.0" prefWidth="420.0" />
-            <JFXTimePicker fx:id="TPOverTimeStart" layoutX="234.0" layoutY="149.0" prefHeight="28.0" prefWidth="81.0" promptText="Start" visible="false" />
-            <JFXTimePicker fx:id="TPVacationStart" layoutX="444.0" layoutY="148.0" prefHeight="28.0" prefWidth="81.0" promptText="Start" visible="false" />
-            <JFXTimePicker fx:id="TPOverTimeEnd" defaultColor="#f23708" layoutX="234.0" layoutY="188.0" prefHeight="28.0" prefWidth="81.0" promptText="End" visible="false" />
-            <JFXTimePicker fx:id="TPVacationEnd" defaultColor="#f23708" layoutX="442.0" layoutY="182.0" prefHeight="28.0" prefWidth="81.0" promptText="End" visible="false" />
-            <JFXDatePicker fx:id="chooseDateForDailyRecords" editable="false" layoutX="496.0" layoutY="80.0" prefHeight="28.0" prefWidth="139.0" promptText="Choos date" />
-            <JFXCheckBox fx:id="overTimeCheck" layoutX="139.0" layoutY="179.0" onMouseClicked="#overTimeShow" text="overtime" />
-            <JFXCheckBox fx:id="LeaveCheck" layoutX="326.0" layoutY="178.0" onMouseClicked="#leaveShow" text="Request leave" />
-            <Label fx:id="lblAlertConfirm" layoutX="403.0" layoutY="235.0" prefHeight="17.0" prefWidth="230.0" />
-            <Label fx:id="lblAlert2" alignment="CENTER" layoutX="451.0" layoutY="155.0" prefHeight="17.0" prefWidth="179.0" />
+            <Separator layoutX="111.0" layoutY="161.0" prefHeight="0.0" prefWidth="420.0" />
+            <JFXTimePicker fx:id="TPOverTimeStart" layoutX="236.0" layoutY="175.0" prefHeight="28.0" prefWidth="81.0" promptText="Start" visible="false" />
+            <JFXTimePicker fx:id="TPVacationStart" layoutX="446.0" layoutY="174.0" prefHeight="28.0" prefWidth="81.0" promptText="Start" visible="false" />
+            <JFXTimePicker fx:id="TPOverTimeEnd" defaultColor="#f23708" layoutX="236.0" layoutY="214.0" prefHeight="28.0" prefWidth="81.0" promptText="End" visible="false" />
+            <JFXTimePicker fx:id="TPVacationEnd" defaultColor="#f23708" layoutX="444.0" layoutY="208.0" prefHeight="28.0" prefWidth="81.0" promptText="End" visible="false" />
+            <JFXCheckBox fx:id="overTimeCheck" layoutX="141.0" layoutY="205.0" onMouseClicked="#overTimeShow" text="overtime" />
+            <JFXCheckBox fx:id="LeaveCheck" layoutX="328.0" layoutY="204.0" onMouseClicked="#leaveShow" text="Request leave" />
+            <Label fx:id="lblAlertConfirm" layoutX="405.0" layoutY="261.0" prefHeight="17.0" prefWidth="230.0" />
+            <Label fx:id="lblAlert2" alignment="CENTER" layoutX="433.0" layoutY="122.0" prefHeight="28.0" prefWidth="207.0" />
+            <Label fx:id="lblDate" alignment="CENTER" layoutX="433.0" layoutY="89.0" prefHeight="28.0" prefWidth="207.0">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+            </Label>
          </children>
       </Pane>
    </children>

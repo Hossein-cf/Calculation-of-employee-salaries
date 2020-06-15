@@ -18,9 +18,11 @@ import javafx.scene.layout.Pane;
 
 import javax.naming.spi.InitialContextFactory;
 import java.net.URL;
+import java.time.LocalDateTime;
 import java.time.LocalTime;
 
 import java.time.LocalTime;
+import java.time.format.DateTimeFormatter;
 import java.util.ResourceBundle;
 
 public class DailyRecordsController implements Initializable {
@@ -46,6 +48,7 @@ public class DailyRecordsController implements Initializable {
     public Label lblAlertSearch;
     public Label lblAlertConfirm;
     public Label lblAlert2;
+    public Label lblDate;
     private Employee employee;
 
     private void alert(String message, Label lbl, String color) {
@@ -79,10 +82,10 @@ public class DailyRecordsController implements Initializable {
     }
 
     public void Confirm() {
-        if (chooseDateForDailyRecords.getValue() == null)
-            alert("choose a date", lblAlert2, "red");
+//        if (chooseDateForDailyRecords.getValue() == null)
+//            alert("choose a date", lblAlert2, "red");
 
-        else {
+
 
             if (checkAbsent.isSelected()) {
                 int absence = employee.getSalaryInformation().getAbsenceDays();
@@ -112,7 +115,7 @@ public class DailyRecordsController implements Initializable {
 
 
             alert("Done", lblAlertConfirm, "green");
-        }
+
     }
 
     public void checkAbsence() {
@@ -202,8 +205,11 @@ public class DailyRecordsController implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        txtEmployeeCode.addEventFilter(KeyEvent.KEY_TYPED, numeric_Validation(12));
+        txtEmployeeCode.addEventFilter(KeyEvent.KEY_TYPED, numeric_Validation(14));
+        DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss");
+        LocalDateTime now = LocalDateTime.now();
 
+      //  lblDate.setText(dtf.format(now));
 
     }
 }
