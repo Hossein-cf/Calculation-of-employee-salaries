@@ -101,4 +101,22 @@ public class SalaryInformation  {
     public void setFullTime(boolean fullTime) {
         this.fullTime = fullTime;
     }
+
+    @Override
+    public String toString() {
+        return "SalaryInformation{" +
+                "OverWorkTime=" + OverWorkTime +
+                ", HolidayWorkTime=" + HolidayWorkTime +
+                ", VacationHour=" + VacationHour +
+                ", MorningWorkDays=" + MorningWorkDays +
+                ", AfternoonWorkDays=" + AfternoonWorkDays +
+                ", NightWorkDays=" + NightWorkDays +
+                ", fullTimeWorksDays=" + fullTimeWorksDays +
+                ", MorningWork=" + MorningWork +
+                ", AfternoonWork=" + AfternoonWork +
+                ", NightWork=" + NightWork +
+                ", fullTime=" + fullTime +
+                ", absenceDays=" + absenceDays +
+                '}';
+    }
 }
