@@ -71,7 +71,7 @@ public class ManagerEmploymentController implements Initializable {
 
         String[] employeeType = {EmployeeType.DBExpert.toString(), EmployeeType.NetworkSecurityExpert.toString(), EmployeeType.FullStack.toString(), EmployeeType.BackEnd.toString(), EmployeeType.FrontEnd.toString()};
         String[] levels = {"Junior", "Mid-level", "Senior"};
-        String[] workTime = {"full time", "Morning Work", "afternoon Work", "night work"};
+        String[] workTime = {"full time(8-20)", "Morning Work(8-14)", "afternoon Work(14-22)", "night work(22-6)"};
         comboEmployeeType.getItems().addAll(employeeType);
         comboEmployeeLevel.getItems().addAll(levels);
         comboWorkTime.getItems().addAll(workTime);

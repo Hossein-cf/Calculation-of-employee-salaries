@@ -13,7 +13,7 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="502.0" prefWidth="815.0" style="-fx-border-radius: 5; -fx-background-color: #BBDEFB;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ManagerDashbord.ManagerLoginController">
+<AnchorPane stylesheets="@../Style.css"  prefHeight="502.0" prefWidth="815.0" style="-fx-border-radius: 5; -fx-background-color: #BBDEFB;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ManagerDashbord.ManagerLoginController">
    <children>
       <Pane layoutX="31.0" layoutY="26.0" prefHeight="451.0" prefWidth="754.0" style="-fx-background-radius: 5; -fx-background-color: #fff; -fx-border-radius: 5;">
          <effect>
@@ -32,7 +32,7 @@
                         <Image url="@../Pics/building-business-company-19953138.jpg" />
                      </image>
                   </ImageView>
-                  <JFXButton fx:id="btnStartToCooperation" buttonType="RAISED" layoutX="48.0" layoutY="326.0" onMouseClicked="#loadDashBoard" prefHeight="32.0" prefWidth="163.0" ripplerFill="#16c1ff" style="-fx-border-radius: 5; -fx-border-color: #B2EBF2;" text="Login as Test User">
+                  <JFXButton   styleClass="button"  fx:id="btnStartToCooperation" buttonType="RAISED" layoutX="48.0" layoutY="326.0" onMouseClicked="#loadDashBoard" prefHeight="32.0" prefWidth="163.0" ripplerFill="#16c1ff" style="-fx-border-radius: 5; -fx-border-color: #B2EBF2;" text="Login as Test User">
                      <font>
                         <Font name="System Bold" size="12.0" />
                      </font>

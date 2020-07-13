@@ -188,7 +188,7 @@ public class SubmitFormController implements Initializable {
             employee.setSalaryInformation(salaryInformation);
             new DBHelper().insertEmployee(employee);
         } else {
-            alert("Employees are not allowed to be employed", alert3, "red");
+            alert("Employees are not allowed to be employed ", alert3, "red");
             btnCheckTheStatus.setDisable(true);
 // karmand mojaz be estexdam nist
         }

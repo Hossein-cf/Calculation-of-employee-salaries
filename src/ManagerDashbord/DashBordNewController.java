@@ -17,6 +17,8 @@ import javafx.stage.StageStyle;
 
 import java.io.IOException;
 import java.net.URL;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.Optional;
 import java.util.ResourceBundle;
 
@@ -39,6 +41,8 @@ public class DashBordNewController implements Initializable {
     public Label lblEmployeeNumbers;
     public Label lblPayedSalaries;
     public JFXButton btnDailyRecords;
+    public Label lblDate;
+    public static String Date ;
 
 
     public void settingCompanyName(String CompanyName, String CompanyType) {
@@ -197,6 +201,14 @@ public class DashBordNewController implements Initializable {
 
         // TODO setting number of employees in company
         // TODO setting amount of payed salaries
+
+        DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm");
+        LocalDateTime now = LocalDateTime.now();
+
+        lblDate.setText(dtf.format(now));
+        Date = dtf.format(now);
+
+
     }
 
 
