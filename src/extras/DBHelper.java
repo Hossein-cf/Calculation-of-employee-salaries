@@ -386,8 +386,9 @@ public class DBHelper {
         close();
         return 0;
     }
-//    public DBHelper(){
-//        CreateTableFoeReceipt();
-//    }
+
+    public static void main(String[] args) {
+        connection();
+    }
 
 }
